@@ -282,8 +282,7 @@ for(let i=0;i<60;i++)pts.push(new Pt());anim();
 // ===== Data =====
 
 const chapters=[
-{num:'01',title:'背景概述',sub:'门店信息 · 品牌关系 · 核心目标',content:`
-<p><strong>鲸岚·烧鸟</strong>位于天津中原·瞰海一楼，毗邻商场一楼出入口，拥有绝佳的自然客流位置。门店分为两个独立空间：</p>
+{num:'01',title:'背景概述',sub:'门店信息 · 品牌关系 · 核心目标',content:`<p><strong>鲸岚·烧鸟</strong>位于天津中原·瞰海一楼，毗邻商场一楼出入口，拥有绝佳的自然客流位置。门店分为两个独立空间：</p>
 <div class="grid2">
 <div class="card"><div class="v">150㎡</div><div class="l">鲸岚·烧鸟（日式烧烤）<br>老板独立运营 · 鲸岚品牌</div></div>
 <div class="card"><div class="v">100㎡+</div><div class="l">精酿空间（合伙经营）<br>品牌名待定 · 与烧鸟相邻</div></div>
@@ -295,869 +294,517 @@ const chapters=[
 ③ <strong>联合消费激励：</strong>出示另一店消费凭证可享专属折扣，用利益驱动顾客主动跨店</p>
 <p><strong>品牌背景：</strong>老板本身经营鲸岚烧肉品牌，楼上三楼的鲸岚烧肉也在同步装修中（尚未营业）。鲸岚品牌在本地已有一定知名度和线上社群基础，这是鲸岚·烧鸟开业最大的流量来源。</p>
 <p><strong>核心目标：</strong>以美团智能版收银系统为中枢，通过开业前45天开始的线下二维码领券蓄水，开业后全渠道自动沉淀私域会员，配合复购券和三平台线上运营，实现"开业即火爆，复购有保障"。</p>
-<div class="tags"><span class="tag">🐋 鲸岚品牌背书</span><span class="tag">📍 商场出入口黄金位置</span><span class="tag">🏗️ 装修期45天蓄水</span><span class="tag">🍺 精酿空间联动</span><span class="tag">🏢 楼上鲸岚烧肉同步装修</span></div>
-`},
-{num:'02',title:'整体策略框架',sub:'五管齐下 · 全渠道覆盖',content:`
-<p class="big">五管齐下策略体系</p>
+<div class="tags"><span class="tag">🐋 鲸岚品牌背书</span><span class="tag">📍 商场出入口黄金位置</span><span class="tag">🏗️ 装修期45天蓄水</span><span class="tag">🍺 精酿空间联动</span><span class="tag">🏢 楼上鲸岚烧肉同步装修</span></div>`},
+{num:'02',title:'整体策略框架',sub:'六管齐下 · 全渠道覆盖',content:`<p class="big">六管齐下策略体系</p>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>策略</th><th>目的</th><th>核心动作</th></tr>
-<tr><td><strong>🎯 团购引流</strong></td><td>线上引流到店</td><td>大众点评+抖音双平台团购，开业特惠套餐吸引新客</td></tr>
-<tr><td><strong>💾 私域沉淀</strong></td><td>锁定长期复购</td><td>扫码领券→自动沉淀会员→复购券自动化推送</td></tr>
-<tr><td><strong>🎉 基础活动</strong></td><td>拉升开业人气</td><td>全场折扣+满赠+发圈赠菜，制造排队效应</td></tr>
-<tr><td><strong>🔥 品类专项</strong></td><td>驱动持续到店</td><td>专项A尝鲜立减·专项B复购赠券·专项C每日特价</td></tr>
-<tr><td><strong>👥 社群运营</strong></td><td>日常触达转化</td><td>每日双时段推送（上午10点+下午4点），周一至周日轮换内容</td></tr>
+<tr><th>策略</th><th>目的</th><th>载体</th><th>核心内容</th></tr>
+<tr><td><strong>🏗️ 装修期45天蓄水</strong></td><td>提前锁定周边客群</td><td>围挡+便利店+试吃</td><td>装修围挡铺设领券二维码，扫码即成为私域会员</td></tr>
+<tr><td><strong>🐋 鲸岚烧肉品牌联动</strong></td><td>利用现有品牌客户基础</td><td>烧肉店+品牌社群</td><td>老客专属福利、结账话术导流、品牌通用储值卡</td></tr>
+<tr><td><strong>📱 三平台线上运营</strong></td><td>线上引流+提升曝光</td><td>点评+抖音+小红书</td><td>大众点评冲新店榜，抖音达人矩阵+本地推，小红书矩阵号+UGC</td></tr>
+<tr><td><strong>💾 私域沉淀+复购</strong></td><td>沉淀会员+锁定复购</td><td>收银系统+社群</td><td>扫码领券→核销→自动发复购券</td></tr>
+<tr><td><strong>🍻 烧鸟+精酿联动</strong></td><td>互相导流</td><td>联合套餐+互推</td><td>联合套餐、互相导流、共用私域</td></tr>
+<tr><td><strong>🎉 开业现场活动</strong></td><td>拉升人气+提升客单</td><td>收银系统+台卡</td><td>68元套餐+满赠精酿+发圈赠菜+每日限定烧鸟</td></tr>
 </table>
+</div>`},
+{num:'03',title:'开业前线下引流',sub:'装修期45天 · 围挡+便利店+试吃',content:`<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.1 核心逻辑</h3>
+<p>从装修期（开业前45天）开始铺设领券二维码。顾客扫码→输入手机号→领取优惠券（满50减10元）。系统自动记录手机号，该顾客即成为私域会员。券有效期设为45天，覆盖装修期到开业后。开业后顾客到店报手机号核销。</p>
+<div class="grid4">
+<div class="card"><div class="v">45天</div><div class="l">蓄水期时长</div></div>
+<div class="card"><div class="v">1500+</div><div class="l">预计领券人数</div></div>
+<div class="card"><div class="v">60%</div><div class="l">预估核销率</div></div>
+<div class="card"><div class="v">900+</div><div class="l">开业即到店顾客</div></div>
 </div>
-<p class="dim">💡 核心逻辑：团购引新客 → 私域锁复购 → 活动造氛围 → 专项拉频次 → 社群做日常。五条线并行，覆盖顾客从"首次到店"到"持续复购"的全生命周期。</p>
-`},
-{num:'03',title:'DM单版面设计',sub:'A5双面128g · 双二维码并排 · 优惠栏',content:`
-<p><strong>规格：</strong>A5（148mm×210mm）| 128g铜版纸 | 双面彩印 | 日式简约设计风格</p>
-
-<div class="grid2">
-<div class="card">
-<div class="v" style="font-size:1.1rem">📄 正面布局</div>
-<div class="l" style="text-align:left">
-<strong>【顶部】</strong><br>
-🐋 鲸岚·烧鸟 · 日式烧鸟 · 中原·瞰海一楼（商场入口旁）<br><br>
-<strong>【中间 · 双二维码并排】</strong><br>
-码① <strong>大众点评团购码</strong> — 扫码抢购开业特惠套餐<br>
-码② <strong>领券私域码</strong> — 扫码免费领10元券（满50元可用）<br><br>
-<strong>【下方优惠栏】</strong><br>
-· 凭此DM单到店，消费满100元赠精酿空间体验券<br>
-· 开业首周，烧鸟全场8.8折<br>
-· 到店发朋友圈/小红书，赠日式烤年糕一份<br>
-· 楼上鲸岚烧肉顾客凭消费小票到店享额外9折
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1.1rem">📄 背面布局</div>
-<div class="l" style="text-align:left">
-<strong>【顶部】</strong><br>
-🐋 鲸岚·烧鸟 · 品牌故事<br><br>
-<strong>【中间 · 菜品展示】</strong><br>
-· 招牌推荐：紫苏鸡腿肉、明太子鸡肉棒、提灯、炭烤牛舌<br>
-· 精选套餐：双人烧鸟套餐 ¥128（开业尝鲜价¥68）<br>
-· 营业时间：17:00-24:00（试营业期间）<br><br>
-<strong>【底部】</strong><br>
-📍 地址：天津中原·瞰海一楼（商场入口旁）<br>
-📞 电话：[待定]<br>
-🐋 鲸岚烧肉品牌旗下 · 楼上三楼同步装修中
-</div>
-</div>
-</div>
-
-<p class="highlight"><strong>📌 设计要点：</strong><br>
-① 双二维码必须并排且大小一致（4cm×4cm），码①在上/左，码②在下/右，标注清晰<br>
-② 优惠栏信息用红色/金色突出，增强视觉冲击力<br>
-③ 背面菜品展示用实拍图（非网图），增强可信度<br>
-④ 印刷建议：5000张起印，单价约0.3元/张，总成本约1500元</p>
-`},
-{num:'04',title:'大众点评团购设计',sub:'套餐设计 · 定价策略 · 限量 · 有效期',content:`
-<p class="big">团购套餐是线上引流的核心抓手，设计原则：低门槛引流 + 高价值感知 + 合理限量</p>
-
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.2 装修期触点铺设（开业前45天→15天）</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>套餐名称</th><th>内容</th><th>原价</th><th>团购价</th><th>限量</th><th>有效期</th><th>目的</th></tr>
-<tr><td><strong>🔥 开业尝鲜双人餐</strong></td><td>烧鸟8串+前菜2品+主食2份+饮品2杯</td><td>¥128</td><td>¥68</td><td>前3天每日50份</td><td>7天</td><td>引爆开业人气</td></tr>
-<tr><td><strong>🍢 烧鸟大满贯单人餐</strong></td><td>烧鸟6串（含提灯）+前菜+主食+饮品</td><td>¥88</td><td>¥48</td><td>前7天每日30份</td><td>15天</td><td>降低单人尝鲜门槛</td></tr>
-<tr><td><strong>🍺 烧鸟+精酿联名双人餐</strong></td><td>烧鸟6串+精酿2杯+前菜2品</td><td>¥158</td><td>¥88</td><td>前7天每日20份</td><td>15天</td><td>带动精酿空间引流</td></tr>
-<tr><td><strong>💎 鲸岚老客尊享双人餐</strong></td><td>烧鸟10串（含限定款）+前菜3品+主食+饮品</td><td>¥198</td><td>¥128</td><td>不限量</td><td>30天</td><td>锁定鲸岚烧肉老客</td></tr>
+<tr><th>触点位置</th><th>铺设方式</th><th>预估日扫码</th><th>45天累计</th></tr>
+<tr><td><strong>装修围挡（核心）</strong></td><td>1.2m×0.8m海报+二维码</td><td>15-30人/天</td><td>675-1350人</td></tr>
+<tr><td><strong>周边便利店/小卖部</strong></td><td>收银台桌贴+二维码</td><td>5-10人/天</td><td>225-450人</td></tr>
+<tr><td><strong>精酿空间小黑板</strong></td><td>60cm×40cm立牌（互推合作）</td><td>3-5人/天</td><td>135-225人</td></tr>
+<tr class="hl"><td><strong>合计</strong></td><td>—</td><td>23-45人/天</td><td><strong>1035-2025人</strong></td></tr>
 </table>
 </div>
-
-<p class="highlight"><strong>📌 团购设计要点：</strong><br>
-① <strong>限量策略：</strong>开业前3天严格控制每日限量，制造"抢购"氛围，避免开业后无券可用<br>
-② <strong>有效期设置：</strong>开业尝鲜套餐7天有效，倒逼顾客尽快到店；老客套餐30天有效，给足消费弹性<br>
-③ <strong>定价逻辑：</strong>开业尝鲜套餐折扣率约53%（¥68/¥128），足够有吸引力但不至于拉低品牌调性<br>
-④ <strong>套餐组合：</strong>覆盖"单人/双人/联名/老客"四种场景，满足不同客群需求<br>
-⑤ <strong>核销率预判：</strong>预计开业尝鲜套餐核销率70%+，联名套餐核销率60%+（需精酿空间配合）</p>
-`},
-{num:'05',title:'扫码领券私域方案',sub:'领券链路 · 自动沉淀 · 成本测算',content:`
-<p class="big">以美团智能版收银系统为中枢，实现"扫码→领券→到店→核销→沉淀→复购"全链路自动化</p>
-
-<h3>领券链路设计</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.3 预热期冲刺（开业前15天→3天）</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>环节</th><th>动作</th><th>工具/载体</th><th>负责人</th></tr>
-<tr><td>① 铺设</td><td>装修围挡/便利店/试吃台铺设领券二维码</td><td>DM单+立牌+台卡</td><td>店长</td></tr>
-<tr><td>② 领券</td><td>顾客扫码→授权手机号→领取10元券（满50可用）</td><td>美团收银系统</td><td>自动</td></tr>
-<tr><td>③ 到店</td><td>开业后顾客到店，报手机号核销</td><td>收银系统核销</td><td>收银员</td></tr>
-<tr><td>④ 沉淀</td><td>核销同时自动记录会员信息</td><td>收银系统会员模块</td><td>自动</td></tr>
-<tr><td>⑤ 复购</td><td>消费后次日自动推送复购券</td><td>收银系统自动发券</td><td>自动</td></tr>
+<tr><th>触点位置</th><th>铺设方式</th><th>预估日扫码</th><th>12天累计</th></tr>
+<tr><td><strong>商场出入口拦截</strong></td><td>地推人员+试吃展台</td><td>20-30人/天</td><td>240-360人</td></tr>
+<tr><td><strong>周边社区派发</strong></td><td>DM单+二维码</td><td>10-15人/天</td><td>120-180人</td></tr>
+<tr><td><strong>鲸岚烧肉装修处</strong></td><td>电梯口/楼梯口引导标识</td><td>5-10人/天</td><td>60-120人</td></tr>
+<tr class="hl"><td><strong>合计</strong></td><td>—</td><td>35-55人/天</td><td><strong>420-660人</strong></td></tr>
 </table>
 </div>
-
-<h3>五大领券场景</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.4 鲸岚烧肉品牌联动引流（最大优势）</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>场景</th><th>铺设位置</th><th>预计领券量</th><th>预计到店</th></tr>
-<tr><td>🏗️ 装修围挡</td><td>围挡外侧+门口地面</td><td>500张</td><td>300人</td></tr>
-<tr><td>🏪 周边便利店</td><td>收银台立牌（合作）</td><td>300张</td><td>180人</td></tr>
-<tr><td>🍢 试吃台</td><td>商场入口试吃台</td><td>400张</td><td>240人</td></tr>
-<tr><td>🐋 鲸岚烧肉店</td><td>收银台+包间</td><td>200张</td><td>120人</td></tr>
-<tr><td>📱 线上社群</td><td>品牌社群+朋友圈</td><td>100张</td><td>60人</td></tr>
-<tr><td><strong>合计</strong></td><td></td><td><strong>1,500张</strong></td><td><strong>900人</strong></td></tr>
+<tr><th>引流方式</th><th>具体操作</th><th>预期效果</th></tr>
+<tr><td><strong>烧肉店到店引流</strong></td><td>在鲸岚烧肉收银台/餐桌上放置鲸岚·烧鸟开业DM单+领券二维码</td><td>精准触达高匹配度客群</td></tr>
+<tr><td><strong>烧肉店结账话术</strong></td><td>「我们新店鲸岚·烧鸟就在楼下，扫码领10元券，开业就能用」</td><td>直接转化到店</td></tr>
+<tr><td><strong>品牌社群预热</strong></td><td>在鲸岚烧肉微信群发布新店预告+开业福利+领券链接</td><td>提前蓄水，制造期待</td></tr>
+<tr><td><strong>三楼导流一楼</strong></td><td>三楼鲸岚烧肉装修期间，在电梯口/楼梯口设置引导标识+二维码</td><td>装修期提前蓄水</td></tr>
+<tr><td><strong>品牌通用储值卡</strong></td><td>推出鲸岚品牌通用储值卡，烧鸟+烧肉两店通用</td><td>打通品牌消费闭环</td></tr>
 </table>
 </div>
-
-<h3>成本测算</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.5 地推人员话术</h3>
+<p><strong>试吃展台：</strong>「您好，新开的日式烧鸟店，免费尝一下。扫码领10元券，开业后就能用，就在旁边。」</p>
+<p><strong>商场出入口拦截：</strong>「您好，新开的日式烧鸟店，鲸岚烧肉旗下的新品牌，就在旁边。扫码领开业福利，欢迎开业来尝尝！」</p>
+<p><strong>社区派发：</strong>「您好，我们是新开的鲸岚·烧鸟，就在中原·瞰海一楼，主打日式烧鸟。扫码领10元券，开业首周还有8.8折，欢迎有空来尝尝。」</p>`},
+{num:'04',title:'DM单版面设计',sub:'A5双面128g · 双二维码 · 优惠栏',content:`<div class="grid2">
+<div class="card"><div class="v">A5</div><div class="l">148mm×210mm</div></div>
+<div class="card"><div class="v">157g</div><div class="l">铜版纸</div></div>
+<div class="card"><div class="v">双面</div><div class="l">彩印</div></div>
+<div class="card"><div class="v">日式</div><div class="l">简约设计风格</div></div>
+</div>
+<p><strong>正面布局：</strong></p>
+<p><strong>【顶部】</strong> 🐋 鲸岚·烧鸟 · 日式烧鸟 · 中原·瞰海一楼（商场入口旁）</p>
+<p><strong>【中间 双二维码并排】</strong><br>码①：大众点评团购码 — 扫码抢购开业特惠套餐<br>码②：领券私域码 — 扫码免费领10元券（满50元可用）</p>
+<p><strong>【下方优惠栏】</strong><br>· 凭此DM单到店，消费满100元赠精酿空间体验券（合作）<br>· 开业首周，烧鸟全场8.8折<br>· 到店发朋友圈/小红书，赠日式烤年糕一份<br>· 楼上鲸岚烧肉顾客凭消费小票到店享额外9折</p>
+<p><strong>【底部】</strong> 鲸岚烧肉品牌旗下 · 楼上三楼同步装修中</p>`},
+{num:'05',title:'全渠道会员自动沉淀',sub:'扫码领券 · 自动沉淀 · 社群运营',content:`<p>美团智能版收银系统自动记录会员的五大场景：</p>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>项目</th><th>数量</th><th>单价</th><th>小计</th></tr>
-<tr><td>DM单印刷</td><td>5,000张</td><td>¥0.3</td><td>¥1,500</td></tr>
-<tr><td>领券立牌（亚克力）</td><td>10个</td><td>¥15</td><td>¥150</td></tr>
-<tr><td>试吃台搭建</td><td>1套</td><td>¥500</td><td>¥500</td></tr>
-<tr><td>便利店合作费</td><td>5家</td><td>¥100</td><td>¥500</td></tr>
-<tr><td>领券成本（满50减10）</td><td>预计核销900张</td><td>¥10</td><td>¥9,000</td></tr>
-<tr><td><strong>合计</strong></td><td></td><td></td><td><strong>¥11,650</strong></td></tr>
+<tr><th>消费场景</th><th>会员记录方式</th><th>说明</th></tr>
+<tr><td><strong>扫码点餐</strong></td><td>顾客扫码即授权手机号，自动成为会员</td><td>最自然的沉淀方式</td></tr>
+<tr><td><strong>团购核销</strong></td><td>核销时输入手机号，系统自动记录</td><td>核销即会员</td></tr>
+<tr><td><strong>领券到店核销</strong></td><td>装修期领券顾客到店报手机号核销</td><td>装修期蓄水转化</td></tr>
+<tr><td><strong>收银台直接消费</strong></td><td>收银员引导报手机号加入会员</td><td>需话术引导</td></tr>
+<tr><td><strong>美团外卖</strong></td><td>外卖订单自动关联手机号</td><td>覆盖外卖场景</td></tr>
 </table>
 </div>
-<p class="dim">💡 领券成本看似高，但900人到店消费（人均¥80+）可带来¥72,000+营收，ROI约6.2倍。</p>
-`},
-{num:'06',title:'开业现场活动设计',sub:'基础活动 + 品类专项A/B/C',content:`
-<p class="big">开业现场活动分为"基础活动"和"品类专项"两层，基础活动拉升人气，专项活动驱动持续到店</p>
-
-<h3>🎯 基础活动（开业首周）</h3>
+<p><strong>收银台引导策略：</strong>「您还没加入会员吧？报一下手机号，以后消费有积分，还会不定期送优惠券。今天加入的话，我额外送您一份小菜。」</p>
+<p><strong>激励措施：</strong>每成功引导一位顾客加入会员，奖励收银员1元/人（月度结算）。</p>
+<p class="highlight"><strong>⚠️ 私域风险防范：企业微信备份策略</strong><br>
+所有会员数据仅存在美团收银系统存在风险——一旦美团政策变化或账号出问题，私域资产将全部暴露。建议在核销环节同步引导顾客添加企业微信：<br>
+① <strong>核销话术增加加微环节：</strong>「您的券已核销，加一下我们企业微信，以后新品上市、限时活动都会第一时间通知您，还有专属福利哦」<br>
+② <strong>企业微信二维码台卡：</strong>与点星码、收藏码并排放置，收银员每引导一人加微奖励0.5元<br>
+③ <strong>双轨并行：</strong>美团收银系统负责自动化发券和消费记录，企业微信负责日常触达和活动推送，形成双重保险</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">首月预计自动沉淀会员</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>活动</th><th>内容</th><th>目的</th><th>时间</th></tr>
-<tr><td>🔥 68元尝鲜套餐</td><td>双人烧鸟套餐（原价128元）</td><td>聚拢人气，降低首次到店门槛</td><td>前3天限量50份/天</td></tr>
-<tr><td>🎉 全场8.8折</td><td>烧鸟全场8.8折</td><td>降低尝鲜门槛，提升客单</td><td>开业首周</td></tr>
-<tr><td>🍺 满100赠精酿体验券</td><td>消费满100元赠精酿空间体验券</td><td>带动烧鸟+精酿联动</td><td>开业首月</td></tr>
-<tr><td>📱 发圈赠年糕</td><td>发朋友圈/小红书赠日式烤年糕</td><td>裂变传播，提升线上曝光</td><td>开业首周</td></tr>
-<tr><td>🐋 烧肉老客专属</td><td>鲸岚烧肉顾客凭小票额外9折</td><td>品牌联动，锁定老客</td><td>开业首月</td></tr>
+<tr><th>来源</th><th>预估人数</th><th>转化率</th><th>说明</th></tr>
+<tr><td><strong>装修期领券核销</strong></td><td>600-900人</td><td>60%核销率</td><td>1500领券×60%</td></tr>
+<tr><td><strong>扫码点餐自动沉淀</strong></td><td>300-500人</td><td>—</td><td>开业首月自然客流</td></tr>
+<tr><td><strong>团购核销沉淀</strong></td><td>200-300人</td><td>—</td><td>点评+抖音团购</td></tr>
+<tr><td><strong>收银台引导</strong></td><td>100-200人</td><td>—</td><td>收银员话术引导</td></tr>
+<tr class="hl"><td><strong>首月合计</strong></td><td><strong>1200-1900人</strong></td><td>—</td><td>保守按1400人计</td></tr>
+</table>
+</div>`},
+{num:'06',title:'复购券与二次营销',sub:'满额赠券 · 复购锁定 · 自动化',content:`<p>利用美团收银的"会员筛选+批量发券"功能，对已消费会员在特定时间节点推送复购券，驱动二次到店。</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<tr><th>时间节点</th><th>触发条件</th><th>券内容</th><th>目标</th></tr>
+<tr><td><strong>消费后次日</strong></td><td>首单完成自动触发</td><td>满80减15元复购券</td><td>趁热打铁，7天有效</td></tr>
+<tr><td><strong>5天未复购</strong></td><td>系统追踪未到店</td><td>满60减10元唤醒券</td><td>唤醒沉睡，15天有效</td></tr>
+<tr><td><strong>7天沉睡</strong></td><td>首单后7天未到店</td><td>「想你了」满30减8元</td><td>轻度唤醒</td></tr>
+<tr><td><strong>15天流失</strong></td><td>15天未到店</td><td>满50减15元大额券</td><td>挽回流失客户</td></tr>
+<tr><td><strong>每月会员日</strong></td><td>每月8号固定推送</td><td>全场8.8折券</td><td>培养固定消费习惯</td></tr>
 </table>
 </div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">与精酿空间的联动合作</h3>
+<div class="tbl-wrap">
+<table class="tbl">
+<tr><th>合作方式</th><th>具体操作</th><th>说明</th></tr>
+<tr><td><strong>联合套餐</strong></td><td>推出「烧鸟+精酿」联名套餐，一票两店使用</td><td>顾客购买后可在两店分别消费</td></tr>
+<tr><td><strong>互相导流</strong></td><td>鲸岚·烧鸟消费满100元赠精酿空间体验券</td><td>精酿空间顾客到店赠鲸岚·烧鸟9折券</td></tr>
+<tr><td><strong>共用私域</strong></td><td>两店共用微信群，联合推送活动信息</td><td>扩大社群覆盖面</td></tr>
+<tr><td><strong>精酿一条街应对</strong></td><td>未来对面精酿一条街形成后，烧鸟+精酿组合形成差异化</td><td>纯精酿酒吧无法提供的用餐体验</td></tr>
+</table>
+</div>`},
+{num:'07',title:'开业现场活动',sub:'基础活动+品类专项A/B/C',content:`<div class="tbl-wrap">
+<table class="tbl">
+<tr><th>活动</th><th>内容</th><th>目的</th><th>限定</th></tr>
+<tr><td><strong>68元尝鲜套餐</strong></td><td>双人烧鸟套餐（原价128元）</td><td>聚拢人气</td><td>前3天限量</td></tr>
+<tr><td><strong>全场8.8折</strong></td><td>开业首周烧鸟全场8.8折</td><td>降低尝鲜门槛</td><td>仅限首周</td></tr>
+<tr><td><strong>满100赠精酿体验券</strong></td><td>消费满100元赠精酿空间体验券</td><td>带动烧鸟+精酿联动</td><td>开业首月</td></tr>
+<tr><td><strong>发圈赠年糕</strong></td><td>发朋友圈/小红书赠日式烤年糕</td><td>裂变传播</td><td>开业首周</td></tr>
+<tr><td><strong>烧肉老客专属</strong></td><td>鲸岚烧肉顾客凭小票额外9折</td><td>品牌联动</td><td>开业首月</td></tr>
+</table>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">烧鸟专项活动</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🔥</div><h4>方案A：每日限定烧鸟</h4><p>每日一款限定烧鸟串（紫苏鸡腿肉、明太子鸡肉棒等），仅限20份/天，售完即止。制造稀缺感，驱动每日到店打卡。</p></div>
+<div class="feat-card"><div class="ic">🏆</div><h4>方案B：烧鸟大满贯</h4><p>15串不同部位拼盘，原价168元开业特惠128元。提升客单价，展示烧鸟品类丰富度。</p></div>
+<div class="feat-card"><div class="ic">🍻</div><h4>方案C：精酿联名套餐</h4><p>购买烧鸟套餐+19.9元获得精酿空间品鉴券。打通两店，互相导流。</p></div>
+</div>`},
+{num:'08',title:'精酿空间专项运营',sub:'精酿品牌 · 联合套餐 · 互相导流',content:`<p>精酿空间为合伙经营，与鲸岚·烧鸟分属不同品牌。未来对面外滩将形成精酿一条街，需提前建立竞争优势。精酿的高颜值属性在小红书和抖音上传播潜力极大，建议适当加码预算。</p>
+<div class="feat">
+<div class="feat-card"><div class="ic">🍺</div><h4>精酿品鉴套餐</h4><p>19.9元精酿品鉴套餐（3杯不同口味），降低尝鲜门槛</p></div>
+<div class="feat-card"><div class="ic">📅</div><h4>每周品鉴会</h4><p>每周五精酿品鉴会（付费预约制），打造社群粘性</p></div>
+<div class="feat-card"><div class="ic">💳</div><h4>会员储值</h4><p>充300赠50，充500赠120，锁定复购</p></div>
+<div class="feat-card"><div class="ic">🎉</div><h4>包场服务</h4><p>精酿生日派对/团建包场服务，拓展企业客户</p></div>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">精酿预算加码建议</h3>
+<p>原方案精酿预算偏低（小红书博主仅500元、抖音达人仅1000元），精酿的颜值内容在小红书传播潜力极大，建议调整：</p>
+<div class="tbl-wrap">
+<table class="tbl">
+<tr><th>渠道</th><th>原预算</th><th>建议调整</th><th>调整理由</th></tr>
+<tr><td><strong>小红书探店博主</strong></td><td>500元</td><td><strong>2,000元</strong></td><td>精酿的高颜值+氛围感内容在小红书天然适合种草，加码后可覆盖5-8位本地博主</td></tr>
+<tr><td><strong>抖音达人探店</strong></td><td>1,000元</td><td><strong>2,500元</strong></td><td>精酿打酒过程+泡沫特写+顾客聚会场景，抖音同城流量转化率高</td></tr>
+<tr><td><strong>精酿品鉴会物料</strong></td><td>—</td><td><strong>500元</strong></td><td>每周五品鉴会配套物料（杯垫、品鉴卡、拍照道具）</td></tr>
+<tr class="hl"><td><strong>精酿合计</strong></td><td><strong>1,500元</strong></td><td><strong>5,000元</strong></td><td>加码后精酿预算占比从9%提升至20%，更合理</td></tr>
+</table>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">与鲸岚·烧鸟的联动合作</h3>
+<p>· 联合套餐：推出「烧鸟+精酿」联名套餐，一票两店使用</p>
+<p>· 互相导流：鲸岚·烧鸟消费满100元赠精酿空间体验券；精酿空间顾客到店赠鲸岚·烧鸟9折券</p>
+<p>· 共用私域：两店共用微信群，联合推送活动信息</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">精酿一条街竞争应对</h3>
+<p>· 提前建立精酿社群，积累种子用户，打造社群壁垒</p>
+<p>· 打造「烧鸟+精酿」差异化组合，区别于纯精酿酒吧——这是精酿一条街其他纯酒吧无法提供的用餐体验</p>
+<p>· 培养精酿KOC客户，形成口碑传播</p>
 
-<h3>🔥 品类专项A/B/C</h3>
+<p class="highlight"><strong>⚠️ 精酿品牌名：</strong>方案中精酿空间一直以"品牌名待定"出现，但品牌名是物料设计、小红书种草、POI定位的基础。建议开业前至少确定一个暂用名，哪怕只是「鲸岚·精酿」或独立名字，以便提前制作物料和铺设线上入口。品牌名一旦确定，方案中所有「精酿空间」均可统一替换。</p>
+<p>· 定期举办精酿品鉴课/酿酒体验活动，建立专业认知</p>`},
+{num:'09',title:'大众点评运营',sub:'新店榜 · 团购设计 · 合规运营',content:`<p><strong>平台机制理解（2026年核心变化）：</strong>严厉打击"赠菜换好评"，诱导评价会导致店铺星级下降。"真实评价数+近30天回复率+顾客证言质量"成排名核心。一条带图、带细节的真实评价权重是简单好评的5倍。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">执行动作</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🎯</div><h4>动作一：内测体验</h4><p>开业前2天邀请30-50人免费体验，要求发布带图真实评价。食材成本约500元。</p></div>
+<div class="feat-card"><div class="ic">📝</div><h4>动作二：合规引导</h4><p>结账后引导扫码评价（不提赠品）。24小时内回复差评。高质量评价点赞互动。</p></div>
+<div class="feat-card"><div class="ic">🔑</div><h4>动作三：关键词优化</h4><p>引导评价包含：烧鸟拼盘、鸡腿肉、提灯、炭火香气、紫苏鸡腿肉、明太子鸡肉棒等。</p></div>
+<div class="feat-card"><div class="ic">🏆</div><h4>动作四：冲击新店榜</h4><p>区域新店榜Top10→南开区烧烤榜Top5→冲刺「必吃榜」「热门榜」双榜上榜。</p></div>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">KPI</h3>
+<div class="grid4">
+<div class="card"><div class="v">4.0星</div><div class="l">首月评分</div></div>
+<div class="card"><div class="v">100条+</div><div class="l">首月评价</div></div>
+<div class="card"><div class="v">500个</div><div class="l">首月收藏</div></div>
+<div class="card"><div class="v">70%</div><div class="l">团购核销率</div></div>
+</div>`},
+{num:'10',title:'抖音运营',sub:'达人矩阵 · 本地推 · 内容策略',content:`<p><strong>平台机制理解（2026年核心变化）：</strong>算法从"内容互动权重"转向"内容质量×交易效率×POI资产"三维评分。"有效转化率"权重升至42%。同城搜索流量占比31%。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">执行动作</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🎬</div><h4>动作一：原生内容矩阵</h4><p>每天发布：炭火特写+烧鸟滋滋冒油+顾客真实用餐场景。添加POI+DOU+同城定向。</p></div>
+<div class="feat-card"><div class="ic">🤝</div><h4>动作二：达人探店矩阵</h4><p>总预算6000元。选择本地美食类达人，视频包含POI定位+团购链接。</p></div>
+<div class="feat-card"><div class="ic">📍</div><h4>动作三：本地推投流</h4><p>地理围栏3公里，人群18-35岁美食兴趣。首周1000元→次周500元→三四周各250元。</p></div>
+<div class="feat-card"><div class="ic">🛒</div><h4>动作四：团购组品</h4><p>68元双人套餐（与点评一致，便于统一核销）。</p></div>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">KPI</h3>
 <div class="grid3">
-<div class="card">
-<div class="v" style="color:#E8451A">A · 尝鲜引导</div>
-<div class="l" style="text-align:left">
-<strong>每日限定烧鸟</strong><br>
-每日一款限定烧鸟串（紫苏鸡腿肉、明太子鸡肉棒等），仅限20份/天，售完即止。<br><br>
-<strong>目的：</strong>制造稀缺感，驱动每日到店打卡<br>
-<strong>方式：</strong>到店立减¥5-10
+<div class="card"><div class="v">50%</div><div class="l">团购核销率</div></div>
+<div class="card"><div class="v">8-10条</div><div class="l">达人探店视频</div></div>
+<div class="card"><div class="v">5万+</div><div class="l">POI曝光量</div></div>
 </div>
+<p class="highlight"><strong>⚠️ 本地推ROI目标调整：</strong>原方案ROI≥1.5偏保守。日式烧烤+精酿品类在本地推上通常能跑到2.5-3，首月目标应拉高至<strong>ROI≥2.5</strong>，倒逼执行动作更精准——达人视频发布后立即追投高互动内容，对完播率＞45%、评论率＞3%的视频即时加投，确保每一分投流预算都花在刀刃上。</p>`},
+{num:'11',title:'小红书运营',sub:'矩阵号 · KFS策略 · UGC引导',content:`<p><strong>平台机制理解（2026年核心变化）：</strong>流量极度偏向"真实、就近、有用、可抄"的同城内容。日式烧鸟的高颜值属性，与小红书图文调性天然契合。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">四种高转化内容模板</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🗺️</div><h4>① 就近懒人攻略</h4><p>《天津中原商圈打工人下班觅食指南·烧鸟》</p></div>
+<div class="feat-card"><div class="ic">📸</div><h4>② 真实到店体验</h4><p>原相机直出：进店→就座→上菜→开吃→买单</p></div>
+<div class="feat-card"><div class="ic">🎯</div><h4>③ 场景刚需套餐</h4><p>绑定场景做内容，挂载团购链接</p></div>
+<div class="feat-card"><div class="ic">💡</div><h4>④ 避坑干货</h4><p>「别再说烧鸟就是鸡肉串了！不同部位怎么点才专业？」</p></div>
 </div>
-<div class="card">
-<div class="v" style="color:#D4A017">B · 复购锁定</div>
-<div class="l" style="text-align:left">
-<strong>烧鸟大满贯拼盘</strong><br>
-15串不同部位拼盘，原价¥168开业特惠¥128。<br><br>
-<strong>目的：</strong>提升客单价，赠复购券锁定下次到店<br>
-<strong>方式：</strong>消费即赠满80减15复购券
-</div>
-</div>
-<div class="card">
-<div class="v" style="color:#4CAF50">C · 日常引流</div>
-<div class="l" style="text-align:left">
-<strong>每日特价串品</strong><br>
-每日一款特价串品（¥9.9/串），仅限堂食，每人限点2串。<br><br>
-<strong>目的：</strong>日常引流，保持工作日客流<br>
-<strong>方式：</strong>每日特价，社群提前预告
-</div>
-</div>
-</div>
-
-<p class="highlight"><strong>📌 专项活动执行要点：</strong><br>
-① A/B/C三项可并行执行，不冲突<br>
-② 每日限定款和特价款提前一天在社群预告，制造期待感<br>
-③ 复购券通过收银系统自动发放，无需人工操作<br>
-④ 专项活动持续至开业后30天，根据数据效果调整</p>
-`},
-{num:'07',title:'大众点评合规运营',sub:'红线对照表 · 点星码规范 · 冲榜策略',content:`
-<p class="big">2026年大众点评核心变化：严厉打击"赠菜换好评"，诱导评价会导致店铺星级下降。"真实评价数+近30天回复率+顾客证言质量"成排名核心。</p>
-
-<h3>🚫 平台红线对照表</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>行为</th><th>是否违规</th><th>后果</th><th>正确做法</th></tr>
-<tr><td>赠菜/打折换好评</td><td class="r">❌ 严重违规</td><td>降星+下架</td><td>不承诺任何回报，仅引导真实评价</td></tr>
-<tr><td>员工刷好评</td><td class="r">❌ 严重违规</td><td>封号+清空评价</td><td>严禁员工自评，发现即处罚</td></tr>
-<tr><td>点星码引导</td><td class="g">✅ 合规</td><td>—</td><td>官方点星码合规摆放，不附加任何条件</td></tr>
-<tr><td>收藏打卡有礼</td><td class="y">⚠️ 灰色地带</td><td>视平台政策</td><td>建议用"收藏打卡"替代"写评价"，风险更低</td></tr>
-<tr><td>差评回复带情绪</td><td class="r">❌ 违规</td><td>影响店铺分</td><td>24小时内专业回复，先道歉后解释再邀约</td></tr>
-</table>
-</div>
-
-<h3>📝 点星码使用规范</h3>
-<p>点星码是大众点评官方提供的合规引导工具，正确使用方式：</p>
-<div class="grid2">
-<div class="card">
-<div class="v" style="font-size:1rem">✅ 正确做法</div>
-<div class="l" style="text-align:left">
-· 收银台摆放官方点星码立牌<br>
-· 结账时自然引导：「您吃得满意的话，方便帮我们点个星吗？」<br>
-· 不承诺任何回报<br>
-· 点星码与收藏码并排放置
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1rem;color:#E8451A">❌ 错误做法</div>
-<div class="l" style="text-align:left">
-· "点星送饮料/送小菜"<br>
-· 强制要求顾客当场点星<br>
-· 用个人手机帮顾客操作<br>
-· 点星后拍照留存证据
-</div>
-</div>
-</div>
-
-<h3>🏆 冲榜执行动作</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>阶段</th><th>动作</th><th>时间</th><th>预算</th></tr>
-<tr><td>内测体验</td><td>邀请30-50人免费体验，要求发布带图真实评价</td><td>开业前2天</td><td>食材成本约¥500</td></tr>
-<tr><td>合规引导</td><td>结账后引导扫码评价（不提赠品），24小时内回复差评</td><td>持续</td><td>—</td></tr>
-<tr><td>关键词优化</td><td>引导评价包含：烧鸟拼盘、鸡腿肉、提灯、炭火香气、紫苏鸡腿肉等</td><td>持续</td><td>—</td></tr>
-<tr><td>冲榜目标</td><td>区域新店榜Top10 → 南开区烧烤榜Top5 → 冲刺双榜</td><td>首月</td><td>—</td></tr>
-</table>
-</div>
-`},
-{num:'08',title:'收银系统配合流程',sub:'后台设置 · 核销流程 · 加群引导',content:`
-<p class="big">美团智能版收银系统是整条私域链路的中枢，正确配置和使用至关重要</p>
-
-<h3>收银系统全链路流程</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>步骤</th><th>操作</th><th>说明</th></tr>
-<tr><td>① 后台营销设置</td><td>创建满50元可用10元通用券，生成领券二维码</td><td>券的有效期设为30天，每人限领1张</td></tr>
-<tr><td>② 装修期铺设</td><td>围挡/便利店/试吃台铺设二维码，顾客扫码领券</td><td>每日检查二维码是否完好，及时更换</td></tr>
-<tr><td>③ 到店核销</td><td>报手机号→收银员查询→系统一键核销→自动留存会员</td><td>核销时确认手机号正确，避免会员信息错误</td></tr>
-<tr><td>④ 复购券自动推送</td><td>消费后次日系统自动发复购券，5天未复购再次触达</td><td>设置好触发条件和券模板，无需人工干预</td></tr>
-<tr><td>⑤ 私域+口碑引导</td><td>收银台摆放加群二维码+官方点星码+收藏二维码</td><td>台卡统一风格，每日检查是否被遮挡</td></tr>
-</table>
-</div>
-
-<h3>话术链：收银员五句话术标准化</h3>
-<p class="dim">💡 完整话术链：券核销 → 满额赠券 → 点星收藏(合规) → 加群领红包 → 品类引导 → 赠券提醒</p>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>场景</th><th>标准话术</th><th>目的</th></tr>
-<tr><td>① 券核销</td><td>「您好，您的优惠券已核销，欢迎下次光临。」</td><td>确认核销完成，留下好印象</td></tr>
-<tr><td>② 满额赠券</td><td>「今天消费已满100元，赠您一张精酿空间体验券，欢迎去隔壁坐坐，我带您过去。」</td><td>引导至精酿空间，降低绕行心理门槛</td></tr>
-<tr><td>③ 点星收藏（合规）</td><td>「您吃得满意的话，方便的话帮我们点个星、收藏一下，非常感谢。」</td><td>合规引导，不承诺任何回报</td></tr>
-<tr><td>④ 加群领红包</td><td>「加一下我们微信群，以后新品上市、限时活动都会通知您，还有新人红包哦。」</td><td>沉淀到微信群，建立直接触达渠道</td></tr>
-<tr><td>⑤ 品类引导+赠券提醒</td><td>「我们每天有限定烧鸟和特价串品，关注群消息有预告。下次来还有复购券等着您！」</td><td>预告下次到店理由，提升复购率</td></tr>
-</table>
-</div>
-
-<h3>台卡布置（收银台四件套）</h3>
-<div class="grid2">
-<div class="card"><div class="v">台卡①</div><div class="l">满额赠券台卡<br>「消费满100元赠精酿空间体验券」</div></div>
-<div class="card"><div class="v">台卡②</div><div class="l">加群台卡<br>「扫码加群领新人红包」</div></div>
-<div class="card"><div class="v">台卡③</div><div class="l">品类活动台卡<br>「今日限定烧鸟：紫苏鸡腿肉（仅20份）」</div></div>
-<div class="card"><div class="v">台卡④</div><div class="l">点星收藏台卡<br>「官方点星码+收藏二维码」</div></div>
-</div>
-`},
-{num:'09',title:'活动节奏总览',sub:'准备→预热→爆发→积累→稳定',content:`
-<p class="big">五阶段节奏，覆盖开业前45天到开业后60天</p>
-
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">执行动作</h3>
+<p><strong>矩阵号策略：</strong>品牌号（企业号）发布官方内容 + 员工号/素人号真实日常内容</p>
+<p><strong>POI设置：</strong>完成企业号认证，开通团购功能。套餐标题包含关键词（如"天津日式烧鸟·双人尝鲜套餐"）。探店博主预算：2500元。</p>
+<p><strong>UGC激发：</strong>顾客拍照时主动让位置→用餐结束后引导分享→社群发起"鲸岚探店日记"活动，优秀笔记送50元券。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">KPI</h3>
+<div class="grid3">
+<div class="card"><div class="v">15篇+</div><div class="l">品牌号笔记</div></div>
+<div class="card"><div class="v">10篇+</div><div class="l">UGC笔记</div></div>
+<div class="card"><div class="v">3万+</div><div class="l">POI浏览量</div></div>
+</div>`},
+{num:'12',title:'收银系统与话术标准化',sub:'后台设置 · 核销流程 · 话术标准化',content:`<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">收银系统全链路流程</h3>
 <div class="timeline">
-<div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>🏗️ 准备期</strong><br>D-45 ~ D-15<br>装修围挡铺设二维码<br>DM单设计印刷<br>便利店合作洽谈<br>试吃台搭建</div></div>
-<div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>🔥 预热期</strong><br>D-15 ~ D-3<br>社群开始预热推送<br>鲸岚烧肉联动导流<br>大众点评店铺装修<br>抖音达人预约</div></div>
-<div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>🎉 爆发期</strong><br>D-Day ~ D+7<br>开业现场活动执行<br>团购套餐上线<br>达人探店集中发布<br>每日社群推送</div></div>
-<div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>📈 积累期</strong><br>D+8 ~ D+30<br>复购券自动化运行<br>大众点评冲榜<br>小红书UGC激发<br>精酿空间联动深化</div></div>
-<div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>🌟 稳定期</strong><br>D+31 ~ D+60<br>常态化社群运营<br>月度会员日活动<br>数据复盘优化<br>鲸岚烧肉开业联动</div></div>
+<div class="tl-item"><div class="phase">步骤一</div><h4>后台营销设置</h4><p>创建满50元可用10元通用券，生成领券二维码</p></div>
+<div class="tl-item"><div class="phase">步骤二</div><h4>装修期铺设</h4><p>围挡/便利店/试吃台铺设二维码，顾客扫码领券</p></div>
+<div class="tl-item"><div class="phase">步骤三</div><h4>到店核销</h4><p>报手机号→收银员查询→系统一键核销→自动留存会员</p></div>
+<div class="tl-item"><div class="phase">步骤四</div><h4>复购券自动推送</h4><p>消费后次日系统自动发复购券，5天未复购再次触达</p></div>
+<div class="tl-item"><div class="phase">步骤五</div><h4>私域+口碑引导</h4><p>收银台摆放加群二维码+官方点星码+收藏二维码</p></div>
 </div>
-`},
-{num:'10',title:'DM单派发策略',sub:'派发地点 · 数量 · 时间 · 话术',content:`
-<p class="big">DM单是装修期蓄水的核心载体，派发策略直接影响领券量和到店转化率</p>
-
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>派发地点</th><th>数量</th><th>时间</th><th>方式</th><th>预计领券</th></tr>
-<tr><td>商场出入口</td><td>1,000张</td><td>每日17:00-20:00（晚高峰）</td><td>专人派发，配合话术引导扫码</td><td>200张</td></tr>
-<tr><td>周边社区（500m内）</td><td>1,500张</td><td>周末10:00-12:00 / 16:00-18:00</td><td>信箱投递+社区门口派发</td><td>200张</td></tr>
-<tr><td>周边写字楼</td><td>1,000张</td><td>工作日11:30-13:00（午休）</td><td>写字楼大堂派发+便利店合作</td><td>150张</td></tr>
-<tr><td>鲸岚烧肉店</td><td>500张</td><td>每日营业时间</td><td>收银台摆放+结账时递送</td><td>200张</td></tr>
-<tr><td>合作便利店</td><td>500张</td><td>全天</td><td>收银台立牌+购物袋夹带</td><td>100张</td></tr>
-<tr><td>商场停车场</td><td>500张</td><td>周末全天</td><td>车窗夹放（合规区域）</td><td>50张</td></tr>
-<tr><td><strong>合计</strong></td><td><strong>5,000张</strong></td><td></td><td></td><td><strong>900张</strong></td></tr>
-</table>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">收银员五句话术标准化</h3>
+<div class="slogan-box">
+<div class="slogan-item"><div class="bd">① 核销</div>「您好，您的优惠券已核销，欢迎下次光临。」</div>
+<div class="slogan-item"><div class="bd">② 满赠</div>「今天消费已满100元，赠您一张精酿空间体验券，欢迎去隔壁坐坐。」</div>
+<div class="slogan-item"><div class="bd">③ 会员</div>「您还没加入会员吧？报一下手机号，今天加入额外送您一份小菜。」</div>
+<div class="slogan-item"><div class="bd">④ 口碑</div>「您吃得满意的话，方便的话帮我们点个星、收藏一下，非常感谢。」</div>
+<div class="slogan-item"><div class="bd">⑤ 联动</div>「楼上鲸岚烧肉也在装修中，开业后凭我们小票到楼上也有优惠哦。」</div>
 </div>
-
-<h3>派发人员话术</h3>
-<div class="grid2">
-<div class="card">
-<div class="v" style="font-size:1rem">🎯 商场入口话术</div>
-<div class="l" style="text-align:left">
-「您好，我们新开了一家日式烧鸟店就在旁边，扫码可以领10元优惠券，开业就能用，欢迎来尝尝！」
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">台卡布置</h3>
+<p>台卡①：消费满100元赠精酿空间体验券（与精酿空间合作）</p>
+<p>台卡②：社群加群二维码+新人红包规则</p>
+<p>台卡③：鲸岚烧肉品牌联动——凭小票互享优惠</p>
+<p>台卡④：官方点星码+收藏二维码（合规摆放）</p>`},
+{num:'13',title:'活动节奏总览',sub:'准备→预热→爆发→积累→稳定',content:`<div class="timeline">
+<div class="tl-item"><div class="phase">蓄水期</div><div class="time">开业前45-15天</div><h4>装修围挡铺设二维码</h4><p>便利店桌贴+精酿空间互推+鲸岚烧肉社群预热。目标：累计领券1000-1500人。</p></div>
+<div class="tl-item"><div class="phase">预热期</div><div class="time">开业前15-3天</div><h4>商场出入口拦截+社区派发</h4><p>鲸岚烧肉装修处导流+KOC探店。目标：累计领券500-700人。</p></div>
+<div class="tl-item"><div class="phase">爆发期</div><div class="time">开业1-7天</div><h4>68元套餐核销+全场8.8折</h4><p>发圈活动+每日限定烧鸟+内测评价发布。目标：拉升人气，积累100+评价。</p></div>
+<div class="tl-item"><div class="phase">积累期</div><div class="time">开业2-4周</div><h4>复购券自动化+精酿联动</h4><p>精酿品鉴会+社群日常运营+达人探店发布。目标：沉淀私域，提升复购。</p></div>
+<div class="tl-item"><div class="phase">稳定期</div><div class="time">开业2-3个月</div><h4>私域精细化运营</h4><p>精酿一条街竞争应对+三平台常态化运营+品牌联动。目标：日均单量稳定，复购率20%+。</p></div>
+</div>`},
+{num:'14',title:'预算汇总',sub:'各项费用明细 · 三档预算',content:`<div class="budget-tabs" id="budgetTabs">
+<button class="budget-tab active" data-tab="basic">基础版 ¥3,000</button>
+<button class="budget-tab" data-tab="standard">标准版 ¥8,000</button>
+<button class="budget-tab" data-tab="full">完整版 ¥15,600</button>
 </div>
+<div class="budget-panel active" id="panel-basic">
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>项目</th><th>费用（元）</th><th>说明</th></tr>
+<tr><td>装修期二维码物料（围挡+桌贴）</td><td>300</td><td>设计+印刷</td></tr>
+<tr><td>DM单设计+印刷1800张</td><td>600</td><td>A5双面157g铜版纸</td></tr>
+<tr><td>地推派发人工</td><td>600</td><td>3人×3天</td></tr>
+<tr><td>开业内测体验（食材成本）</td><td>500</td><td>30-50人免费体验</td></tr>
+<tr><td>开业赠品（年糕+精酿体验券）</td><td>1000</td><td>开业首周活动配套</td></tr>
+<tr class="hl"><td><strong>基础版合计</strong></td><td><strong>3,000</strong></td><td>不含让利成本</td></tr>
+</table></div>
 </div>
-<div class="card">
-<div class="v" style="font-size:1rem">🎯 社区派发话术</div>
-<div class="l" style="text-align:left">
-「您好，我是旁边新开的鲸岚·烧鸟，日式烧鸟专门店。扫码领10元券，开业来尝尝，就在商场一楼入口旁边。」
+<div class="budget-panel" id="panel-standard">
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>项目</th><th>费用（元）</th><th>说明</th></tr>
+<tr><td>基础版全部</td><td>3,000</td><td>含基础版所有项目</td></tr>
+<tr><td>KOC探店费用</td><td>1,500</td><td>3-5位本地美食KOC</td></tr>
+<tr><td>小红书矩阵号运营</td><td>1,000</td><td>品牌号+素人号内容制作</td></tr>
+<tr><td>抖音本地推投流</td><td>2,000</td><td>开业首周+次周投流</td></tr>
+<tr><td>社群运营+红包</td><td>500</td><td>新人红包+活动激励</td></tr>
+<tr class="hl"><td><strong>标准版合计</strong></td><td><strong>8,000</strong></td><td>不含让利成本</td></tr>
+</table></div>
 </div>
+<div class="budget-panel" id="panel-full">
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>项目</th><th>费用（元）</th><th>说明</th></tr>
+<tr><td>标准版全部</td><td>8,000</td><td>含标准版所有项目</td></tr>
+<tr><td>抖音达人探店矩阵</td><td>6,000</td><td>8-10位本地美食达人</td></tr>
+<tr><td>小红书探店博主</td><td>1,500</td><td>3-5位本地博主</td></tr>
+<tr><td>品牌通用储值卡制作</td><td>100</td><td>烧鸟+烧肉两店通用</td></tr>
+<tr class="hl"><td><strong>完整版合计</strong></td><td><strong>15,600</strong></td><td>不含让利成本约6,800元</td></tr>
+</table></div>
 </div>
+<p class="dim">注：让利成本（优惠券核销让利约6,800元）非现金支出，是利润让渡。实际现金支出按所选档位执行。</p>`},
+{num:'15',title:'KPI总览',sub:'评分 · 收藏 · 核销率 · 营收',content:`<div class="kpi-grid">
+<div class="kpi-card"><div class="cat">大众点评</div><div class="val">4.0星</div><div class="lbl">首月评分</div></div>
+<div class="kpi-card"><div class="cat">大众点评</div><div class="val">100条+</div><div class="lbl">首月评价</div></div>
+<div class="kpi-card"><div class="cat">大众点评</div><div class="val">500个</div><div class="lbl">首月收藏</div></div>
+<div class="kpi-card"><div class="cat">大众点评</div><div class="val">70%</div><div class="lbl">团购核销率</div></div>
+<div class="kpi-card"><div class="cat">抖音</div><div class="val">50%</div><div class="lbl">团购核销率</div></div>
+<div class="kpi-card"><div class="cat">抖音</div><div class="val">8-10条</div><div class="lbl">达人探店视频</div></div>
+<div class="kpi-card"><div class="cat">小红书</div><div class="val">15篇+</div><div class="lbl">品牌号笔记</div></div>
+<div class="kpi-card"><div class="cat">小红书</div><div class="val">10篇+</div><div class="lbl">UGC笔记</div></div>
+<div class="kpi-card"><div class="cat">私域</div><div class="val">1,400人</div><div class="lbl">首月会员</div></div>
+<div class="kpi-card"><div class="cat">私域</div><div class="val">20%</div><div class="lbl">首月复购率</div></div>
+<div class="kpi-card" style="border-color:var(--fire)"><div class="cat" style="color:var(--fire)">营收</div><div class="val" style="color:var(--fire)">¥8万</div><div class="lbl">鲸岚·烧鸟首月</div></div>
+<div class="kpi-card" style="border-color:var(--amber)"><div class="cat" style="color:var(--amber)">季度</div><div class="val" style="color:var(--amber)">¥15万</div><div class="lbl">季度月均目标</div></div>
 </div>
-`},
-{num:'11',title:'地推人员话术标准化',sub:'各场景标准话术 · 培训要点',content:`
-<p class="big">地推人员是装修期蓄水的第一线，话术质量直接影响扫码转化率</p>
-
-<h3>各场景标准话术</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>场景</th><th>标准话术</th><th>关键动作</th></tr>
-<tr><td>🎯 商场入口主动引流</td><td>「您好，我们新开的日式烧鸟店就在旁边，扫码领10元券开业就能用，先领一张不亏！」</td><td>递DM单+指二维码位置+确认扫码成功</td></tr>
-<tr><td>🎯 顾客犹豫时</td><td>「就在商场一楼入口旁边，开业还有68元双人套餐，超划算的。先领券不花钱，开业来尝尝！」</td><td>强调距离近+价格优势+零成本领券</td></tr>
-<tr><td>🎯 顾客拒绝时</td><td>「没关系，DM单您拿着，开业来看看，就在旁边。」</td><td>不纠缠，保持友好，留下DM单</td></tr>
-<tr><td>🎯 扫码后跟进</td><td>「已经领成功了！开业时间是[日期]，到时候报手机号就能用。我们还有群，加一下有开业红包哦。」</td><td>确认领券成功+引导加群</td></tr>
-<tr><td>🎯 鲸岚烧肉老客</td><td>「您是鲸岚烧肉的顾客吧？我们新开的烧鸟店就在楼下，凭您今天的消费小票到店享额外9折！」</td><td>强调品牌关联+专属优惠</td></tr>
-</table>
-</div>
-
-<h3>地推人员培训要点</h3>
-<div class="grid2">
-<div class="card">
-<div class="v" style="font-size:1rem">✅ 必须做到</div>
-<div class="l" style="text-align:left">
-· 统一着装（印有鲸岚logo的围裙）<br>
-· 主动递DM单，不等人来拿<br>
-· 手指指向二维码位置<br>
-· 确认顾客扫码成功再离开<br>
-· 每天记录派发量和扫码量
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1rem;color:#E8451A">❌ 禁止行为</div>
-<div class="l" style="text-align:left">
-· 强行拉客、肢体接触<br>
-· 虚假宣传（如"免费吃"）<br>
-· 在非允许区域派发<br>
-· 玩手机、态度冷淡<br>
-· 未扫码直接给DM单
-</div>
-</div>
-</div>
-`},
-{num:'12',title:'客流低谷应对',sub:'各场景应对策略 · 主动出击',content:`
-<p class="big">开业后客流波动是常态，提前制定各场景应对策略，确保日均客流稳定</p>
-
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>场景</th><th>表现</th><th>应对策略</th><th>执行人</th></tr>
-<tr><td>🌧️ 工作日午市冷清</td><td>11:00-13:00 上座率<30%</td><td>① 推出「工作日午市定食套餐」（¥28-38）<br>② 周边写字楼地推+传单派发<br>③ 美团外卖同步上线午市套餐</td><td>店长+地推</td></tr>
-<tr><td>🌧️ 工作日晚市平淡</td><td>18:00-20:00 上座率<50%</td><td>① 每日特价串品（限量50串，19:00后供应）<br>② 社群推送「今晚有位置，到店赠饮品」<br>③ 与精酿空间联合推出「下班小酌套餐」</td><td>店长+运营</td></tr>
-<tr><td>🌧️ 周末下午空档</td><td>14:00-17:00 几乎无客</td><td>① 推出「下午茶烧鸟串+饮品」组合（¥19.9起）<br>② 小红书/抖音发布「下午时段专属优惠」<br>③ 与精酿空间联动「下午串+精酿套餐」</td><td>运营</td></tr>
-<tr><td>🌧️ 连续阴雨天</td><td>连续3天以上客流下降</td><td>① 雨天专属折扣（到店出示天气截图享9折）<br>② 社群推送「雨天送暖汤」活动<br>③ 加大外卖推广力度，满减加码</td><td>店长+运营</td></tr>
-<tr><td>🌧️ 节假日前夕</td><td>节前1-2天客流骤降</td><td>① 提前3天在社群发布「节后首日到店赠券」<br>② 推出「节前囤券」活动（买5送1）<br>③ 调整备货量，减少损耗</td><td>店长</td></tr>
-<tr><td>🌧️ 竞品开业冲击</td><td>周边新店开业导致分流</td><td>① 加大社群福利力度，锁定老客<br>② 推出「老客专享」活动<br>③ 差异化竞争：强调烧鸟品类独特性</td><td>运营+店长</td></tr>
-</table>
-</div>
-<p class="dim">💡 核心原则：低谷期不硬扛，主动出击。用低成本活动维持基本客流，避免出现「空店」现象（空店会进一步劝退潜在顾客）。</p>
-`},
-{num:'13',title:'社群运营方案',sub:'每日双时段推送 · 周一至周日轮换',content:`
-<p class="big">社群是日常触达顾客的核心渠道，坚持每日双时段推送，保持群活跃度</p>
-
-<h3>每日推送节奏</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>时段</th><th>时间</th><th>内容方向</th><th>目的</th></tr>
-<tr><td>☀️ 上午推送</td><td>上午10点</td><td>今日限定/特价预告+营业提醒</td><td>提前种草，驱动午餐/晚餐决策</td></tr>
-<tr><td>🌙 下午推送</td><td>下午4点</td><td>晚餐推荐+今日活动+互动话题</td><td>临门一脚，驱动下班后到店</td></tr>
-</table>
-</div>
-
-<h3>周一至周日轮换内容</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>星期</th><th>上午10:00</th><th>下午16:00</th></tr>
-<tr><td>周一</td><td>「本周限定烧鸟预告」+ 营业时间提醒</td><td>「周一治愈套餐」推荐 + 互动话题「周末吃了啥」</td></tr>
-<tr><td>周二</td><td>「今日特价串品」预告 + 实拍图</td><td>「周二会员日」专属福利 + 限时秒杀</td></tr>
-<tr><td>周三</td><td>「周三半价饮品」活动预告</td><td>「周三小酌」烧鸟+精酿套餐推荐</td></tr>
-<tr><td>周四</td><td>「周四新品试吃」邀请 + 限量名额</td><td>「周末去哪吃」话题互动 + 抽奖</td></tr>
-<tr><td>周五</td><td>「周末预订」提醒 + 限定套餐预告</td><td>「周五狂欢」活动 + 精酿买一送一</td></tr>
-<tr><td>周六</td><td>「今日限定」预告 + 营业时间</td><td>「周末打卡」有奖征集 + 顾客晒图</td></tr>
-<tr><td>周日</td><td>「周日家庭套餐」推荐</td><td>「下周预告」+ 本周精彩回顾</td></tr>
-</table>
-</div>
-
-<p class="highlight"><strong>📌 社群运营要点：</strong><br>
-① 每条推送必须配图（实拍菜品/活动海报），纯文字效果差<br>
-② 互动话题类推送安排在16:00-17:00，下班前互动率最高<br>
-③ 每周至少1次福利活动（抽奖/秒杀/限量），保持群活跃<br>
-④ 严禁广告刷屏，每天最多2条推送，避免打扰</p>
-`},
-{num:'14',title:'预算汇总',sub:'三档可选 · 各项费用明细',content:`
-<p class="big">三档预算方案，根据实际需求和资金情况灵活选择</p>
-
-<div class="tabs">
-<div class="tab active" onclick="switchTab(0)">💰 基础版 ¥3,000</div>
-<div class="tab" onclick="switchTab(1)">📈 标准版 ¥8,000</div>
-<div class="tab" onclick="switchTab(2)">🏆 完整版 ¥15,600</div>
-</div>
-
-<div class="tab-content active">
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>项目</th><th>明细</th><th>费用</th></tr>
-<tr><td>DM单印刷</td><td>3,000张 A5 128g铜版纸</td><td>¥900</td></tr>
-<tr><td>领券立牌</td><td>5个亚克力立牌</td><td>¥75</td></tr>
-<tr><td>台卡制作</td><td>4个台卡</td><td>¥60</td></tr>
-<tr><td>试吃台</td><td>简易试吃台1套</td><td>¥300</td></tr>
-<tr><td>开业装饰</td><td>基础花篮+横幅</td><td>¥500</td></tr>
-<tr><td>内测体验</td><td>邀请20人免费体验（食材成本）</td><td>¥300</td></tr>
-<tr><td>社群红包</td><td>开业首周每日红包</td><td>¥500</td></tr>
-<tr><td>物料运输</td><td>杂项</td><td>¥200</td></tr>
-<tr><td><strong>合计</strong></td><td></td><td><strong>¥2,835</strong></td></tr>
-</table>
-</div>
-<p class="dim">适合预算紧张，聚焦装修期蓄水和基础开业活动</p>
-</div>
-
-<div class="tab-content">
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>项目</th><th>明细</th><th>费用</th></tr>
-<tr><td>DM单印刷</td><td>5,000张 A5 128g铜版纸</td><td>¥1,500</td></tr>
-<tr><td>领券立牌</td><td>10个亚克力立牌</td><td>¥150</td></tr>
-<tr><td>台卡制作</td><td>4个台卡+2个桌面立牌</td><td>¥100</td></tr>
-<tr><td>试吃台</td><td>标准试吃台1套+试吃食材</td><td>¥800</td></tr>
-<tr><td>开业装饰</td><td>花篮+气球拱门+横幅</td><td>¥1,000</td></tr>
-<tr><td>内测体验</td><td>邀请30人免费体验</td><td>¥500</td></tr>
-<tr><td>社群红包</td><td>开业首月每日红包</td><td>¥1,500</td></tr>
-<tr><td>便利店合作</td><td>5家便利店合作费</td><td>¥500</td></tr>
-<tr><td>达人探店</td><td>2-3位本地达人</td><td>¥1,500</td></tr>
-<tr><td>物料运输+杂项</td><td></td><td>¥500</td></tr>
-<tr><td><strong>合计</strong></td><td></td><td><strong>¥8,050</strong></td></tr>
-</table>
-</div>
-<p class="dim">适合中等预算，覆盖装修期蓄水+开业活动+基础线上运营</p>
-</div>
-
-<div class="tab-content">
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>项目</th><th>明细</th><th>费用</th></tr>
-<tr><td>DM单印刷</td><td>5,000张 A5 128g铜版纸</td><td>¥1,500</td></tr>
-<tr><td>领券立牌+台卡</td><td>全套物料</td><td>¥300</td></tr>
-<tr><td>试吃台</td><td>标准试吃台+45天食材</td><td>¥2,000</td></tr>
-<tr><td>开业装饰</td><td>全套开业装饰</td><td>¥1,500</td></tr>
-<tr><td>内测体验</td><td>邀请50人免费体验</td><td>¥800</td></tr>
-<tr><td>社群红包+运营</td><td>开业首月+次月</td><td>¥2,500</td></tr>
-<tr><td>便利店合作</td><td>8家便利店合作费</td><td>¥800</td></tr>
-<tr><td>达人探店</td><td>5-8位本地达人（含抖音+小红书）</td><td>¥3,000</td></tr>
-<tr><td>抖音本地推</td><td>开业首周投流</td><td>¥1,500</td></tr>
-<tr><td>小红书KFS</td><td>信息流+搜索广告</td><td>¥1,000</td></tr>
-<tr><td>物料运输+杂项</td><td></td><td>¥700</td></tr>
-<tr><td><strong>合计</strong></td><td></td><td><strong>¥15,600</strong></td></tr>
-</table>
-</div>
-<p class="dim">适合完整预算，覆盖全渠道运营，效果最大化</p>
-</div>
-`},
-{num:'15',title:'KPI目标',sub:'评分 · 收藏 · 核销率 · 营收',content:`
-<p class="big">KPI之间需要打通推导链条，让老板清楚「首月8万」是怎么算出来的</p>
-
-<h3>核心KPI总览</h3>
 <div class="tbl-wrap">
 <table class="tbl">
 <tr><th>维度</th><th>指标</th><th>首月目标</th><th>季度目标</th></tr>
-<tr><td rowspan="3">大众点评</td><td>评分</td><td>4.0星</td><td>4.3星+</td></tr>
+<tr><td rowspan="3"><strong>大众点评</strong></td><td>评分</td><td>4.0星</td><td>4.3星+</td></tr>
 <tr><td>评价数</td><td>100条+</td><td>300条+</td></tr>
 <tr><td>收藏打卡</td><td>500个</td><td>1,000个</td></tr>
-<tr><td rowspan="2">抖音</td><td>团购核销率</td><td>50%</td><td>60%+</td></tr>
+<tr><td rowspan="2"><strong>抖音</strong></td><td>团购核销率</td><td>50%</td><td>60%+</td></tr>
 <tr><td>达人探店视频</td><td>8-10条</td><td>20条+</td></tr>
-<tr><td rowspan="2">小红书</td><td>品牌号笔记</td><td>15篇+</td><td>40篇+</td></tr>
+<tr><td rowspan="2"><strong>小红书</strong></td><td>品牌号笔记</td><td>15篇+</td><td>40篇+</td></tr>
 <tr><td>UGC笔记</td><td>10篇+</td><td>30篇+</td></tr>
-<tr><td rowspan="2">私域</td><td>会员总数</td><td>1,400人</td><td>3,000人</td></tr>
+<tr><td rowspan="2"><strong>私域</strong></td><td>会员总数</td><td>1,400人</td><td>3,000人</td></tr>
 <tr><td>复购率</td><td>20%</td><td>30%+</td></tr>
-<tr><td>营收</td><td>鲸岚·烧鸟</td><td>¥8万</td><td>¥15万/月</td></tr>
+<tr class="hl"><td><strong>营收</strong></td><td><strong>鲸岚·烧鸟</strong></td><td><strong>¥8万</strong></td><td><strong>¥15万</strong></td></tr>
 </table>
 </div>
-
-<h3>营收测算推导逻辑</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">营收测算推导逻辑</h3>
+<p>KPI之间需要打通推导链条，让老板清楚「首月8万」是怎么算出来的：</p>
 <div class="tbl-wrap">
 <table class="tbl">
 <tr><th>推导步骤</th><th>计算过程</th><th>结果</th></tr>
-<tr><td>① 装修期蓄水到店</td><td>1,500领券 × 60%核销率</td><td>900人到店</td></tr>
-<tr><td>② 自然客流到店</td><td>商场日均自然客流 × 转化率（保守估算）</td><td>600人到店</td></tr>
-<tr><td>③ 团购引流到店</td><td>点评+抖音团购售出500份 × 70%核销率</td><td>350人到店</td></tr>
-<tr><td>④ 首月总到店人次</td><td>900 + 600 + 350</td><td>约1,850人次</td></tr>
-<tr><td>⑤ 日均到店</td><td>1,850 ÷ 30天</td><td>约62人/天</td></tr>
-<tr><td>⑥ 人均消费</td><td>烧鸟人均¥80（含酒水）</td><td>¥80</td></tr>
-<tr><td>⑦ 首月营收</td><td>1,850 × ¥80</td><td>约¥14.8万</td></tr>
-<tr><td>⑧ 保守调整</td><td>考虑自然客流波动+团购折扣</td><td>目标¥8万</td></tr>
+<tr><td><strong>① 装修期蓄水到店</strong></td><td>1500领券 × 60%核销率</td><td>900人到店</td></tr>
+<tr><td><strong>② 自然客流到店</strong></td><td>商场日均自然客流×转化率（保守估算）</td><td>600人到店</td></tr>
+<tr><td><strong>③ 团购引流到店</strong></td><td>点评+抖音团购售出500份×70%核销率</td><td>350人到店</td></tr>
+<tr><td><strong>④ 首月总到店人次</strong></td><td>900+600+350</td><td><strong>约1,850人次</strong></td></tr>
+<tr><td><strong>⑤ 人均消费</strong></td><td>68元引流套餐+加点（烧鸟串+饮品）</td><td><strong>约45-55元</strong></td></tr>
+<tr><td><strong>⑥ 首月营收</strong></td><td>1,850人次 × 50元人均</td><td><strong>约9.25万元</strong></td></tr>
+<tr class="hl"><td><strong>⑦ 保守目标</strong></td><td>考虑开业磨合期，取保守值</td><td><strong>¥8万</strong></td></tr>
 </table>
 </div>
-
-<p class="highlight"><strong>📌 KPI合理性验证：</strong><br>
-日均62人到店 ÷ 150㎡ ≈ 0.4人/㎡，对于新店开业首月属于合理范围<br>
-人均¥80符合烧鸟品类客单价区间<br>
-复购率20%是餐饮行业平均水平，通过复购券可提升至25-30%<br>
-如日均营收低于¥2,700（¥8万÷30天），需启动低谷应对策略</p>
-`},
-{num:'16',title:'竞品分析',sub:'周边竞品 · 差异化优势',content:`
-<p class="big">周边竞品分析，明确鲸岚·烧鸟的差异化定位和竞争优势</p>
-
+<p class="dim">注：以上测算未计入复购消费。首月复购率20%意味着约370人会二次到店，额外贡献约1.8万营收，因此首月实际营收有望冲击10-12万。</p>`},
+{num:'16',title:'竞品分析',sub:'周边竞品 · 差异化优势',content:`<div class="tbl-wrap">
+<table class="tbl">
+<tr><th>竞品</th><th>距离</th><th>人均</th><th>优劣势分析</th></tr>
+<tr><td><strong>商场内日料店</strong></td><td>同商场</td><td>80-120元</td><td>定位高端，非烧鸟专门店，价格偏高</td></tr>
+<tr><td><strong>周边中式烧烤</strong></td><td>500m-1km</td><td>50-70元</td><td>中式烧烤为主，非日式烧鸟，品类不同</td></tr>
+<tr><td><strong>未来精酿一条街</strong></td><td>对面</td><td>—</td><td>未来竞品，精酿空间需提前建立社群壁垒</td></tr>
+<tr><td><strong>鲸岚烧肉（自有品牌）</strong></td><td>楼上3楼</td><td>100-150元</td><td>同一品牌，可联动导流，形成互补</td></tr>
+</table>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">差异化优势</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🎯</div><h4>日式烧鸟专门店</h4><p>区域内无直接竞品，品类差异化明显</p></div>
+<div class="feat-card"><div class="ic">🐋</div><h4>鲸岚品牌背书</h4><p>已有口碑基础和客户信任度</p></div>
+<div class="feat-card"><div class="ic">📍</div><h4>黄金位置</h4><p>商场出入口，自然客流充足</p></div>
+<div class="feat-card"><div class="ic">🏗️</div><h4>45天蓄水</h4><p>开业即有1500+准顾客</p></div>
+<div class="feat-card"><div class="ic">🍻</div><h4>烧鸟+精酿联动</h4><p>差异化体验，纯精酿酒吧无法复制</p></div>
+</div>`},
+{num:'17',title:'总结',sub:'核心策略回顾 · 执行要点',content:`<p class="big">以美团智能收银为核心，构建完整私域引流与复购闭环</p>
+<p>本方案围绕鲸岚·烧鸟的独特优势——鲸岚品牌背书+商场出入口位置+装修期45天蓄水+精酿空间联动——制定了完整的开业前线下引流及前期营销方案。</p>
+<p><strong>核心策略：</strong>以鲸岚烧肉品牌联动为最大流量来源，以装修期45天二维码铺设为核心蓄水手段，以大众点评/抖音/小红书三平台线上运营为曝光引擎，以私域社群和复购券自动化为长期复购保障。</p>
+<p><strong>与精酿空间联动：</strong>通过联合套餐、互相导流、共用私域，实现「烧鸟+精酿」差异化体验，同时为精酿空间应对未来精酿一条街竞争提供助力。</p>
+<p><strong>预算三档可选：</strong>基础版¥3,000 / 标准版¥8,000 / 完整版¥15,600（均为现金支出，不含让利成本），丰俭由人。</p>
+<p><strong>核心目标：</strong>点评评分4.0星+、收藏500+、团购核销率70%、首月营业额8万+，为鲸岚品牌在天津市场的长期发展打下坚实基础。</p>
+<div class="grid3" style="margin-top:24px">
+<div class="card" style="border-color:var(--fire)"><div class="v" style="color:var(--fire)">🐋</div><div class="l">鲸岚品牌联动</div></div>
+<div class="card" style="border-color:var(--amber)"><div class="v" style="color:var(--amber)">🏗️</div><div class="l">45天蓄水</div></div>
+<div class="card" style="border-color:var(--gold)"><div class="v" style="color:var(--gold)">📱</div><div class="l">三平台运营</div></div>
+</div>
+<p style="text-align:center;margin-top:24px;color:var(--dim);font-size:13px">编制人：娄苏 | 美团SAAS · 2026年5月（完整版）</p>`},
+{num:'18',title:'鲸岚烧肉三店联动',sub:'烧肉品牌联动 · 开业时间轴 · 品牌矩阵',content:`<p class="big">三楼鲸岚烧肉同步装修中——这是整份方案里被严重低估的超级引流资产</p>
+<p>鲸岚烧肉与鲸岚·烧鸟同属鲸岚品牌，且位于同一栋楼的三楼。等烧肉开业后，完全可以形成<strong>「烧鸟+精酿+烧肉」三店品牌矩阵</strong>，互相导流，形成品牌合力。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">三店联动设计</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>竞品</th><th>距离</th><th>人均</th><th>品类</th><th>优势</th><th>劣势</th></tr>
-<tr><td>商场内日料店</td><td>同商场</td><td>¥80-120</td><td>综合日料</td><td>品牌成熟，有固定客群</td><td>非烧鸟专门店，品类不聚焦</td></tr>
-<tr><td>周边中式烧烤</td><td>500m-1km</td><td>¥50-70</td><td>中式烧烤</td><td>价格低，接地气</td><td>非日式烧鸟，客群不同</td></tr>
-<tr><td>未来精酿一条街</td><td>对面</td><td>—</td><td>精酿酒吧</td><td>集中引流效应</td><td>未来竞品，需提前建立壁垒</td></tr>
-<tr><td>鲸岚烧肉（自有）</td><td>楼上3楼</td><td>¥100-150</td><td>日式烧肉</td><td>同一品牌，可联动导流</td><td>价格偏高，客群有重叠</td></tr>
-<tr><td>周边居酒屋</td><td>800m</td><td>¥70-100</td><td>居酒屋</td><td>品类接近，有固定客群</td><td>非烧鸟专门，菜品杂</td></tr>
+<tr><th>联动方式</th><th>具体操作</th><th>预期效果</th></tr>
+<tr><td><strong>品牌通用储值卡</strong></td><td>推出鲸岚品牌通用储值卡，烧鸟+烧肉两店通用（精酿可协商加入）</td><td>打通品牌消费闭环，提升客单价</td></tr>
+<tr><td><strong>消费互享折扣</strong></td><td>任一店消费后，凭小票到另两店享9折优惠</td><td>三店互相导流，提升复购</td></tr>
+<tr><td><strong>联合会员体系</strong></td><td>三店共用会员体系，消费积分通存通兑</td><td>扩大私域池，提升会员价值</td></tr>
+<tr><td><strong>品牌矩阵宣传</strong></td><td>三店菜单/台卡/海报互相露出，形成「鲸岚美食矩阵」认知</td><td>强化品牌心智，降低获客成本</td></tr>
+<tr><td><strong>联合活动日</strong></td><td>每月设「鲸岚品牌日」，三店同步推出限定套餐/折扣</td><td>制造话题，集中引爆</td></tr>
 </table>
 </div>
-
-<h3>差异化优势</h3>
-<div class="grid2">
-<div class="card"><div class="v">🎯</div><div class="l"><strong>品类差异化</strong><br>区域内无直接竞品——日式烧鸟专门店，与中式烧烤、综合日料形成明显区隔</div></div>
-<div class="card"><div class="v">🐋</div><div class="l"><strong>品牌背书</strong><br>鲸岚品牌已有口碑基础和客户信任度，开业即有种子用户</div></div>
-<div class="card"><div class="v">📍</div><div class="l"><strong>黄金位置</strong><br>商场出入口旁，自然客流充足，曝光度高</div></div>
-<div class="card"><div class="v">🏗️</div><div class="l"><strong>45天蓄水</strong><br>装修期即开始蓄水，开业即有1,500+准顾客</div></div>
-<div class="card"><div class="v">🍻</div><div class="l"><strong>烧鸟+精酿联动</strong><br>差异化体验，纯精酿酒吧无法复制的"烧鸟配精酿"组合</div></div>
-<div class="card"><div class="v">🏢</div><div class="l"><strong>三店联动</strong><br>烧鸟+精酿+烧肉三品牌矩阵，互相导流，形成生态</div></div>
-</div>
-`},
-{num:'17',title:'总结',sub:'核心策略回顾 · 预期成果',content:`
-<p class="big">鲸岚·烧鸟开业方案核心要点回顾</p>
-
-<div class="grid2">
-<div class="card">
-<div class="v" style="font-size:1.1rem">🎯 核心策略</div>
-<div class="l" style="text-align:left">
-<strong>五管齐下：</strong><br>
-· 团购引流 → 线上引新客<br>
-· 私域沉淀 → 锁定复购<br>
-· 基础活动 → 造开业氛围<br>
-· 品类专项 → 拉消费频次<br>
-· 社群运营 → 日常触达
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1.1rem">📊 预期成果</div>
-<div class="l" style="text-align:left">
-· 首月评分：4.0星+<br>
-· 首月收藏：500个+<br>
-· 团购核销率：70%+<br>
-· 私域会员：1,400人<br>
-· 首月营收：¥8万+<br>
-· 复购率：20%+
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1.1rem">💰 预算投入</div>
-<div class="l" style="text-align:left">
-· 基础版：¥3,000<br>
-· 标准版：¥8,000<br>
-· 完整版：¥15,600<br><br>
-<strong>ROI预估：</strong><br>
-完整版投入¥15,600<br>
-首月营收¥80,000+<br>
-ROI > 5倍
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1.1rem">🔑 成功关键</div>
-<div class="l" style="text-align:left">
-· 装修期45天蓄水不能停<br>
-· 收银员话术培训到位<br>
-· 每日社群推送坚持执行<br>
-· 三平台内容持续更新<br>
-· 鲸岚烧肉联动充分利用
-</div>
-</div>
-</div>
-
-<p class="highlight"><strong>📌 下一步行动：</strong><br>
-① 确认精酿空间品牌名，更新方案<br>
-② 确定预算档位，启动DM单设计印刷<br>
-③ 开始装修围挡铺设领券二维码<br>
-④ 联系鲸岚烧肉店，启动联动导流<br>
-⑤ 预约达人探店，排期开业发布</p>
-`},
-{num:'18',title:'鲸岚烧肉三店联动',sub:'烧肉开业时间轴 · 品牌矩阵',content:`
-<p class="big">鲸岚烧肉（楼上3楼）是鲸岚·烧鸟最大的品牌资产，三店联动形成品牌矩阵效应</p>
-
-<h3>三店联动设计</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">烧肉开业前的蓄水准备</h3>
+<p>鲸岚烧肉装修期间（与烧鸟同步），即可提前为烧肉蓄水：</p>
+<p>· 在鲸岚·烧鸟收银台放置烧肉店开业预告+领券二维码</p>
+<p>· 在烧鸟社群中定期推送烧肉装修进度+开业福利预告</p>
+<p>· 烧鸟顾客结账时话术：「楼上鲸岚烧肉也在装修中，开业后凭我们小票到楼上也有优惠哦」</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">鲸岚烧肉开业时间轴与联动节奏</h3>
+<p>鲸岚烧肉的开业时间直接影响三店联动策略的执行节奏，需分场景设计：</p>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>联动方式</th><th>具体操作</th><th>执行时间</th></tr>
-<tr><td>🐋 烧肉老客导流</td><td>鲸岚烧肉结账时递送烧鸟DM单+告知「楼下新店开业，凭小票享9折」</td><td>装修期开始</td></tr>
-<tr><td>📱 品牌社群共享</td><td>鲸岚烧肉社群同步推送烧鸟开业信息，烧鸟社群同步推送烧肉优惠</td><td>持续</td></tr>
-<tr><td>🎫 通用储值卡</td><td>推出鲸岚品牌通用储值卡，两店通用</td><td>烧鸟开业后</td></tr>
-<tr><td>🍢 烧肉顾客专属套餐</td><td>鲸岚烧肉顾客凭消费记录享烧鸟专属套餐优惠</td><td>烧鸟开业后</td></tr>
-<tr><td>🏢 三店联动活动</td><td>烧鸟+精酿+烧肉联合活动（如「三店打卡集章」）</td><td>烧肉开业后</td></tr>
+<tr><th>场景</th><th>烧肉开业时间</th><th>联动策略</th></tr>
+<tr><td><strong>场景A：烧肉与烧鸟同期开业</strong></td><td>相差1个月内</td><td>三店同步推广，联合开业活动，品牌通用储值卡同步上线，三店互相导流最大化</td></tr>
+<tr><td><strong>场景B：烧肉晚1-3个月</strong></td><td>烧鸟开业后1-3个月</td><td>烧鸟先积累口碑和会员，为烧肉蓄水；烧肉开业时烧鸟已有稳定客流，可直接导流上楼</td></tr>
+<tr><td><strong>场景C：烧肉晚3个月以上</strong></td><td>烧鸟开业后3个月+</td><td>烧鸟独立运营建立品牌认知，烧肉开业时作为"新店"重新引爆话题，三店联动作为第二波营销高潮</td></tr>
 </table>
 </div>
-
-<h3>烧肉开业时间轴与联动节奏</h3>
+<p><strong>建议：</strong>无论烧肉何时开业，烧鸟开业期间就应开始为烧肉蓄水（收银台预告+社群进度推送），让烧肉开业时已有"准顾客"基础。</p>
+<p>· 烧鸟开业活动期间，同步收集顾客对烧肉的期待和偏好，为烧肉开业提供选品参考</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">品牌矩阵长期价值</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🐋</div><h4>品牌认知叠加</h4><p>三店覆盖「烧鸟（轻食）+精酿（社交）+烧肉（正餐）」全场景，强化鲸岚品牌在天津日式餐饮领域的心智占位</p></div>
+<div class="feat-card"><div class="ic">🔄</div><h4>流量循环利用</h4><p>一店获客→三店共享→交叉复购，单个获客成本被三店分摊，ROI大幅提升</p></div>
+<div class="feat-card"><div class="ic">🛡️</div><h4>竞争壁垒</h4><p>三店品牌矩阵形成规模效应，竞品难以复制，为未来精酿一条街竞争提供品牌护城河</p></div>
+</div>`},
+{num:'19',title:'执行落地清单',sub:'D-45到D+30 · 每日执行清单',content:`<p class="big">方案再好，不落地等于零。以下清单按时间轴排列，明确每项任务的负责人和完成标准。</p>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>时间</th><th>烧鸟动作</th><th>烧肉动作</th><th>联动效果</th></tr>
-<tr><td>D-45 ~ D-15</td><td>装修期蓄水</td><td>同步装修中</td><td>烧肉老客导流至烧鸟蓄水</td></tr>
-<tr><td>D-15 ~ D-Day</td><td>预热期</td><td>装修收尾</td><td>烧肉社群预热烧鸟开业</td></tr>
-<tr><td>D-Day ~ D+30</td><td>开业爆发期</td><td>装修完成</td><td>烧肉老客到烧鸟消费</td></tr>
-<tr><td>D+30 ~ D+60</td><td>稳定期</td><td>烧肉开业准备</td><td>烧鸟为烧肉导流</td></tr>
-<tr><td>D+60+</td><td>常态化</td><td>烧肉开业</td><td>三店联动正式启动</td></tr>
+<tr><th>时间节点</th><th>任务</th><th>负责人</th><th>完成标准</th></tr>
+<tr><td><strong>D-45</strong></td><td>美团收银后台配置优惠券+生成领券二维码</td><td>老板/店长</td><td>二维码可正常扫码领券，测试通过</td></tr>
+<tr><td><strong>D-45</strong></td><td>装修围挡海报设计+制作+上墙</td><td>设计+印刷</td><td>海报含二维码，已张贴在围挡醒目位置</td></tr>
+<tr><td><strong>D-40</strong></td><td>周边便利店桌贴铺设（5家）</td><td>地推人员</td><td>5家便利店收银台已贴二维码</td></tr>
+<tr><td><strong>D-35</strong></td><td>精酿空间小黑板立牌制作+摆放</td><td>精酿合伙人</td><td>立牌已放置在精酿空间入口</td></tr>
+<tr><td><strong>D-30</strong></td><td>DM单设计+印刷（1800张）</td><td>设计+印刷</td><td>DM单到货，A5双面157g</td></tr>
+<tr><td><strong>D-20</strong></td><td>鲸岚烧肉社群发布新店预告+领券链接</td><td>老板</td><td>社群已推送，领券量开始增长</td></tr>
+<tr><td><strong>D-15</strong></td><td>商场出入口拦截+试吃展台启动</td><td>地推人员</td><td>每日扫码量20-30人</td></tr>
+<tr><td><strong>D-15</strong></td><td>社区DM单派发启动</td><td>地推人员</td><td>每日派发300张+</td></tr>
+<tr><td><strong>D-10</strong></td><td>大众点评店铺页面搭建+团购上架</td><td>老板/美团运营</td><td>店铺可正常访问，团购可购买</td></tr>
+<tr><td><strong>D-7</strong></td><td>抖音团购上架+POI设置</td><td>老板</td><td>团购链接可正常核销</td></tr>
+<tr><td><strong>D-5</strong></td><td>小红书企业号认证+POI设置</td><td>老板</td><td>企业号认证通过</td></tr>
+<tr><td><strong>D-3</strong></td><td>开业内测体验（30-50人）</td><td>老板</td><td>内测完成，评价开始发布</td></tr>
+<tr><td><strong>D-2</strong></td><td>收银员话术培训+台卡摆放</td><td>店长</td><td>收银员能熟练背诵五句话术</td></tr>
+<tr><td><strong>D-1</strong></td><td>开业前全面检查</td><td>老板</td><td>所有物料到位，系统测试通过</td></tr>
+<tr><td><strong>D-Day</strong></td><td>开业！68元套餐+8.8折+发圈活动</td><td>全员</td><td>首日客流达标</td></tr>
+<tr><td><strong>D+7</strong></td><td>复购券自动化检查+首周数据复盘</td><td>老板</td><td>复购券正常推送，首周数据汇总</td></tr>
+<tr><td><strong>D+30</strong></td><td>首月数据复盘+精酿品鉴会启动</td><td>老板+精酿合伙人</td><td>首月KPI达成情况分析</td></tr>
 </table>
+</div>`},
+{num:'20',title:'风险预案B计划',sub:'五大风险 · 兜底方案',content:`<p class="big">所有方案都是"乐观路径"，但现实往往不按剧本走。以下为关键风险点的B计划。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">风险1：装修期领券量不足</h3>
+<p><strong>目标：</strong>1500人 &nbsp;|&nbsp; <strong>预警线：</strong>D-15天时不足800人</p>
+<p><strong>B计划：</strong></p>
+<p>· 追加社区地推频次，从每天2小时增至4小时</p>
+<p>· 在商场内部增加二维码铺设点（电梯间、洗手间门口）</p>
+<p>· 鲸岚烧肉社群加推一轮，附带"老客专属福利"刺激领券</p>
+<p>· 启动"扫码领券+抽奖"活动（奖品：精酿品鉴券），提升扫码意愿</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">风险2：开业首周核销率低于30%</h3>
+<p><strong>目标：</strong>60% &nbsp;|&nbsp; <strong>预警线：</strong>开业第3天核销率不足30%</p>
+<p><strong>B计划：</strong></p>
+<p>· 立即启动短信/电话提醒：对已领券未核销顾客发送"开业限时福利"提醒</p>
+<p>· 追加朋友圈广告投放（地理围栏3公里），提醒领券顾客到店</p>
+<p>· 延长68元套餐限量时间，从3天延至7天</p>
+<p>· 收银台增加"领券核销有礼"活动，核销即赠小菜</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">风险3：大众点评评分掉到3.5以下</h3>
+<p><strong>目标：</strong>4.0星 &nbsp;|&nbsp; <strong>预警线：</strong>评分低于3.8</p>
+<p><strong>B计划：</strong></p>
+<p>· 立即排查差评原因（口味/服务/环境），48小时内整改</p>
+<p>· 对差评顾客进行一对一沟通，提供补偿方案（免单/赠券）</p>
+<p>· 邀请橙V用户到店体验，发布高质量带图评价</p>
+<p>· 暂停所有"引导评价"动作，避免被平台判定为刷评</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">风险4：精酿空间开业后客流不足</h3>
+<p><strong>B计划：</strong></p>
+<p>· 加大烧鸟→精酿的导流力度：消费满50元即赠精酿体验券（原为满100元）</p>
+<p>· 精酿品鉴会改为免费开放（原为付费），快速积累人气</p>
+<p>· 与周边写字楼合作"下班后精酿时光"活动，拓展企业客户</p>
+<p>· 推出"精酿+小食"超值套餐（19.9元），降低尝鲜门槛</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">风险5：首月营收未达8万</h3>
+<p><strong>B计划：</strong></p>
+<p>· 分析营收缺口来源（客流量不足 vs 客单价不足）</p>
+<p>· 客流量不足：加大抖音本地推投流+小红书种草力度</p>
+<p>· 客单价不足：优化菜单结构，增加高毛利烧鸟串组合推荐</p>
+<p>· 启动"会员储值赠"活动：充300赠80，快速回笼资金+锁定复购</p>`},
+{num:'21',title:'外卖渠道策略',sub:'可行性分析 · 运营策略 · KPI',content:`<p class="big">方案聚焦堂食和团购，但外卖是重要的增量营收来源，不可忽视。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">烧鸟外卖可行性分析</h3>
+<div class="cmp">
+<div class="cmp-col g"><h4>✅ 适合外卖的品类</h4><p>烧鸟串（烤好后配送，微波炉加热即可）</p><p>日式饭类（亲子丼、烧鸟丼）</p><p>前菜/小食（毛豆、芥末章鱼等）</p><p>精酿瓶装/罐装（外卖+精酿组合）</p></div>
+<div class="cmp-col b"><h4>❌ 不适合外卖的品类</h4><p>提灯（易碎，口感依赖现烤）</p><p>限定烧鸟（每日限量，不适合外卖）</p><p>精酿扎啤（口感会随配送时间下降）</p></div>
 </div>
-
-<h3>品牌矩阵长期价值</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">外卖运营策略</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">🍱</div><h4>外卖专属套餐</h4><p>推出「烧鸟丼套餐」（含烧鸟串+米饭+小菜+味增汤），定价28-38元，适合午餐场景</p></div>
+<div class="feat-card"><div class="ic">📦</div><h4>包装设计</h4><p>锡纸包裹烧鸟串保温+品牌贴纸+精酿空间体验券（外卖专属），每单附赠</p></div>
+<div class="feat-card"><div class="ic">⏰</div><h4>时段策略</h4><p>午市（11:00-13:00）主推烧鸟丼套餐；晚市（17:00-20:00）主推送酒套餐</p></div>
+<div class="feat-card"><div class="ic">🎯</div><h4>满减设计</h4><p>满30减5 / 满60减12 / 满100减25，与堂食形成互补</p></div>
+</div>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">外卖KPI</h3>
 <div class="grid3">
-<div class="card"><div class="v">🐋 鲸岚·烧鸟</div><div class="l">日式烧鸟专门店<br>人均¥80<br>定位：日常聚餐+下班小酌</div></div>
-<div class="card"><div class="v">🍺 精酿空间</div><div class="l">精酿啤酒吧<br>人均¥60<br>定位：社交+品酒</div></div>
-<div class="card"><div class="v">🥩 鲸岚烧肉</div><div class="l">日式烧肉<br>人均¥120<br>定位：聚餐+宴请</div></div>
-</div>
-<p class="dim">💡 三店覆盖不同客单价和消费场景，形成完整品牌矩阵，互相导流降低获客成本。</p>
-`},
-{num:'19',title:'执行落地清单',sub:'D-45到D+30 · 每日执行项',content:`
-<p class="big">从装修期到开业后30天，每日执行清单，确保不漏项</p>
-
-<h3>装修期（D-45 ~ D-15）</h3>
+<div class="card"><div class="v">500单+</div><div class="l">首月外卖订单</div></div>
+<div class="card"><div class="v">4.5星+</div><div class="l">外卖评分</div></div>
+<div class="card"><div class="v">¥1.5万+</div><div class="l">首月外卖营收</div></div>
+</div>`},
+{num:'22',title:'每日运营SOP',sub:'每日/每周/每月SOP',content:`<p class="big">开业后每天/每周的具体执行动作，老板可以直接打印贴在墙上照着做。</p>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">每日SOP</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th><th>完成✓</th></tr>
-<tr><td>D-45</td><td>围挡铺设领券二维码+开业预告海报</td><td>店长</td><td>☐</td></tr>
-<tr><td>D-40</td><td>DM单设计定稿，下单印刷</td><td>运营</td><td>☐</td></tr>
-<tr><td>D-35</td><td>周边便利店合作洽谈（5-8家）</td><td>店长</td><td>☐</td></tr>
-<tr><td>D-30</td><td>试吃台搭建+试吃食材采购</td><td>店长</td><td>☐</td></tr>
-<tr><td>D-25</td><td>DM单到货，开始派发</td><td>地推</td><td>☐</td></tr>
-<tr><td>D-20</td><td>大众点评店铺装修+团购套餐上架</td><td>运营</td><td>☐</td></tr>
-<tr><td>D-15</td><td>社群开始预热推送，每日1条</td><td>运营</td><td>☐</td></tr>
+<tr><th>时间</th><th>任务</th><th>执行人</th><th>备注</th></tr>
+<tr><td><strong>09:00</strong></td><td>检查大众点评/美团评价，回复所有新评价（含差评）</td><td>店长</td><td>差评24小时内必须回复</td></tr>
+<tr><td><strong>10:00</strong></td><td>社群推送今日限定烧鸟+午市福利</td><td>店长</td><td>配图+定位</td></tr>
+<tr><td><strong>11:00</strong></td><td>检查抖音/小红书后台，回复评论和私信</td><td>店长</td><td>保持互动率</td></tr>
+<tr><td><strong>12:00</strong></td><td>午市高峰：关注出餐速度+顾客反馈</td><td>全员</td><td>—</td></tr>
+<tr><td><strong>14:00</strong></td><td>午市复盘：记录午市单量+客单价+问题</td><td>店长</td><td>填写日报</td></tr>
+<tr><td><strong>15:00</strong></td><td>发布小红书/抖音内容（每日1条）</td><td>店长</td><td>原相机直出+POI定位</td></tr>
+<tr><td><strong>16:00</strong></td><td>社群推送晚市福利+精酿推荐</td><td>店长</td><td>配图+定位</td></tr>
+<tr><td><strong>17:00</strong></td><td>晚市高峰：关注出餐速度+顾客反馈</td><td>全员</td><td>—</td></tr>
+<tr><td><strong>21:00</strong></td><td>晚市复盘：记录晚市单量+客单价+问题</td><td>店长</td><td>填写日报</td></tr>
+<tr><td><strong>21:30</strong></td><td>检查次日食材库存+下单补货</td><td>后厨</td><td>—</td></tr>
 </table>
 </div>
-
-<h3>预热期（D-15 ~ D-3）</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">每周SOP</h3>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th><th>完成✓</th></tr>
-<tr><td>D-14</td><td>鲸岚烧肉店铺设DM单+话术培训</td><td>店长</td><td>☐</td></tr>
-<tr><td>D-10</td><td>达人探店预约（抖音+小红书）</td><td>运营</td><td>☐</td></tr>
-<tr><td>D-7</td><td>收银系统配置+券模板设置</td><td>店长</td><td>☐</td></tr>
-<tr><td>D-5</td><td>收银员话术培训+台卡制作</td><td>店长</td><td>☐</td></tr>
-<tr><td>D-3</td><td>开业装饰布置+内测体验邀请</td><td>全员</td><td>☐</td></tr>
+<tr><th>时间</th><th>任务</th><th>执行人</th></tr>
+<tr><td><strong>周一</strong></td><td>上周数据复盘（单量/营收/评价/会员增长/核销率）+ 本周计划制定</td><td>老板+店长</td></tr>
+<tr><td><strong>周二</strong></td><td>检查复购券推送情况+调整券策略</td><td>店长</td></tr>
+<tr><td><strong>周三</strong></td><td>联系本周探店达人/博主，确认探店时间</td><td>店长</td></tr>
+<tr><td><strong>周四</strong></td><td>精酿品鉴会准备（物料/酒品/报名确认）</td><td>精酿合伙人</td></tr>
+<tr><td><strong>周五</strong></td><td>精酿品鉴会（晚7点-9点）+ 社群直播/图文同步</td><td>精酿合伙人+店长</td></tr>
+<tr><td><strong>周六</strong></td><td>周末高峰：加大社群推送频次+关注排队情况</td><td>全员</td></tr>
+<tr><td><strong>周日</strong></td><td>周末高峰：收集顾客反馈+拍照素材积累</td><td>店长</td></tr>
 </table>
 </div>
-
-<h3>爆发期（D-Day ~ D+7）</h3>
+<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">每月SOP</h3>
+<div class="feat">
+<div class="feat-card"><div class="ic">📊</div><h4>月度数据复盘</h4><p>对比KPI完成情况，分析差距原因，制定下月改进计划</p></div>
+<div class="feat-card"><div class="ic">🎯</div><h4>会员日运营</h4><p>每月8号会员日：全场8.8折+双倍积分+专属福利</p></div>
+<div class="feat-card"><div class="ic">🔄</div><h4>复购券策略调整</h4><p>根据上月数据调整券面额和有效期，优化ROI</p></div>
+<div class="feat-card"><div class="ic">📸</div><h4>内容素材更新</h4><p>更新菜单拍照+环境拍照+顾客好评截图，为下月内容做准备</p></div>
+</div>`},
+{num:'23',title:'客流低谷应对',sub:'各场景应对策略 · 主动出击',content:`<p class="big">开业后客流波动是常态，提前制定各场景应对策略，确保日均客流稳定。</p>
 <div class="tbl-wrap">
 <table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th><th>完成✓</th></tr>
-<tr><td>D-Day</td><td>开业活动执行+团购上线+社群推送</td><td>全员</td><td>☐</td></tr>
-<tr><td>D+1</td><td>首日数据复盘+调整次日策略</td><td>店长</td><td>☐</td></tr>
-<tr><td>D+3</td><td>达人探店内容发布+社群转发</td><td>运营</td><td>☐</td></tr>
-<tr><td>D+7</td><td>首周数据复盘+次周计划调整</td><td>店长</td><td>☐</td></tr>
+<tr><th>场景</th><th>表现</th><th>应对策略</th><th>执行人</th></tr>
+<tr><td><strong>🌧️ 工作日午市冷清</strong></td><td>11:00-13:00 上座率<30%</td><td>① 推出「工作日午市定食套餐」（¥28-38，限时供应）<br>② 周边写字楼地推+传单派发<br>③ 美团外卖同步上线午市套餐</td><td>店长+地推</td></tr>
+<tr><td><strong>🌧️ 工作日晚市平淡</strong></td><td>18:00-20:00 上座率<50%</td><td>① 每日特价串品（限量50串，19:00后供应）<br>② 社群推送「今晚有位置，到店赠饮品」<br>③ 与精酿空间联合推出「下班小酌套餐」</td><td>店长+运营</td></tr>
+<tr><td><strong>🌧️ 周末下午空档</strong></td><td>14:00-17:00 几乎无客</td><td>① 推出「下午茶烧鸟串+饮品」组合（¥19.9起）<br>② 小红书/抖音发布「下午时段专属优惠」<br>③ 与精酿空间联动「下午串+精酿套餐」</td><td>运营</td></tr>
+<tr><td><strong>🌧️ 连续阴雨天</strong></td><td>连续3天以上客流下降</td><td>① 雨天专属折扣（到店出示天气截图享9折）<br>② 社群推送「雨天送暖汤」活动<br>③ 加大外卖推广力度，满减加码</td><td>店长+运营</td></tr>
+<tr><td><strong>🌧️ 节假日前夕</strong></td><td>节前1-2天客流骤降</td><td>① 提前3天在社群发布「节后首日到店赠券」<br>② 推出「节前囤券」活动（买5送1）<br>③ 调整备货量，减少损耗</td><td>店长</td></tr>
+<tr><td><strong>🌧️ 竞品开业冲击</strong></td><td>周边新店开业导致分流</td><td>① 加大社群福利力度，锁定老客<br>② 推出「老客专享」活动（凭历史消费记录享折扣）<br>③ 差异化竞争：强调鲸岚品牌优势和烧鸟品类独特性</td><td>运营+店长</td></tr>
 </table>
 </div>
-
-<h3>积累期（D+8 ~ D+30）</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th><th>完成✓</th></tr>
-<tr><td>D+14</td><td>半月数据复盘+复购券效果分析</td><td>运营</td><td>☐</td></tr>
-<tr><td>D+21</td><td>精酿空间联动活动深化</td><td>店长</td><td>☐</td></tr>
-<tr><td>D+30</td><td>首月数据复盘+次月计划</td><td>全员</td><td>☐</td></tr>
-</table>
-</div>
-`},
-{num:'20',title:'风险预案B计划',sub:'五大风险 · 兜底方案',content:`
-<p class="big">提前识别五大风险场景，制定兜底方案，确保开业顺利</p>
-
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>风险</th><th>表现</th><th>B计划</th><th>触发条件</th></tr>
-<tr><td><strong>风险1：装修期领券量不足</strong></td><td>D-15时领券<300张</td><td>① 增加地推频次和人数<br>② 扩大派发范围（周边2km）<br>③ 线上社群加大推广力度<br>④ 鲸岚烧肉店增加导流话术</td><td>D-15检查</td></tr>
-<tr><td><strong>风险2：开业首周核销率低于30%</strong></td><td>开业3天后核销<30%</td><td>① 社群推送限时加码福利<br>② 短信提醒领券顾客到店<br>③ 增加团购套餐吸引力<br>④ 启动「到店赠饮品」活动</td><td>D+3检查</td></tr>
-<tr><td><strong>风险3：大众点评评分掉到3.5以下</strong></td><td>评分<3.5</td><td>① 24小时内回复所有差评<br>② 排查差评原因并整改<br>③ 增加合规好评引导力度<br>④ 考虑下架重开（极端情况）</td><td>持续监控</td></tr>
-<tr><td><strong>风险4：精酿空间开业后客流不足</strong></td><td>精酿空间日均<20人</td><td>① 加大烧鸟→精酿导流力度<br>② 推出精酿空间独立团购<br>③ 精酿空间独立社群运营<br>④ 举办精酿品鉴活动</td><td>精酿开业后</td></tr>
-<tr><td><strong>风险5：首月营收未达8万</strong></td><td>D+20时营收<5万</td><td>① 启动低谷应对策略<br>② 加大外卖推广力度<br>③ 推出「月末冲刺」活动<br>④ 调整客单价（推高价值套餐）</td><td>D+20检查</td></tr>
-</table>
-</div>
-
-<p class="highlight"><strong>📌 风险应对原则：</strong><br>
-① 每个风险设置明确的触发条件和检查时间点<br>
-② B计划在风险触发时立即启动，不犹豫不观望<br>
-③ 店长每周检查风险指标，及时调整策略<br>
-④ 重大风险（如评分骤降）需在24小时内响应</p>
-`},
-{num:'21',title:'外卖渠道策略',sub:'可行性分析 · 运营策略 · KPI',content:`
-<p class="big">烧鸟品类外卖可行性高（串品适合外带），开业后同步上线外卖渠道，补充营收</p>
-
-<h3>烧鸟外卖可行性分析</h3>
-<div class="grid2">
-<div class="card">
-<div class="v" style="color:#4CAF50">✅ 优势</div>
-<div class="l" style="text-align:left">
-· 烧鸟串品适合外卖（独立包装）<br>
-· 开业即积累品牌知名度<br>
-· 可覆盖周边3km办公+社区客群<br>
-· 外卖平台新店有流量扶持
-</div>
-</div>
-<div class="card">
-<div class="v" style="color:#E8451A">⚠️ 挑战</div>
-<div class="l" style="text-align:left">
-· 烧鸟口感堂食优于外卖<br>
-· 包装成本较高（需保温）<br>
-· 外卖平台抽佣20-23%<br>
-· 需专人负责打包出餐
-</div>
-</div>
-</div>
-
-<h3>外卖运营策略</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>策略</th><th>具体操作</th><th>时间</th></tr>
-<tr><td>📱 双平台上线</td><td>美团外卖+饿了么同步上线</td><td>开业后D+7</td></tr>
-<tr><td>🍱 外卖专属套餐</td><td>设计外卖专属套餐（区别于堂食），如「一人食烧鸟套餐」¥38</td><td>上线即设</td></tr>
-<tr><td>📦 包装升级</td><td>锡纸保温袋+品牌贴纸，确保串品温度和卖相</td><td>上线前</td></tr>
-<tr><td>🔥 新店满减</td><td>满30减5 / 满60减12 / 满100减20</td><td>首月</td></tr>
-<tr><td>⭐ 评分维护</td><td>每单附好评卡+赠小菜（合规引导），差评24小时内回复</td><td>持续</td></tr>
-<tr><td>📢 社群同步</td><td>社群每日推送外卖优惠信息，引导线上下单</td><td>持续</td></tr>
-</table>
-</div>
-
-<h3>外卖KPI</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>指标</th><th>首月目标</th><th>季度目标</th></tr>
-<tr><td>月订单量</td><td>500单+</td><td>1,500单+</td></tr>
-<tr><td>月营收</td><td>¥2万+</td><td>¥6万+</td></tr>
-<tr><td>评分</td><td>4.3星+</td><td>4.5星+</td></tr>
-<tr><td>复购率</td><td>15%+</td><td>25%+</td></tr>
-</table>
-</div>
-`},
-{num:'22',title:'每日运营SOP',sub:'日/周/月标准化流程',content:`
-<p class="big">标准化运营流程，确保每日执行不遗漏</p>
-
-<h3>📅 每日SOP</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th></tr>
-<tr><td>09:00</td><td>检查各平台评价，回复差评（如有）</td><td>运营</td></tr>
-<tr><td>上午10点</td><td>社群上午推送（今日限定/特价预告）</td><td>运营</td></tr>
-<tr><td>11:00</td><td>检查领券二维码是否完好，补充物料</td><td>店长</td></tr>
-<tr><td>14:00</td><td>午市数据统计（到店数/营收/核销数）</td><td>店长</td></tr>
-<tr><td>下午4点</td><td>社群下午推送（晚餐推荐+互动）</td><td>运营</td></tr>
-<tr><td>17:00</td><td>晚市准备+台卡检查+收银员话术提醒</td><td>店长</td></tr>
-<tr><td>21:00</td><td>晚市数据统计+次日备货计划</td><td>店长</td></tr>
-<tr><td>22:00</td><td>当日数据汇总+社群互动回复</td><td>运营</td></tr>
-</table>
-</div>
-
-<h3>📅 每周SOP</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th></tr>
-<tr><td>周一</td><td>上周数据复盘+本周计划制定</td><td>店长+运营</td></tr>
-<tr><td>周二</td><td>物料检查+补充印刷/制作</td><td>店长</td></tr>
-<tr><td>周三</td><td>竞品动态检查+策略调整</td><td>运营</td></tr>
-<tr><td>周四</td><td>下周活动策划+内容排期</td><td>运营</td></tr>
-<tr><td>周五</td><td>周末备货+人员排班确认</td><td>店长</td></tr>
-</table>
-</div>
-
-<h3>📅 每月SOP</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>时间</th><th>执行项</th><th>负责人</th></tr>
-<tr><td>月初</td><td>上月完整数据复盘+本月目标设定</td><td>店长+运营</td></tr>
-<tr><td>月中</td><td>月中数据检查+策略调整</td><td>店长</td></tr>
-<tr><td>月末</td><td>下月计划制定+预算调整</td><td>店长+运营</td></tr>
-</table>
-</div>
-`},
-{num:'23',title:'抖音运营',sub:'达人矩阵 · 本地推投流 · 团购组品',content:`
-<p class="big">抖音是年轻客群获取餐饮信息的主要渠道，通过达人探店+本地推投流快速引爆</p>
-
-<h3>达人矩阵策略</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>达人层级</th><th>粉丝量</th><th>数量</th><th>费用</th><th>内容方向</th></tr>
-<tr><td>头部达人</td><td>50万+</td><td>1-2位</td><td>¥2,000-3,000/位</td><td>品牌背书+大范围曝光</td></tr>
-<tr><td>腰部达人</td><td>10-50万</td><td>3-5位</td><td>¥500-1,000/位</td><td>深度体验+团购引导</td></tr>
-<tr><td>尾部达人</td><td>1-10万</td><td>5-8位</td><td>置换（免单）</td><td>真实体验+UGC内容</td></tr>
-</table>
-</div>
-
-<h3>本地推投流策略</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>阶段</th><th>预算</th><th>定向</th><th>内容</th></tr>
-<tr><td>开业首周</td><td>¥500/天</td><td>周边3km+25-40岁+美食兴趣</td><td>达人探店视频+团购链接</td></tr>
-<tr><td>开业次周</td><td>¥300/天</td><td>周边5km+25-40岁+美食兴趣</td><td>顾客实拍+好评截图</td></tr>
-<tr><td>稳定期</td><td>¥200/天</td><td>周边3km+已到店顾客相似人群</td><td>新品推荐+活动预告</td></tr>
-</table>
-</div>
-
-<h3>团购组品策略</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>套餐</th><th>价格</th><th>佣金</th><th>核销率预期</th></tr>
-<tr><td>开业尝鲜双人餐</td><td>¥68</td><td>15%</td><td>70%+</td></tr>
-<tr><td>烧鸟大满贯单人餐</td><td>¥48</td><td>12%</td><td>65%+</td></tr>
-<tr><td>烧鸟+精酿联名双人餐</td><td>¥88</td><td>15%</td><td>60%+</td></tr>
-</table>
-</div>
-`},
-{num:'24',title:'小红书运营',sub:'矩阵号 · KFS策略 · UGC激发',content:`
-<p class="big">小红书是本地生活种草的核心平台，通过矩阵号+KFS策略+UGC激发三管齐下</p>
-
-<h3>四种高转化内容模板</h3>
-<div class="grid2">
-<div class="card">
-<div class="v" style="font-size:1rem">🍢 探店打卡型</div>
-<div class="l" style="text-align:left">
-标题：「天津新店｜商场里藏着一家超好吃的日式烧鸟！」<br>
-内容：环境+菜品实拍+价格+位置<br>
-关键词：#天津美食 #天津烧鸟 #日式烧鸟
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1rem">🍺 精酿联动型</div>
-<div class="l" style="text-align:left">
-标题：「烧鸟配精酿也太绝了吧！天津新晋深夜食堂」<br>
-内容：烧鸟+精酿搭配推荐+两店联动体验<br>
-关键词：#天津探店 #精酿啤酒 #深夜食堂
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1rem">💡 攻略分享型</div>
-<div class="l" style="text-align:left">
-标题：「天津烧鸟点单攻略！第一次去这样点不踩雷」<br>
-内容：必点菜品+避坑指南+人均消费<br>
-关键词：#天津美食攻略 #烧鸟点单
-</div>
-</div>
-<div class="card">
-<div class="v" style="font-size:1rem">🎁 福利互动型</div>
-<div class="l" style="text-align:left">
-标题：「送100份烤年糕！天津新店开业福利」<br>
-内容：开业福利+到店规则+互动抽奖<br>
-关键词：#天津新店 #开业福利
-</div>
-</div>
-</div>
-
-<h3>KFS策略</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>策略</th><th>预算</th><th>内容</th><th>目标</th></tr>
-<tr><td>K（Kol/达人）</td><td>¥1,000</td><td>3-5位本地美食达人探店</td><td>品牌曝光+内容沉淀</td></tr>
-<tr><td>F（Feeds/信息流）</td><td>¥500</td><td>优质笔记投流，定向周边3km</td><td>精准触达潜在客群</td></tr>
-<tr><td>S（Search/搜索）</td><td>¥500</td><td>「天津烧鸟」「南开区美食」关键词竞价</td><td>截流搜索流量</td></tr>
-</table>
-</div>
-
-<h3>UGC激发策略</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>方式</th><th>具体操作</th><th>激励</th></tr>
-<tr><td>到店发笔记</td><td>到店消费发小红书笔记，出示给店员</td><td>赠日式烤年糕/饮品</td></tr>
-<tr><td>话题挑战</td><td>发起#鲸岚烧鸟打卡 话题，最佳笔记有奖</td><td>赠双人套餐券</td></tr>
-<tr><td>社群UGC引导</td><td>社群定期征集顾客晒图，精选发布</td><td>赠复购券</td></tr>
-</table>
-</div>
-`}
+<p class="dim">💡 核心原则：低谷期不硬扛，主动出击。用低成本活动维持基本客流，避免出现「空店」现象（空店会进一步劝退潜在顾客）。</p>`}
 ];
 
 
