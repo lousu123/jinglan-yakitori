@@ -7,561 +7,556 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0a0a0a;
-  --bg2: #111111;
-  --bg3: #1a1a1a;
-  --bg4: #222222;
-  --crimson: #8B0000;
-  --fire: #CC2200;
-  --fire2: #E8451A;
-  --amber: #D4A017;
-  --gold: #C9A84C;
-  --cream: #F5EFE6;
-  --text: #E8DDD0;
-  --text2: #C4B8A8;
-  --dim: #8A7A6A;
-  --dim2: #6B5D4F;
-  --border: rgba(204,34,0,0.08);
-  --border2: rgba(204,34,0,0.15);
+  --bg: #0a0806;
+  --bg2: #120e0a;
+  --bg3: #1a1410;
+  --bg4: #221c16;
+  --fire: #d4561e;
+  --fire2: #e85d26;
+  --fire3: #ff6b35;
+  --amber: #f0b429;
+  --gold: #c9a84c;
+  --cream: #e8ddd0;
+  --text: #d4c8b8;
+  --text2: #b8a898;
+  --dim: #8a7a6a;
+  --dimmer: #5a4a3a;
+  --border: rgba(212,86,30,0.08);
+  --border2: rgba(212,86,30,0.15);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.8}
 
-/* ===== Canvas BG ===== */
-#canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+/* ===== 粒子背景 ===== */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 
-/* ===== Nav ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+/* ===== 导航 ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,8,6,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;transition:transform .4s cubic-bezier(.4,0,.2,1)}
 .nav.hidden{transform:translateY(-100%)}
-.nav-l{display:flex;align-items:center;gap:10px}
-.nav-logo{font-family:'Noto Serif SC',serif;font-weight:900;font-size:18px;background:linear-gradient(135deg,var(--fire),var(--amber));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-badge{font-size:10px;color:var(--dim2);border:1px solid var(--border);padding:2px 8px;border-radius:10px}
-.nav-r{display:flex;align-items:center;gap:2px}
-.nav-r a{color:var(--dim);text-decoration:none;font-size:11px;padding:4px 8px;border-radius:4px;transition:all .3s;font-weight:400}
-.nav-r a:hover{color:var(--amber);background:rgba(212,86,30,.08)}
-.nav-toggle{display:none;background:none;border:none;color:var(--cream);font-size:22px;cursor:pointer;padding:4px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Noto Serif SC',serif;font-weight:900;font-size:18px;background:linear-gradient(135deg,var(--fire),var(--amber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1px}
+.nav-logo .ico{font-size:20px;-webkit-text-fill-color:initial}
+.nav-links{display:flex;gap:2px;flex-wrap:wrap}
+.nav-links a{color:var(--dimmer);text-decoration:none;font-size:11px;padding:4px 8px;border-radius:4px;transition:all .3s;font-weight:500}
+.nav-links a:hover{color:var(--amber);background:rgba(212,86,30,.1)}
+.nav-links a.active{color:var(--fire2);background:rgba(212,86,30,.12)}
+.nav-toggle{display:none;background:none;border:none;color:var(--cream);font-size:24px;cursor:pointer;padding:4px}
 
 /* ===== Hero ===== */
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 80%,rgba(204,34,0,.08) 0%,transparent 60%),radial-gradient(ellipse at 30% 20%,rgba(212,160,23,.04) 0%,transparent 40%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 18px;border:1px solid var(--fire);border-radius:20px;font-size:12px;color:var(--fire2);letter-spacing:3px;margin-bottom:20px;animation:fadeUp .8s ease}
-.hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(42px,9vw,88px);font-weight:900;line-height:1.1;margin-bottom:4px;animation:fadeUp .8s ease .1s both}
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 80%,rgba(212,86,30,.12) 0%,transparent 60%),radial-gradient(ellipse at 30% 20%,rgba(240,180,41,.06) 0%,transparent 40%),radial-gradient(ellipse at 70% 40%,rgba(255,107,53,.04) 0%,transparent 30%);pointer-events:none}
+.hero-glow{position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(212,86,30,.15) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 20px;border:1px solid var(--fire);border-radius:20px;font-size:12px;color:var(--fire2);letter-spacing:3px;margin-bottom:24px;animation:fadeUp .8s ease}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(48px,10vw,96px);font-weight:900;line-height:1.05;margin-bottom:4px;animation:fadeUp .8s ease .1s both}
 .hero h1 .c1{color:var(--fire)}.hero h1 .c2{color:var(--amber)}.hero h1 .c3{color:var(--cream)}
-.hero-sub{font-size:clamp(14px,2.2vw,20px);color:var(--dim);font-weight:300;letter-spacing:6px;margin-bottom:8px;animation:fadeUp .8s ease .15s both}
-.hero-sub2{font-size:clamp(12px,1.6vw,16px);color:var(--dim2);font-weight:300;margin-bottom:32px;animation:fadeUp .8s ease .18s both}
-.hero-stats{display:flex;gap:48px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .2s both}
+.hero-sub{font-size:clamp(14px,2.2vw,20px);color:var(--dim);font-weight:300;letter-spacing:6px;margin-bottom:8px;animation:fadeUp .8s ease .12s both}
+.hero-desc{font-size:clamp(13px,1.6vw,16px);color:var(--dimmer);font-weight:300;letter-spacing:2px;margin-bottom:36px;animation:fadeUp .8s ease .14s both}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .18s both}
 .hero-stat{text-align:center}
-.hero-stat-num{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:var(--amber)}
-.hero-stat-lbl{font-size:12px;color:var(--dim);margin-top:2px}
-.hero-tag{margin-top:28px;padding:8px 24px;background:rgba(204,34,0,.06);border:1px solid var(--border2);border-radius:30px;font-size:13px;color:var(--cream);letter-spacing:1px;animation:fadeUp .8s ease .25s both}
-.hero-cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .3s both}
-.hero-cta a{display:inline-flex;align-items:center;gap:8px;padding:12px 32px;background:linear-gradient(135deg,var(--fire),var(--fire2));color:#fff;text-decoration:none;border-radius:30px;font-size:14px;font-weight:500;transition:all .3s;box-shadow:0 4px 20px rgba(204,34,0,.25)}
-.hero-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(204,34,0,.4)}
-.hero-cta a.outline{background:transparent;border:1px solid var(--border2);box-shadow:none;color:var(--cream)}
-.hero-cta a.outline:hover{background:rgba(204,34,0,.08);border-color:var(--fire)}
+.hero-stat-num{font-family:'Noto Serif SC',serif;font-size:36px;font-weight:700;color:var(--amber)}
+.hero-stat-lbl{font-size:12px;color:var(--dimmer);margin-top:2px;letter-spacing:1px}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:28px;animation:fadeUp .8s ease .22s both}
+.hero-tag{padding:5px 16px;background:rgba(212,86,30,.06);border:1px solid var(--border2);border-radius:16px;font-size:12px;color:var(--text2)}
+.hero-cta{margin-top:36px;animation:fadeUp .8s ease .26s both}
+.hero-cta a{display:inline-flex;align-items:center;gap:8px;padding:14px 40px;background:linear-gradient(135deg,var(--fire),var(--fire2));color:#fff;text-decoration:none;border-radius:30px;font-size:15px;font-weight:500;transition:all .3s;box-shadow:0 4px 24px rgba(212,86,30,.25)}
+.hero-cta a:hover{transform:translateY(-3px);box-shadow:0 8px 36px rgba(212,86,30,.4)}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--dimmer);font-size:11px;letter-spacing:2px;animation:bounce 2s ease infinite;cursor:pointer}
+.hero-scroll .arr{width:20px;height:20px;border-right:1.5px solid var(--dimmer);border-bottom:1.5px solid var(--dimmer);transform:rotate(45deg);animation:bounceArr 2s ease infinite}
 
-/* ===== Divider ===== */
-.divider{position:relative;z-index:1;height:50px;display:flex;align-items:center;justify-content:center;gap:10px}
+/* ===== 分隔 ===== */
+.divider{position:relative;z-index:1;height:60px;display:flex;align-items:center;justify-content:center;gap:12px}
 .divider .line{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--fire),transparent)}
 .divider .dot{width:6px;height:6px;background:var(--fire);border-radius:50%;animation:pulse 2s ease infinite}
 
-/* ===== Section ===== */
-.section{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:60px 24px}
-.section-header{text-align:center;margin-bottom:40px}
-.section-header .num{font-family:'Noto Serif SC',serif;font-size:48px;font-weight:900;color:var(--fire);opacity:.15;line-height:1;margin-bottom:-8px}
-.section-header h2{font-family:'Noto Serif SC',serif;font-size:28px;color:var(--cream);margin-bottom:4px}
-.section-header .sub{font-size:13px;color:var(--dim)}
-.section-body{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.4,0,.2,1)}
-.section-body.show{opacity:1;transform:translateY(0)}
-.section-body p{color:var(--text2);font-size:14px;line-height:2;margin-bottom:12px}
-.section-body p.dim{color:var(--dim);font-size:13px}
-.section-body p.big{font-size:16px;color:var(--cream);font-weight:500}
+/* ===== 目录 ===== */
+.toc{position:relative;z-index:1;padding:60px 20px 40px;max-width:960px;margin:0 auto}
+.toc-hdr{text-align:center;margin-bottom:40px}
+.toc-hdr .num{font-family:'Noto Serif SC',serif;font-size:14px;color:var(--fire);letter-spacing:4px;margin-bottom:4px}
+.toc-hdr h2{font-family:'Noto Serif SC',serif;font-size:30px;color:var(--cream);margin-bottom:6px}
+.toc-hdr p{color:var(--dim);font-size:13px}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.toc-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.03);border-radius:10px;cursor:pointer;transition:all .35s;text-align:left;color:var(--text);font-size:13px;font-family:'Noto Sans SC',sans-serif}
+.toc-btn:hover{background:rgba(212,86,30,.06);border-color:var(--border2);transform:translateY(-2px)}
+.toc-btn .num{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700;color:var(--fire);min-width:28px;opacity:.7}
+.toc-btn .arrow{color:var(--fire);font-size:14px;transition:transform .3s;margin-left:auto}
+.toc-btn:hover .arrow{transform:translateX(4px)}
 
-/* ===== Cards ===== */
+/* ===== 内容 ===== */
+.content{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 20px 80px}
+.chapter{margin-bottom:60px;opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.4,0,.2,1)}
+.chapter.show{opacity:1;transform:translateY(0)}
+.ch-hdr{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.ch-num{font-family:'Noto Serif SC',serif;font-size:42px;font-weight:900;color:var(--fire);line-height:1;opacity:.4;min-width:50px}
+.ch-info{flex:1}
+.ch-title{font-family:'Noto Serif SC',serif;font-size:24px;color:var(--cream)}
+.ch-sub{font-size:12px;color:var(--dimmer);margin-top:2px;letter-spacing:1px}
+.ch-badge{display:inline-block;padding:3px 12px;background:rgba(212,86,30,.1);border:1px solid var(--border2);border-radius:12px;font-size:11px;color:var(--fire2)}
+.chapter p{color:var(--text2);font-size:14px;line-height:2;margin-bottom:10px}
+.chapter p.dim{color:var(--dim);font-size:13px}
+.chapter p.strong{color:var(--cream);font-weight:500}
+.chapter p.highlight{padding:12px 16px;background:rgba(212,86,30,.04);border-left:3px solid var(--fire);border-radius:0 6px 6px 0;font-size:13px;color:var(--text)}
+
+/* ===== 卡片 ===== */
 .grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:16px 0}
-.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:16px 0}
-.grid4{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0}
-.card{background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:10px;padding:18px;text-align:center;transition:all .3s}
-.card:hover{background:var(--bg3);border-color:var(--border2);transform:translateY(-2px)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:10px;padding:18px;text-align:center;transition:all .3s}
+.card:hover{background:var(--bg4);border-color:var(--border2)}
 .card .v{font-family:'Noto Serif SC',serif;font-size:28px;font-weight:700;color:var(--amber)}
-.card .l{font-size:12px;color:var(--dim);margin-top:4px}
+.card .l{font-size:12px;color:var(--dim);margin-top:3px}
 
-/* ===== Tables ===== */
-.tbl-wrap{overflow-x:auto;margin:16px 0;border-radius:10px;border:1px solid rgba(255,255,255,.03)}
+/* ===== 表格 ===== */
+.tbl-wrap{overflow-x:auto;margin:16px 0;border-radius:8px;border:1px solid rgba(255,255,255,.03)}
 .tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}
-.tbl th{background:rgba(204,34,0,.12);color:var(--amber);padding:10px 14px;text-align:left;font-weight:500;border-bottom:2px solid var(--fire);white-space:nowrap}
+.tbl th{background:rgba(212,86,30,.1);color:var(--amber);padding:10px 14px;text-align:left;font-weight:500;border-bottom:2px solid var(--fire);white-space:nowrap}
 .tbl td{padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.02);color:var(--text2)}
-.tbl tr:hover td{background:rgba(255,255,255,.012)}
-.tbl .hl td{background:rgba(204,34,0,.06);font-weight:500;color:var(--cream)}
+.tbl tr:hover td{background:rgba(255,255,255,.01)}
+.tbl tr:last-child td{border-bottom:none}
 
-/* ===== Tags ===== */
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
-.tag{padding:4px 14px;background:rgba(204,34,0,.05);border:1px solid var(--border);border-radius:16px;font-size:12px;color:var(--text2);transition:all .3s}
-.tag:hover{background:rgba(204,34,0,.1);border-color:var(--border2);color:var(--cream)}
-
-/* ===== Feat Cards ===== */
-.feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:16px 0}
-.feat-card{background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:12px;padding:22px 18px;text-align:center;position:relative;overflow:hidden;transition:all .3s}
-.feat-card:hover{background:var(--bg3);border-color:var(--border2);transform:translateY(-3px)}
+/* ===== 功能卡片 ===== */
+.feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0}
+.feat-card{background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:10px;padding:20px;text-align:center;position:relative;overflow:hidden;transition:all .3s}
+.feat-card:hover{background:var(--bg4);border-color:var(--border2);transform:translateY(-2px)}
 .feat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--fire),var(--amber))}
 .feat-card .ic{font-size:30px;margin-bottom:8px}
-.feat-card h4{font-size:15px;color:var(--cream);margin-bottom:6px}
+.feat-card h4{font-size:15px;color:var(--cream);margin-bottom:4px}
 .feat-card p{font-size:12px!important;color:var(--dim)!important;line-height:1.7!important}
 
-/* ===== Pkg ===== */
-.pkg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:16px 0}
-.pkg-card{background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:14px;padding:28px 22px;text-align:center;position:relative;overflow:hidden;transition:all .3s}
-.pkg-card:hover{transform:translateY(-3px)}
-.pkg-card.hot{border-color:var(--fire);background:linear-gradient(180deg,rgba(204,34,0,.06),var(--bg2))}
+/* ===== 套餐卡片 ===== */
+.pkg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:16px 0}
+.pkg-card{background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:12px;padding:28px 22px;text-align:center;position:relative;overflow:hidden;transition:all .3s}
+.pkg-card:hover{transform:translateY(-3px);border-color:var(--border2)}
+.pkg-card.hot{border-color:var(--border2);background:linear-gradient(180deg,rgba(212,86,30,.06),var(--bg3))}
 .pkg-card.hot::before{content:'推荐';position:absolute;top:12px;right:-28px;background:var(--fire);color:#fff;font-size:10px;padding:2px 32px;transform:rotate(45deg);letter-spacing:1px}
 .pkg-card .tag{font-size:11px;color:var(--fire2);margin-bottom:4px;letter-spacing:1px}
 .pkg-card .nm{font-family:'Noto Serif SC',serif;font-size:19px;color:var(--cream);margin-bottom:4px}
-.pkg-card .pr{font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:var(--amber);margin-bottom:8px}
+.pkg-card .pr{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:900;color:var(--amber);margin-bottom:8px}
 .pkg-card .pr small{font-size:14px;color:var(--dim)}
 .pkg-card .desc{font-size:12px;color:var(--dim);line-height:1.8}
 
-/* ===== Compare ===== */
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
-.cmp-col{background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:12px;padding:20px;transition:all .3s}
-.cmp-col:hover{transform:translateY(-2px)}
-.cmp-col h4{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
-.cmp-col.g h4{color:var(--amber)}.cmp-col.b h4{color:var(--dim)}
-.cmp-col p{font-size:12px!important;color:var(--dim)!important;margin-bottom:6px!important;line-height:1.8!important;padding-left:12px;position:relative}
-.cmp-col p::before{content:'·';position:absolute;left:0;color:var(--dim2)}
+/* ===== 标签 ===== */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.tag{padding:4px 14px;background:rgba(212,86,30,.04);border:1px solid var(--border);border-radius:14px;font-size:12px;color:var(--text2);transition:all .2s}
+.tag:hover{background:rgba(212,86,30,.08);border-color:var(--border2)}
 
-/* ===== Risk ===== */
-.risk{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:16px 0}
-.risk-card{background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:12px;padding:20px;transition:all .3s}
-.risk-card:hover{background:var(--bg3);transform:translateY(-2px)}
+/* ===== 对比 ===== */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.cmp-col{background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:10px;padding:18px}
+.cmp-col h4{font-size:14px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.cmp-col.g h4{color:var(--amber)}
+.cmp-col.b h4{color:var(--dim)}
+.cmp-col p{font-size:12px!important;color:var(--dim)!important;margin-bottom:4px!important;line-height:1.7!important}
+
+/* ===== 风险 ===== */
+.risk{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0}
+.risk-card{background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:10px;padding:20px;transition:all .3s}
+.risk-card:hover{background:var(--bg4);border-color:var(--border2)}
 .risk-card .rl{display:inline-block;padding:2px 10px;border-radius:4px;font-size:11px;margin-bottom:8px;font-weight:500}
-.risk-card .rl.h{background:rgba(204,34,0,.12);color:var(--fire2)}
-.risk-card .rl.m{background:rgba(212,160,23,.1);color:var(--amber)}
+.risk-card .rl.h{background:rgba(212,86,30,.15);color:var(--fire2)}
+.risk-card .rl.m{background:rgba(240,180,41,.1);color:var(--amber)}
 .risk-card .rl.l{background:rgba(100,200,100,.06);color:#6c6}
 .risk-card h4{font-size:14px;color:var(--cream);margin-bottom:6px}
 .risk-card p{font-size:12px!important;color:var(--dim)!important;line-height:1.7!important}
 
-/* ===== Slogan ===== */
-.slogan-box{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin:12px 0}
-.slogan-item{padding:16px;background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:10px;text-align:center;font-size:13px;color:var(--text2);font-style:italic;transition:all .3s}
-.slogan-item:hover{border-color:var(--border2);background:var(--bg3)}
-.slogan-item .bd{display:inline-block;padding:2px 10px;background:var(--fire);color:#fff;border-radius:4px;font-size:10px;font-style:normal;margin-bottom:8px;letter-spacing:1px}
+/* ===== 客群 ===== */
+.aud{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:16px 0}
+.aud-item{background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:10px;padding:16px;text-align:center;transition:all .3s}
+.aud-item:hover{background:var(--bg4);border-color:var(--border2)}
+.aud-item .p{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;color:var(--fire)}
+.aud-item .l{font-size:12px;color:var(--dim);margin-top:3px}
 
-/* ===== Budget ===== */
-.budget-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.budget-tab{padding:8px 20px;border:1px solid var(--border);border-radius:20px;font-size:13px;color:var(--dim);cursor:pointer;transition:all .3s;background:transparent;font-family:'Noto Sans SC',sans-serif}
-.budget-tab:hover{border-color:var(--border2);color:var(--cream)}
-.budget-tab.active{background:var(--fire);border-color:var(--fire);color:#fff}
-.budget-panel{display:none}
-.budget-panel.active{display:block;animation:fadeUp .4s ease}
+/* ===== 时间轴 ===== */
+.timeline{position:relative;margin:20px 0;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--fire),var(--amber),var(--fire))}
+.tl-item{position:relative;margin-bottom:20px;padding:16px 20px;background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:10px;transition:all .3s}
+.tl-item:hover{background:var(--bg4);border-color:var(--border2)}
+.tl-item::before{content:'';position:absolute;left:-24px;top:20px;width:12px;height:12px;background:var(--fire);border-radius:50%;border:3px solid var(--bg)}
+.tl-item .tl-phase{font-size:11px;color:var(--fire2);letter-spacing:2px;margin-bottom:2px}
+.tl-item .tl-time{font-size:12px;color:var(--dimmer);margin-bottom:4px}
+.tl-item .tl-title{font-size:15px;color:var(--cream);font-weight:500;margin-bottom:4px}
+.tl-item .tl-desc{font-size:12px;color:var(--dim);line-height:1.7}
 
-/* ===== Timeline ===== */
-.timeline{position:relative;margin:24px 0;padding-left:32px}
-.timeline::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--fire),var(--amber),transparent)}
-.tl-item{position:relative;margin-bottom:24px;padding-left:20px}
-.tl-item::before{content:'';position:absolute;left:-21px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--fire);border:2px solid var(--bg)}
-.tl-item:nth-child(2)::before{background:var(--amber)}
-.tl-item:nth-child(3)::before{background:var(--gold)}
-.tl-item:nth-child(4)::before{background:var(--cream)}
-.tl-item:nth-child(5)::before{background:var(--text2)}
-.tl-item .phase{font-size:11px;color:var(--fire2);font-weight:500;letter-spacing:1px}
-.tl-item .time{font-size:12px;color:var(--dim);margin-bottom:4px}
-.tl-item h4{font-size:15px;color:var(--cream);margin-bottom:4px}
-.tl-item p{font-size:13px!important;color:var(--dim)!important;line-height:1.7!important}
+/* ===== 预算 ===== */
+.budget-tabs{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
+.budget-tab{padding:8px 20px;background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:8px;cursor:pointer;font-size:13px;color:var(--dim);transition:all .3s;font-family:'Noto Sans SC',sans-serif}
+.budget-tab:hover{background:var(--bg4);border-color:var(--border2)}
+.budget-tab.active{background:rgba(212,86,30,.1);border-color:var(--fire);color:var(--fire2)}
+.budget-content{display:none}
+.budget-content.active{display:block}
+.budget-total{text-align:center;padding:16px;margin-top:12px;background:rgba(212,86,30,.06);border:1px solid var(--border2);border-radius:10px}
+.budget-total .v{font-family:'Noto Serif SC',serif;font-size:32px;font-weight:900;color:var(--amber)}
+.budget-total .l{font-size:12px;color:var(--dim);margin-top:2px}
 
-/* ===== KPI Summary ===== */
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin:16px 0}
-.kpi-card{background:var(--bg2);border:1px solid rgba(255,255,255,.03);border-radius:12px;padding:18px 14px;text-align:center;transition:all .3s}
-.kpi-card:hover{background:var(--bg3);border-color:var(--border2);transform:translateY(-2px)}
-.kpi-card .cat{font-size:10px;color:var(--dim2);letter-spacing:1px;margin-bottom:4px}
-.kpi-card .val{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700;color:var(--amber)}
-.kpi-card .lbl{font-size:11px;color:var(--dim);margin-top:2px}
+/* ===== 品牌关系图 ===== */
+.brand-tree{display:flex;flex-direction:column;align-items:center;gap:16px;margin:20px 0;padding:24px;background:var(--bg3);border:1px solid rgba(255,255,255,.03);border-radius:12px}
+.brand-root{font-family:'Noto Serif SC',serif;font-size:16px;color:var(--cream);padding:8px 24px;background:rgba(212,86,30,.08);border:1px solid var(--border2);border-radius:8px}
+.brand-branch{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.brand-node{padding:10px 20px;border-radius:8px;text-align:center;min-width:160px}
+.brand-node.main{background:rgba(240,180,41,.06);border:1px solid rgba(240,180,41,.2)}
+.brand-node.main .nm{color:var(--amber);font-weight:700}
+.brand-node.partner{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)}
+.brand-node.partner .nm{color:var(--dim)}
+.brand-node .nm{font-size:14px;margin-bottom:2px}
+.brand-node .info{font-size:11px;color:var(--dimmer)}
+.brand-connector{color:var(--dimmer);font-size:12px;letter-spacing:2px}
 
-/* ===== Footer ===== */
-.footer{position:relative;z-index:1;text-align:center;padding:50px 24px;border-top:1px solid rgba(255,255,255,.03)}
+/* ===== 页脚 ===== */
+.footer{position:relative;z-index:1;text-align:center;padding:50px 20px;border-top:1px solid var(--border)}
 .footer .br{font-family:'Noto Serif SC',serif;font-size:20px;background:linear-gradient(135deg,var(--fire),var(--amber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
-.footer .cr{color:var(--dim);font-size:12px}
-.footer .cr a{color:var(--amber);text-decoration:none}
+.footer .cr{color:var(--dimmer);font-size:12px}
 
-/* ===== Animations ===== */
+/* ===== 动画 ===== */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes bounceArr{0%,100%{opacity:.3}50%{opacity:1}}
 
-/* ===== Responsive ===== */
+/* ===== 响应式 ===== */
 @media(max-width:768px){
-  .hero-stats{gap:24px}
-  .nav-r{display:none}
-  .nav-r.open{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:rgba(10,10,10,.96);backdrop-filter:blur(24px);padding:12px;border-bottom:1px solid var(--border);gap:4px}
+  .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:rgba(10,8,6,.95);backdrop-filter:blur(24px);padding:12px;flex-direction:column;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
   .nav-toggle{display:block}
-  .cmp{grid-template-columns:1fr}
+  .hero-stats{gap:24px}
+  .toc-grid,.pkg,.feat{grid-template-columns:1fr}
   .grid2{grid-template-columns:1fr 1fr}
-  .pkg,.feat,.risk,.grid3,.grid4{grid-template-columns:1fr}
-  .section{padding:40px 16px}
-  .budget-tabs{flex-direction:column}
-  .kpi-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:480px){
-  .kpi-grid{grid-template-columns:repeat(2,1fr)}
-  .hero h1{font-size:36px}
+  .cmp{grid-template-columns:1fr}
+  .brand-branch{flex-direction:column;align-items:center}
+  .ch-num{font-size:32px;min-width:36px}
+  .ch-title{font-size:20px}
 }
 </style>
 </head>
 <body>
-<canvas id="canvas"></canvas>
+
+<canvas id="particles"></canvas>
 
 <nav class="nav" id="nav">
-  <div class="nav-l">
-    <div class="nav-logo">鲸岚·烧鸟</div>
-    <span class="nav-badge">完整方案</span>
-  </div>
+  <div class="nav-logo"><span class="ico">🐋</span> 鲸岚·烧鸟</div>
   <button class="nav-toggle" id="navToggle">☰</button>
-  <div class="nav-r" id="navLinks"></div>
+  <div class="nav-links" id="navLinks"></div>
 </nav>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
+  <div class="hero-glow"></div>
   <div class="hero-badge">✦ 以美团智能收银为核心的全渠道运营方案 ✦</div>
   <h1><span class="c1">鲸岚</span><span class="c2">·</span><span class="c3">烧鸟</span></h1>
-  <div class="hero-sub">开业引流 · 全渠道运营</div>
-  <div class="hero-sub2">天津 · 中原·瞰海一楼（商场入口旁）| 鲸岚烧肉品牌旗下</div>
+  <div class="hero-sub">开业引流 · 全渠道运营方案</div>
+  <div class="hero-desc">天津 · 中原·瞰海一楼 · 日式烧鸟 × 精酿空间联动</div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-num">150㎡</div><div class="hero-stat-lbl">日式烧鸟空间</div></div>
     <div class="hero-stat"><div class="hero-stat-num">45天</div><div class="hero-stat-lbl">装修期蓄水</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">1500+</div><div class="hero-stat-lbl">预计蓄水人数</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">¥8万</div><div class="hero-stat-lbl">首月营收目标</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">1500+</div><div class="hero-stat-lbl">预计领券</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">¥3K-15.6K</div><div class="hero-stat-lbl">预算三档</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">8万+</div><div class="hero-stat-lbl">首月营收</div></div>
   </div>
-  <div class="hero-tag">🔥 装修期45天二维码蓄水 · 鲸岚烧肉品牌联动 · 三平台运营 · 复购券自动化</div>
-  <div class="hero-cta">
-    <a href="#ch-0">📖 查看完整方案</a>
-    <a href="#ch-14" class="outline">💰 预算速览</a>
+  <div class="hero-tags">
+    <span class="hero-tag">🐋 鲸岚品牌</span>
+    <span class="hero-tag">🔥 日式烧鸟</span>
+    <span class="hero-tag">🍺 精酿联动</span>
+    <span class="hero-tag">📱 三平台运营</span>
+    <span class="hero-tag">🔄 复购自动化</span>
   </div>
-</section>
-
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-
-<!-- ===== TOC ===== -->
-<section class="section" id="ch-0">
-  <div class="section-header">
-    <div class="num">00</div>
-    <h2>方案目录</h2>
-    <div class="sub">共 18 个章节 · 点击跳转</div>
-  </div>
-  <div class="section-body show">
-    <div class="grid3" id="tocGrid"></div>
+  <div class="hero-cta"><a href="#toc">📋 查看完整方案</a></div>
+  <div class="hero-scroll" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})">
+    <span>向下滚动</span>
+    <div class="arr"></div>
   </div>
 </section>
 
 <div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
 
-<!-- ===== CONTENT ===== -->
-<div id="content"></div>
+<!-- ===== 目录 ===== -->
+<section class="toc" id="toc">
+  <div class="toc-hdr">
+    <div class="num">✦ 目 录 ✦</div>
+    <h2>鲸岚·烧鸟 全案营销方案</h2>
+    <p>共 17 个章节 · 点击任意章节直接跳转</p>
+  </div>
+  <div class="toc-grid" id="tocGrid"></div>
+</section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ===== 内容 ===== -->
+<section class="content" id="content"></section>
+
+<!-- ===== 页脚 ===== -->
 <footer class="footer">
-  <div class="br">鲸岚·烧鸟</div>
+  <div class="br">🐋 鲸岚·烧鸟</div>
   <p class="cr">编制：娄苏 | 美团SAAS &nbsp;·&nbsp; 2026年5月（完整版）</p>
 </footer>
 
 <script>
-// ===== Canvas Particles =====
-const c=document.getElementById('canvas'),ctx=c.getContext('2d');
+// ===== 粒子系统 =====
+const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
 let pts=[],embers=[];
-function resize(){c.width=innerWidth;c.height=innerHeight}
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
 resize();addEventListener('resize',resize);
-class Pt{constructor(){this.reset()}
-reset(){this.x=Math.random()*c.width;this.y=Math.random()*c.height;this.size=Math.random()*2+.3;this.sx=(Math.random()-.5)*.25;this.sy=-Math.random()*.15-.08;this.o=Math.random()*.3+.05}
-update(){this.x+=this.sx;this.y+=this.sy;if(this.y<-10||this.x<-10||this.x>c.width+10)this.reset();if(this.y<c.height*.25)this.y=c.height}
-draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fillStyle=`rgba(204,34,0,${this.o})`;ctx.fill()}}
-class Em{constructor(){this.x=Math.random()*c.width;this.y=c.height-20;this.size=Math.random()*3+1;this.sy=Math.random()*1.5+.5;this.sx=(Math.random()-.5)*.5;this.l=1;this.d=Math.random()*.006+.003}
-update(){this.y-=this.sy;this.x+=this.sx;this.l-=this.d}
-draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.size*this.l,0,Math.PI*2);let g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*this.l);g.addColorStop(0,`rgba(255,80,40,${this.l})`);g.addColorStop(.5,`rgba(212,160,23,${this.l*.5})`);g.addColorStop(1,`rgba(204,34,0,0)`);ctx.fillStyle=g;ctx.fill()}}
+
+class Pt{
+  constructor(){this.reset()}
+  reset(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.size=Math.random()*2+.3;this.sx=(Math.random()-.5)*.25;this.sy=-Math.random()*.15-.05;this.o=Math.random()*.3+.05}
+  update(){this.x+=this.sx;this.y+=this.sy;if(this.y<-10||this.x<-10||this.x>canvas.width+10)this.reset();if(this.y<canvas.height*.25)this.y=canvas.height}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fillStyle=`rgba(212,86,30,${this.o})`;ctx.fill()}
+}
+
+class Em{
+  constructor(){this.x=Math.random()*canvas.width;this.y=canvas.height-10;this.size=Math.random()*3+1;this.sy=Math.random()*1.2+.3;this.sx=(Math.random()-.5)*.4;this.l=1;this.d=Math.random()*.006+.003}
+  update(){this.y-=this.sy;this.x+=this.sx;this.l-=this.d}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.size*this.l,0,Math.PI*2);let g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*this.l);g.addColorStop(0,`rgba(255,107,53,${this.l})`);g.addColorStop(.4,`rgba(240,180,41,${this.l*.5})`);g.addColorStop(1,`rgba(212,86,30,0)`);ctx.fillStyle=g;ctx.fill()}
+}
+
 function spawn(){if(Math.random()<.12)embers.push(new Em())}
-function anim(){ctx.clearRect(0,0,c.width,c.height);pts.forEach(p=>{p.update();p.draw()});spawn();embers.forEach(e=>{e.update();e.draw()});embers=embers.filter(e=>e.l>0);if(embers.length>50)embers.splice(0,embers.length-50);requestAnimationFrame(anim)}
+function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.update();p.draw()});spawn();embers.forEach(e=>{e.update();e.draw()});embers=embers.filter(e=>e.l>0);if(embers.length>50)embers.splice(0,embers.length-50);requestAnimationFrame(anim)}
 for(let i=0;i<60;i++)pts.push(new Pt());anim();
 
-// ===== Data =====
-const chapters=[
-{num:'01',title:'背景概述',sub:'门店信息 · 品牌关系 · 核心目标',
-content:`<p><strong>鲸岚·烧鸟</strong>位于天津中原·瞰海一楼，毗邻商场一楼出入口，拥有绝佳的自然客流位置。门店分为两个独立空间：</p>
-<div class="grid2">
-<div class="card"><div class="v">150㎡</div><div class="l">鲸岚·烧鸟（日式烧烤）<br>老板独立运营 · 鲸岚品牌</div></div>
-<div class="card"><div class="v">100㎡+</div><div class="l">精酿空间（合伙经营）<br>品牌名待定 · 与烧鸟相邻</div></div>
-</div>
-<p>两个空间物理上不打通，顾客需要出门绕行。精酿空间与鲸岚·烧鸟分属不同品牌/合伙关系，但可进行商业合作层面的软联动（联合套餐、互相导流、共用私域）。</p>
-<p class="highlight"><strong>⚠️ 体验断层解决方案：</strong>两店不打通意味着顾客在烧鸟吃完后，需要出门再进另一家，转化损耗较大。为此设计三重引导机制：<br>
-① <strong>专人带引导：</strong>收银员结账时主动告知「往右走20步就是精酿区，我带您过去看看」，由专人引导至精酿空间门口，降低绕行心理门槛<br>
-② <strong>实体指引牌：</strong>在两店门口及中间通道设置统一风格的指引立牌（日式木牌风格），标注「精酿空间 → 20步」「鲸岚·烧鸟 → 20步」，让顾客清晰感知两店距离很近<br>
-③ <strong>联合消费激励：</strong>出示另一店消费凭证可享专属折扣，用利益驱动顾客主动跨店</p>
-<p><strong>品牌背景：</strong>老板本身经营鲸岚烧肉品牌，楼上三楼的鲸岚烧肉也在同步装修中（尚未营业）。鲸岚品牌在本地已有一定知名度和线上社群基础，这是鲸岚·烧鸟开业最大的流量来源。</p>
-<p><strong>核心目标：</strong>以美团智能版收银系统为中枢，通过开业前45天开始的线下二维码领券蓄水，开业后全渠道自动沉淀私域会员，配合复购券和三平台线上运营，实现"开业即火爆，复购有保障"。</p>
-<div class="tags"><span class="tag">🐋 鲸岚品牌背书</span><span class="tag">📍 商场出入口黄金位置</span><span class="tag">🏗️ 装修期45天蓄水</span><span class="tag">🍺 精酿空间联动</span><span class="tag">🏢 楼上鲸岚烧肉同步装修</span></div>`},
+// ===== 导航 =====
+document.getElementById('navToggle').onclick=()=>document.getElementById('navLinks').classList.toggle('open');
 
-{num:'02',title:'整体策略框架',sub:'六管齐下 · 全渠道覆盖',
-content:`<p class="big">六管齐下策略体系</p>
-<div class="tbl-wrap">
-<table class="tbl">
+let lastScroll=0;
+addEventListener('scroll',()=>{
+  const y=scrollY,nav=document.getElementById('nav');
+  if(y>200)nav.classList.toggle('hidden',y>lastScroll&&y>400);else nav.classList.remove('hidden');
+  lastScroll=y;
+  // 高亮当前章节
+  document.querySelectorAll('.chapter').forEach(ch=>{
+    const id=ch.id.replace('ch-','');
+    const a=document.querySelector(`.nav-links a[href="#ch-${id}"]`);
+    if(a){
+      const rect=ch.getBoundingClientRect();
+      a.classList.toggle('active',rect.top<200&&rect.bottom>200);
+    }
+  });
+});
+
+// ===== 章节数据 =====
+const chapters=[
+{num:'01',title:'背景概述',sub:'门店信息 / 品牌关系 / 核心目标',badge:'鲸岚品牌',
+content:`<p>鲸岚·烧鸟位于天津<strong>中原·瞰海一楼</strong>，毗邻商场一楼出入口，拥有绝佳的自然客流位置。门店分为两个独立空间：</p>
+<div class="brand-tree">
+  <div class="brand-root">🐋 鲸岚品牌（老板自有）</div>
+  <div class="brand-branch">
+    <div class="brand-node main"><div class="nm">🐋 鲸岚·烧鸟</div><div class="info">一楼 · 150㎡ · 日式烧鸟</div></div>
+    <div class="brand-node main"><div class="nm">🐋 鲸岚烧肉</div><div class="info">三楼 · 同步装修中 · 品牌联动</div></div>
+  </div>
+  <div class="brand-connector">⬇ 商业合作联动</div>
+  <div class="brand-branch">
+    <div class="brand-node partner"><div class="nm">🍺 精酿空间</div><div class="info">一楼 · 100㎡+ · 合伙经营 · 品牌名待定</div></div>
+  </div>
+</div>
+<p>两个空间物理上不打通，顾客需要出门绕行。精酿空间与鲸岚·烧鸟分属不同品牌/合伙关系，但可进行商业合作层面的软联动——联合套餐、互相导流、共用私域。</p>
+<p><strong>品牌背景：</strong>老板本身经营鲸岚烧肉品牌，楼上三楼的鲸岚烧肉也在同步装修中。鲸岚品牌在本地已有一定知名度和线上社群基础，这是鲸岚·烧鸟开业最大的流量来源。</p>
+<p><strong>核心目标：</strong>以美团智能版收银系统为中枢，通过开业前45天线下二维码领券蓄水，开业后全渠道自动沉淀私域会员，配合复购券和三平台线上运营，实现"开业即火爆，复购有保障"。</p>`},
+
+{num:'02',title:'整体策略框架',sub:'六管齐下 / 全渠道覆盖',badge:'策略',
+content:`<p><strong>六管齐下策略体系：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>策略</th><th>目的</th><th>载体</th><th>核心内容</th></tr>
 <tr><td><strong>🏗️ 装修期45天蓄水</strong></td><td>提前锁定周边客群</td><td>围挡+便利店+试吃</td><td>装修围挡铺设领券二维码，扫码即成为私域会员</td></tr>
 <tr><td><strong>🐋 鲸岚烧肉品牌联动</strong></td><td>利用现有品牌客户基础</td><td>烧肉店+品牌社群</td><td>老客专属福利、结账话术导流、品牌通用储值卡</td></tr>
 <tr><td><strong>📱 三平台线上运营</strong></td><td>线上引流+提升曝光</td><td>点评+抖音+小红书</td><td>大众点评冲新店榜，抖音达人矩阵+本地推，小红书矩阵号+UGC</td></tr>
-<tr><td><strong>💾 私域沉淀+复购</strong></td><td>沉淀会员+锁定复购</td><td>收银系统+社群</td><td>扫码领券→核销→自动发复购券</td></tr>
-<tr><td><strong>🍻 烧鸟+精酿联动</strong></td><td>互相导流</td><td>联合套餐+互推</td><td>联合套餐、互相导流、共用私域</td></tr>
+<tr><td><strong>🔄 私域沉淀+复购</strong></td><td>沉淀会员+锁定复购</td><td>收银系统+社群</td><td>扫码领券→核销→自动发复购券</td></tr>
+<tr><td><strong>🍺 烧鸟+精酿联动</strong></td><td>互相导流</td><td>联合套餐+互推</td><td>联合套餐、互相导流、共用私域</td></tr>
 <tr><td><strong>🎉 开业现场活动</strong></td><td>拉升人气+提升客单</td><td>收银系统+台卡</td><td>68元套餐+满赠精酿+发圈赠菜+每日限定烧鸟</td></tr>
-</table>
-</div>`},
+</table></div>`},
 
-{num:'03',title:'开业前线下引流',sub:'装修期二维码铺设 · 提前45天蓄水',
-content:`<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.1 核心逻辑</h3>
-<p>从装修期（开业前45天）开始铺设领券二维码。顾客扫码→输入手机号→领取优惠券（满50减10元）。系统自动记录手机号，该顾客即成为私域会员。券有效期设为45天，覆盖装修期到开业后。开业后顾客到店报手机号核销。</p>
-<div class="grid4">
-<div class="card"><div class="v">45天</div><div class="l">蓄水期时长</div></div>
-<div class="card"><div class="v">1500+</div><div class="l">预计领券人数</div></div>
-<div class="card"><div class="v">60%</div><div class="l">预估核销率</div></div>
-<div class="card"><div class="v">900+</div><div class="l">开业即到店顾客</div></div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.2 装修期触点铺设（开业前45天→15天）</h3>
-<div class="tbl-wrap">
-<table class="tbl">
+{num:'03',title:'开业前线下引流',sub:'装修期二维码铺设 · 提前45天蓄水',badge:'核心策略',
+content:`<p class="strong">🎯 核心逻辑：从装修期（开业前45天）开始铺设领券二维码。顾客扫码→输入手机号→领取优惠券（满50减10元）。系统自动记录手机号，该顾客即成为私域会员。券有效期45天，覆盖装修期到开业后。</p>
+<p><strong>优势：</strong></p>
+<p>· 蓄水期长达45天，累计触达量远超传统3-5天</p>
+<p>· 每天路过人群持续转化，预计领券1000-1500人</p>
+<p>· 装修围挡本身吸引眼球，扫码意愿高</p>
+<p>· 开业时已有大批"已领券、待核销"的准顾客</p>
+<p class="highlight">💡 美团收银后台配置：登录美团智能版收银后台→营销中心→优惠券管理→创建满50减10元券→有效期45天→生成领券二维码</p>
+<p><strong>装修期触点铺设（开业前45天→15天）：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>触点位置</th><th>铺设方式</th><th>预估日扫码</th><th>45天累计</th></tr>
 <tr><td><strong>装修围挡（核心）</strong></td><td>1.2m×0.8m海报+二维码</td><td>15-30人/天</td><td>675-1350人</td></tr>
 <tr><td><strong>周边便利店/小卖部</strong></td><td>收银台桌贴+二维码</td><td>5-10人/天</td><td>225-450人</td></tr>
 <tr><td><strong>精酿空间小黑板</strong></td><td>60cm×40cm立牌（互推合作）</td><td>3-5人/天</td><td>135-225人</td></tr>
-<tr class="hl"><td><strong>合计</strong></td><td>—</td><td>23-45人/天</td><td><strong>1035-2025人</strong></td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.3 预热期冲刺（开业前15天→3天）</h3>
-<div class="tbl-wrap">
-<table class="tbl">
+<tr><td><strong>合计</strong></td><td>—</td><td>23-45人/天</td><td><strong>1035-2025人</strong></td></tr>
+</table></div>
+<p><strong>预热期冲刺（开业前15天→3天）：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>触点位置</th><th>铺设方式</th><th>预估日扫码</th><th>12天累计</th></tr>
 <tr><td><strong>商场出入口拦截</strong></td><td>地推人员+试吃展台</td><td>20-30人/天</td><td>240-360人</td></tr>
 <tr><td><strong>周边社区派发</strong></td><td>DM单+二维码</td><td>10-15人/天</td><td>120-180人</td></tr>
 <tr><td><strong>鲸岚烧肉装修处</strong></td><td>电梯口/楼梯口引导标识</td><td>5-10人/天</td><td>60-120人</td></tr>
-<tr class="hl"><td><strong>合计</strong></td><td>—</td><td>35-55人/天</td><td><strong>420-660人</strong></td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.4 鲸岚烧肉品牌联动引流（最大优势）</h3>
-<div class="tbl-wrap">
-<table class="tbl">
+<tr><td><strong>合计</strong></td><td>—</td><td>35-55人/天</td><td><strong>420-660人</strong></td></tr>
+</table></div>
+<p><strong>总领券量预估：</strong>装修期 + 预热期 = 总计约<strong>1455-2685人</strong>，保守按<strong>1500人</strong>计。</p>
+<p><strong>鲸岚烧肉品牌联动引流（最大优势）：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>引流方式</th><th>具体操作</th><th>预期效果</th></tr>
 <tr><td><strong>烧肉店到店引流</strong></td><td>在鲸岚烧肉收银台/餐桌上放置鲸岚·烧鸟开业DM单+领券二维码</td><td>精准触达高匹配度客群</td></tr>
 <tr><td><strong>烧肉店结账话术</strong></td><td>「我们新店鲸岚·烧鸟就在楼下，扫码领10元券，开业就能用」</td><td>直接转化到店</td></tr>
 <tr><td><strong>品牌社群预热</strong></td><td>在鲸岚烧肉微信群发布新店预告+开业福利+领券链接</td><td>提前蓄水，制造期待</td></tr>
 <tr><td><strong>三楼导流一楼</strong></td><td>三楼鲸岚烧肉装修期间，在电梯口/楼梯口设置引导标识+二维码</td><td>装修期提前蓄水</td></tr>
 <tr><td><strong>品牌通用储值卡</strong></td><td>推出鲸岚品牌通用储值卡，烧鸟+烧肉两店通用</td><td>打通品牌消费闭环</td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">3.5 地推人员话术</h3>
-<p><strong>试吃展台：</strong>「您好，新开的日式烧鸟店，免费尝一下。扫码领10元券，开业后就能用，就在旁边。」</p>
-<p><strong>商场出入口拦截：</strong>「您好，新开的日式烧鸟店，鲸岚烧肉旗下的新品牌，就在旁边。扫码领开业福利，欢迎开业来尝尝！」</p>
-<p><strong>社区派发：</strong>「您好，我们是新开的鲸岚·烧鸟，就在中原·瞰海一楼，主打日式烧鸟。扫码领10元券，开业首周还有8.8折，欢迎有空来尝尝。」</p>`},
+</table></div>
+<p><strong>领券物料文案：</strong></p>
+<p class="highlight">🐋 鲸岚·烧鸟 · 日式烧鸟<br>即将开业 · 敬请期待<br>扫码领10元开业券 🎁 【二维码】<br>领券即自动成为会员，开业后到店报手机号核销<br>地址：中原·瞰海一楼（商场入口旁）</p>
+<p><strong>地推话术：</strong></p>
+<p>试吃展台：「您好，新开的日式烧鸟店，免费尝一下。扫码领10元券，开业后就能用，就在旁边。」</p>
+<p>商场拦截：「您好，新开的日式烧鸟店，鲸岚烧肉旗下的新品牌，就在旁边。扫码领开业福利，欢迎开业来尝尝！」</p>
+<p>社区派发：「您好，我们是新开的鲸岚·烧鸟，就在中原·瞰海一楼，主打日式烧鸟。扫码领10元券，开业首周还有8.8折，欢迎有空来尝尝。」</p>`},
 
-{num:'04',title:'DM单版面设计',sub:'A5双面 · 双二维码 · 日式简约风',
-content:`<div class="grid2">
-<div class="card"><div class="v">A5</div><div class="l">148mm×210mm</div></div>
-<div class="card"><div class="v">157g</div><div class="l">铜版纸</div></div>
-<div class="card"><div class="v">双面</div><div class="l">彩印</div></div>
-<div class="card"><div class="v">日式</div><div class="l">简约设计风格</div></div>
-</div>
+{num:'04',title:'DM单版面设计',sub:'A5双面 · 双二维码 · 日式简约风',badge:'物料',
+content:`<p><strong>规格：</strong>A5（148mm×210mm）· 双面彩印 · 157g铜版纸 · 日式简约风</p>
 <p><strong>正面布局：</strong></p>
-<p><strong>【顶部】</strong> 🐋 鲸岚·烧鸟 · 日式烧鸟 · 中原·瞰海一楼（商场入口旁）</p>
-<p><strong>【中间 双二维码并排】</strong><br>码①：大众点评团购码 — 扫码抢购开业特惠套餐<br>码②：领券私域码 — 扫码免费领10元券（满50元可用）</p>
-<p><strong>【下方优惠栏】</strong><br>· 凭此DM单到店，消费满100元赠精酿空间体验券（合作）<br>· 开业首周，烧鸟全场8.8折<br>· 到店发朋友圈/小红书，赠日式烤年糕一份<br>· 楼上鲸岚烧肉顾客凭消费小票到店享额外9折</p>
-<p><strong>【底部】</strong> 鲸岚烧肉品牌旗下 · 楼上三楼同步装修中</p>`},
+<p class="highlight">【顶部】🐋 鲸岚·烧鸟 · 日式烧鸟 · 中原·瞰海一楼（商场入口旁）<br><br>【中间 双二维码并排】<br>码①：大众点评团购码 — 扫码抢购开业特惠套餐<br>码②：领券私域码 — 扫码免费领10元券（满50元可用）<br><br>【下方优惠栏】<br>· 凭此DM单到店，消费满100元赠精酿啤酒一杯（与精酿空间合作）<br>· 开业首周，烧鸟全场8.8折<br>· 到店发朋友圈/小红书，赠日式烤年糕一份<br>· 楼上鲸岚烧肉顾客凭消费小票到店享额外9折<br><br>【底部】鲸岚烧肉品牌旗下 · 楼上三楼同步装修中</p>`},
 
-{num:'05',title:'全渠道会员自动沉淀',sub:'扫码点餐 · 团购核销 · 收银台引导',
-content:`<p>美团智能版收银系统自动记录会员的五大场景：</p>
-<div class="tbl-wrap">
-<table class="tbl">
+{num:'05',title:'开业后全渠道会员自动沉淀',sub:'扫码点餐 / 团购核销 / 收银台引导',badge:'私域',
+content:`<p><strong>美团智能版收银的自动记录场景：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>消费场景</th><th>会员记录方式</th><th>说明</th></tr>
 <tr><td><strong>扫码点餐</strong></td><td>顾客扫码即授权手机号，自动成为会员</td><td>最自然的沉淀方式</td></tr>
 <tr><td><strong>团购核销</strong></td><td>核销时输入手机号，系统自动记录</td><td>核销即会员</td></tr>
 <tr><td><strong>领券到店核销</strong></td><td>装修期领券顾客到店报手机号核销</td><td>装修期蓄水转化</td></tr>
 <tr><td><strong>收银台直接消费</strong></td><td>收银员引导报手机号加入会员</td><td>需话术引导</td></tr>
 <tr><td><strong>美团外卖</strong></td><td>外卖订单自动关联手机号</td><td>覆盖外卖场景</td></tr>
-</table>
-</div>
-<p><strong>收银台引导策略：</strong>「您还没加入会员吧？报一下手机号，以后消费有积分，还会不定期送优惠券。今天加入的话，我额外送您一份小菜。」</p>
+</table></div>
+<p><strong>收银台引导话术：</strong>「您还没加入会员吧？报一下手机号，以后消费有积分，还会不定期送优惠券。今天加入的话，我额外送您一份小菜。」</p>
 <p><strong>激励措施：</strong>每成功引导一位顾客加入会员，奖励收银员1元/人（月度结算）。</p>
-<p class="highlight"><strong>⚠️ 私域风险防范：企业微信备份策略</strong><br>
-所有会员数据仅存在美团收银系统存在风险——一旦美团政策变化或账号出问题，私域资产将全部暴露。建议在核销环节同步引导顾客添加企业微信：<br>
-① <strong>核销话术增加加微环节：</strong>「您的券已核销，加一下我们企业微信，以后新品上市、限时活动都会第一时间通知您，还有专属福利哦」<br>
-② <strong>企业微信二维码台卡：</strong>与点星码、收藏码并排放置，收银员每引导一人加微奖励0.5元<br>
-③ <strong>双轨并行：</strong>美团收银系统负责自动化发券和消费记录，企业微信负责日常触达和活动推送，形成双重保险</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">首月预计自动沉淀会员</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>来源</th><th>预估人数</th><th>转化率</th><th>说明</th></tr>
-<tr><td><strong>装修期领券核销</strong></td><td>600-900人</td><td>60%核销率</td><td>1500领券×60%</td></tr>
-<tr><td><strong>扫码点餐自动沉淀</strong></td><td>300-500人</td><td>—</td><td>开业首月自然客流</td></tr>
-<tr><td><strong>团购核销沉淀</strong></td><td>200-300人</td><td>—</td><td>点评+抖音团购</td></tr>
-<tr><td><strong>收银台引导</strong></td><td>100-200人</td><td>—</td><td>收银员话术引导</td></tr>
-<tr class="hl"><td><strong>首月合计</strong></td><td><strong>1200-1900人</strong></td><td>—</td><td>保守按1400人计</td></tr>
-</table>
+<p><strong>首月预计自动沉淀会员：</strong></p>
+<div class="grid2">
+<div class="card"><div class="v">600-900人</div><div class="l">装修期领券核销</div></div>
+<div class="card"><div class="v">300-500人</div><div class="l">扫码点餐自动沉淀</div></div>
+<div class="card"><div class="v">200-300人</div><div class="l">团购核销沉淀</div></div>
+<div class="card"><div class="v">100-200人</div><div class="l">收银台引导</div></div>
+<div class="card" style="border-color:var(--border2)"><div class="v" style="color:var(--fire)">1400人</div><div class="l">首月合计（保守）</div></div>
 </div>`},
 
-{num:'06',title:'复购券与二次营销',sub:'自动化发券 · 5天唤醒 · 15天流失挽回',
+{num:'06',title:'复购券与二次营销策略',sub:'自动化发券 / 5天唤醒 / 15天挽回',badge:'复购',
 content:`<p>利用美团收银的"会员筛选+批量发券"功能，对已消费会员在特定时间节点推送复购券，驱动二次到店。</p>
-<div class="tbl-wrap">
-<table class="tbl">
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>时间节点</th><th>触发条件</th><th>券内容</th><th>目标</th></tr>
 <tr><td><strong>消费后次日</strong></td><td>首单完成自动触发</td><td>满80减15元复购券</td><td>趁热打铁，7天有效</td></tr>
 <tr><td><strong>5天未复购</strong></td><td>系统追踪未到店</td><td>满60减10元唤醒券</td><td>唤醒沉睡，15天有效</td></tr>
 <tr><td><strong>7天沉睡</strong></td><td>首单后7天未到店</td><td>「想你了」满30减8元</td><td>轻度唤醒</td></tr>
 <tr><td><strong>15天流失</strong></td><td>15天未到店</td><td>满50减15元大额券</td><td>挽回流失客户</td></tr>
 <tr><td><strong>每月会员日</strong></td><td>每月8号固定推送</td><td>全场8.8折券</td><td>培养固定消费习惯</td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">与精酿空间的联动合作</h3>
-<div class="tbl-wrap">
-<table class="tbl">
+</table></div>
+<p><strong>与精酿空间的联动合作：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>合作方式</th><th>具体操作</th><th>说明</th></tr>
 <tr><td><strong>联合套餐</strong></td><td>推出「烧鸟+精酿」联名套餐，一票两店使用</td><td>顾客购买后可在两店分别消费</td></tr>
-<tr><td><strong>互相导流</strong></td><td>鲸岚·烧鸟消费满100元赠精酿空间体验券</td><td>精酿空间顾客到店赠鲸岚·烧鸟9折券</td></tr>
+<tr><td><strong>互相导流</strong></td><td>鲸岚·烧鸟消费满100元赠精酿空间体验券；精酿空间顾客到店赠鲸岚·烧鸟9折券</td><td>双向引流</td></tr>
 <tr><td><strong>共用私域</strong></td><td>两店共用微信群，联合推送活动信息</td><td>扩大社群覆盖面</td></tr>
 <tr><td><strong>精酿一条街应对</strong></td><td>未来对面精酿一条街形成后，烧鸟+精酿组合形成差异化</td><td>纯精酿酒吧无法提供的用餐体验</td></tr>
-</table>
-</div>`},
+</table></div>`},
 
-{num:'07',title:'开业现场活动',sub:'68元套餐 · 每日限定烧鸟 · 精酿联动',
-content:`<div class="tbl-wrap">
-<table class="tbl">
+{num:'07',title:'开业现场活动设计',sub:'基础活动 / 烧鸟专项 / 精酿联动',badge:'活动',
+content:`<p><strong>基础活动组合：</strong></p>
+<div class="tbl-wrap"><table class="tbl">
 <tr><th>活动</th><th>内容</th><th>目的</th><th>限定</th></tr>
 <tr><td><strong>68元尝鲜套餐</strong></td><td>双人烧鸟套餐（原价128元）</td><td>聚拢人气</td><td>前3天限量</td></tr>
 <tr><td><strong>全场8.8折</strong></td><td>开业首周烧鸟全场8.8折</td><td>降低尝鲜门槛</td><td>仅限首周</td></tr>
 <tr><td><strong>满100赠精酿体验券</strong></td><td>消费满100元赠精酿空间体验券</td><td>带动烧鸟+精酿联动</td><td>开业首月</td></tr>
 <tr><td><strong>发圈赠年糕</strong></td><td>发朋友圈/小红书赠日式烤年糕</td><td>裂变传播</td><td>开业首周</td></tr>
 <tr><td><strong>烧肉老客专属</strong></td><td>鲸岚烧肉顾客凭小票额外9折</td><td>品牌联动</td><td>开业首月</td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">烧鸟专项活动</h3>
+</table></div>
+<p><strong>烧鸟专项活动：</strong></p>
 <div class="feat">
-<div class="feat-card"><div class="ic">🔥</div><h4>方案A：每日限定烧鸟</h4><p>每日一款限定烧鸟串（紫苏鸡腿肉、明太子鸡肉棒等），仅限20份/天，售完即止。制造稀缺感，驱动每日到店打卡。</p></div>
-<div class="feat-card"><div class="ic">🏆</div><h4>方案B：烧鸟大满贯</h4><p>15串不同部位拼盘，原价168元开业特惠128元。提升客单价，展示烧鸟品类丰富度。</p></div>
-<div class="feat-card"><div class="ic">🍻</div><h4>方案C：精酿联名套餐</h4><p>购买烧鸟套餐+19.9元获得精酿空间品鉴券。打通两店，互相导流。</p></div>
+<div class="feat-card"><div class="ic">🔥</div><h4>每日限定烧鸟</h4><p>每日一款限定烧鸟串（紫苏鸡腿肉、明太子鸡肉棒等），仅限20份，售完即止。制造稀缺感，驱动每日到店打卡。</p></div>
+<div class="feat-card"><div class="ic">🏆</div><h4>烧鸟大满贯拼盘</h4><p>15串不同部位拼盘，原价168元开业特惠128元。提升客单价，展示烧鸟品类丰富度。</p></div>
+<div class="feat-card"><div class="ic">🍺</div><h4>精酿+烧鸟联名套餐</h4><p>购买烧鸟套餐+19.9元即可获得精酿空间品鉴券。打通两店，互相导流。</p></div>
 </div>`},
 
-{num:'08',title:'精酿空间专项运营',sub:'引流策略 · 联动合作 · 竞争应对',
-content:`<p>精酿空间为合伙经营，与鲸岚·烧鸟分属不同品牌。未来对面外滩将形成精酿一条街，需提前建立竞争优势。精酿的高颜值属性在小红书和抖音上传播潜力极大，建议适当加码预算。</p>
-<div class="feat">
-<div class="feat-card"><div class="ic">🍺</div><h4>精酿品鉴套餐</h4><p>19.9元精酿品鉴套餐（3杯不同口味），降低尝鲜门槛</p></div>
-<div class="feat-card"><div class="ic">📅</div><h4>每周品鉴会</h4><p>每周五精酿品鉴会（付费预约制），打造社群粘性</p></div>
-<div class="feat-card"><div class="ic">💳</div><h4>会员储值</h4><p>充300赠50，充500赠120，锁定复购</p></div>
-<div class="feat-card"><div class="ic">🎉</div><h4>包场服务</h4><p>精酿生日派对/团建包场服务，拓展企业客户</p></div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">精酿预算加码建议</h3>
-<p>原方案精酿预算偏低（小红书博主仅500元、抖音达人仅1000元），精酿的颜值内容在小红书传播潜力极大，建议调整：</p>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>渠道</th><th>原预算</th><th>建议调整</th><th>调整理由</th></tr>
-<tr><td><strong>小红书探店博主</strong></td><td>500元</td><td><strong>2,000元</strong></td><td>精酿的高颜值+氛围感内容在小红书天然适合种草，加码后可覆盖5-8位本地博主</td></tr>
-<tr><td><strong>抖音达人探店</strong></td><td>1,000元</td><td><strong>2,500元</strong></td><td>精酿打酒过程+泡沫特写+顾客聚会场景，抖音同城流量转化率高</td></tr>
-<tr><td><strong>精酿品鉴会物料</strong></td><td>—</td><td><strong>500元</strong></td><td>每周五品鉴会配套物料（杯垫、品鉴卡、拍照道具）</td></tr>
-<tr class="hl"><td><strong>精酿合计</strong></td><td><strong>1,500元</strong></td><td><strong>5,000元</strong></td><td>加码后精酿预算占比从9%提升至20%，更合理</td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">与鲸岚·烧鸟的联动合作</h3>
+{num:'08',title:'精酿空间专项运营',sub:'引流策略 / 联动合作 / 竞争应对',badge:'联动',
+content:`<p>精酿空间为合伙经营，与鲸岚·烧鸟分属不同品牌。未来对面外滩将形成精酿一条街，需提前建立竞争优势。</p>
+<p><strong>精酿空间引流策略：</strong></p>
+<p>· 19.9元精酿品鉴套餐（3杯不同口味），降低尝鲜门槛</p>
+<p>· 每周五精酿品鉴会（付费预约制），打造社群粘性</p>
+<p>· 精酿会员储值：充300赠50，充500赠120，锁定复购</p>
+<p>· 精酿生日派对/团建包场服务，拓展企业客户</p>
+<p><strong>与鲸岚·烧鸟的联动合作：</strong></p>
 <p>· 联合套餐：推出「烧鸟+精酿」联名套餐，一票两店使用</p>
 <p>· 互相导流：鲸岚·烧鸟消费满100元赠精酿空间体验券；精酿空间顾客到店赠鲸岚·烧鸟9折券</p>
 <p>· 共用私域：两店共用微信群，联合推送活动信息</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">精酿一条街竞争应对</h3>
+<p><strong>精酿一条街竞争应对：</strong></p>
 <p>· 提前建立精酿社群，积累种子用户，打造社群壁垒</p>
-<p>· 打造「烧鸟+精酿」差异化组合，区别于纯精酿酒吧——这是精酿一条街其他纯酒吧无法提供的用餐体验</p>
+<p>· 打造「烧鸟+精酿」差异化组合——这是精酿一条街其他纯酒吧无法提供的用餐体验</p>
 <p>· 培养精酿KOC客户，形成口碑传播</p>
 <p>· 定期举办精酿品鉴课/酿酒体验活动，建立专业认知</p>`},
 
-{num:'09',title:'大众点评运营',sub:'合规冲榜 · 关键词优化 · 评价积累',
-content:`<p><strong>平台机制理解（2026年核心变化）：</strong>严厉打击"赠菜换好评"，诱导评价会导致店铺星级下降。"真实评价数+近30天回复率+顾客证言质量"成排名核心。一条带图、带细节的真实评价权重是简单好评的5倍。</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">执行动作</h3>
-<div class="feat">
-<div class="feat-card"><div class="ic">🎯</div><h4>动作一：内测体验</h4><p>开业前2天邀请30-50人免费体验，要求发布带图真实评价。食材成本约500元。</p></div>
-<div class="feat-card"><div class="ic">📝</div><h4>动作二：合规引导</h4><p>结账后引导扫码评价（不提赠品）。24小时内回复差评。高质量评价点赞互动。</p></div>
-<div class="feat-card"><div class="ic">🔑</div><h4>动作三：关键词优化</h4><p>引导评价包含：烧鸟拼盘、鸡腿肉、提灯、炭火香气、紫苏鸡腿肉、明太子鸡肉棒等。</p></div>
-<div class="feat-card"><div class="ic">🏆</div><h4>动作四：冲击新店榜</h4><p>区域新店榜Top10→南开区烧烤榜Top5→冲刺「必吃榜」「热门榜」双榜上榜。</p></div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">KPI</h3>
-<div class="grid4">
+{num:'09',title:'大众点评运营策略',sub:'合规运营 / 新店榜冲刺 / 关键词优化',badge:'平台',
+content:`<p><strong>平台机制（2026年）：</strong>严厉打击"赠菜换好评"。"真实评价数+近30天回复率+顾客证言质量"成排名核心。带图带细节的真实评价权重是简单好评的5倍。新店有流量倾斜。</p>
+<p><strong>执行动作：</strong></p>
+<p><strong>① 开业前内测+橙V免费体验：</strong>开业前2天，邀请30-50人免费体验，要求发布带图真实评价。食材成本约500元。</p>
+<p><strong>② 合规引导自然评价：</strong>每桌结账后服务员引导扫码评价（不提任何赠品）。重点维护差评，24小时内回复致歉+补偿方案。</p>
+<p><strong>③ 关键词密度优化：</strong>引导评价中包含：烧鸟拼盘、鸡腿肉、提灯、酱烤盐烤、炭火香气、紫苏鸡腿肉、明太子鸡肉棒、日式前菜、环境安静、出餐快。</p>
+<p><strong>④ 冲击新店榜：</strong>申请「新店推荐」资质认证。冲刺路径：区域新店榜Top10→南开区烧烤榜Top5→「必吃榜」「热门榜」双榜上榜。</p>
+<p><strong>KPI：</strong></p>
+<div class="grid2">
 <div class="card"><div class="v">4.0星</div><div class="l">首月评分</div></div>
 <div class="card"><div class="v">100条+</div><div class="l">首月评价</div></div>
 <div class="card"><div class="v">500个</div><div class="l">首月收藏</div></div>
 <div class="card"><div class="v">70%</div><div class="l">团购核销率</div></div>
 </div>`},
 
-{num:'10',title:'抖音运营',sub:'达人矩阵 · 本地推投流 · 团购组品',
-content:`<p><strong>平台机制理解（2026年核心变化）：</strong>算法从"内容互动权重"转向"内容质量×交易效率×POI资产"三维评分。"有效转化率"权重升至42%。同城搜索流量占比31%。</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">执行动作</h3>
-<div class="feat">
-<div class="feat-card"><div class="ic">🎬</div><h4>动作一：原生内容矩阵</h4><p>每天发布：炭火特写+烧鸟滋滋冒油+顾客真实用餐场景。添加POI+DOU+同城定向。</p></div>
-<div class="feat-card"><div class="ic">🤝</div><h4>动作二：达人探店矩阵</h4><p>总预算6000元。选择本地美食类达人，视频包含POI定位+团购链接。</p></div>
-<div class="feat-card"><div class="ic">📍</div><h4>动作三：本地推投流</h4><p>地理围栏3公里，人群18-35岁美食兴趣。首周1000元→次周500元→三四周各250元。</p></div>
-<div class="feat-card"><div class="ic">🛒</div><h4>动作四：团购组品</h4><p>68元双人套餐（与点评一致，便于统一核销）。</p></div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">KPI</h3>
-<div class="grid3">
+{num:'10',title:'抖音运营策略',sub:'达人矩阵 / 本地推投流 / 团购组品',badge:'平台',
+content:`<p><strong>平台机制（2026年）：</strong>算法转向"内容质量×交易效率×POI资产"三维评分。"有效转化率"权重升至42%。同城搜索流量占比31%。</p>
+<p><strong>执行动作：</strong></p>
+<p><strong>① 真实原生内容矩阵（每天发布）：</strong>炭火特写+烧鸟滋滋冒油画面+环境氛围；顾客真实用餐场景+套餐展示。必须添加POI位置，启用"DOU+同城定向"。</p>
+<p><strong>② 达人探店矩阵投放：</strong>总预算6000元。选择本地美食类达人，要求视频包含POI定位+团购链接。</p>
+<p><strong>③ 本地推精准投流：</strong>地理围栏门店周边3公里，人群18-35岁美食/日料兴趣。开业前7天开始，首周1000元，次周500元，第三四周各250元→总计2000元。</p>
+<p><strong>④ 抖音团购组品：</strong>68元双人套餐（与点评一致，便于统一核销）。</p>
+<p><strong>KPI：</strong></p>
+<div class="grid2">
 <div class="card"><div class="v">50%</div><div class="l">团购核销率</div></div>
 <div class="card"><div class="v">8-10条</div><div class="l">达人探店视频</div></div>
 <div class="card"><div class="v">5万+</div><div class="l">POI曝光量</div></div>
-</div>
-<p class="highlight"><strong>⚠️ 本地推ROI目标调整：</strong>原方案ROI≥1.5偏保守。日式烧烤+精酿品类在本地推上通常能跑到2.5-3，首月目标应拉高至<strong>ROI≥2.5</strong>，倒逼执行动作更精准——达人视频发布后立即追投高互动内容，对完播率＞45%、评论率＞3%的视频即时加投，确保每一分投流预算都花在刀刃上。</p>`},
+</div>`},
 
-{num:'11',title:'小红书运营',sub:'矩阵号 · 4类内容模板 · UGC激发',
-content:`<p><strong>平台机制理解（2026年核心变化）：</strong>流量极度偏向"真实、就近、有用、可抄"的同城内容。日式烧鸟的高颜值属性，与小红书图文调性天然契合。</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">四种高转化内容模板</h3>
-<div class="feat">
-<div class="feat-card"><div class="ic">🗺️</div><h4>① 就近懒人攻略</h4><p>《天津中原商圈打工人下班觅食指南·烧鸟》</p></div>
-<div class="feat-card"><div class="ic">📸</div><h4>② 真实到店体验</h4><p>原相机直出：进店→就座→上菜→开吃→买单</p></div>
-<div class="feat-card"><div class="ic">🎯</div><h4>③ 场景刚需套餐</h4><p>绑定场景做内容，挂载团购链接</p></div>
-<div class="feat-card"><div class="ic">💡</div><h4>④ 避坑干货</h4><p>「别再说烧鸟就是鸡肉串了！不同部位怎么点才专业？」</p></div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">执行动作</h3>
-<p><strong>矩阵号策略：</strong>品牌号（企业号）发布官方内容 + 员工号/素人号真实日常内容</p>
-<p><strong>POI设置：</strong>完成企业号认证，开通团购功能。套餐标题包含关键词（如"天津日式烧鸟·双人尝鲜套餐"）。探店博主预算：2500元。</p>
-<p><strong>UGC激发：</strong>顾客拍照时主动让位置→用餐结束后引导分享→社群发起"鲸岚探店日记"活动，优秀笔记送50元券。</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">KPI</h3>
-<div class="grid3">
+{num:'11',title:'小红书运营策略',sub:'矩阵号 / 4类模板 / UGC激发',badge:'平台',
+content:`<p><strong>平台机制（2026年）：</strong>流量极度偏向"真实、就近、有用、可抄"的同城内容。日式烧鸟的高颜值属性与小红书图文调性天然契合。</p>
+<p><strong>执行动作：</strong></p>
+<p><strong>① 矩阵号策略：</strong>品牌号（企业号）发布官方内容；员工号/素人号发布真实日常内容，原相机直出。</p>
+<p><strong>② 四种高转化内容模板：</strong></p>
+<p>· 就近懒人攻略：《天津中原商圈打工人下班觅食指南·烧鸟》</p>
+<p>· 真实到店体验（原相机）：不修图不滤镜，原相机直出</p>
+<p>· 场景刚需套餐：绑定场景做内容，挂载团购链接</p>
+<p>· 避坑干货：「别再说烧鸟就是鸡肉串了！不同部位怎么点才专业？」</p>
+<p><strong>③ POI设置与博主矩阵：</strong>完成企业号认证，开通团购功能。探店博主总预算2500元。</p>
+<p><strong>④ 老顾客UGC激发：</strong>顾客拍照时主动让位置，用餐结束后引导分享。在社群发起"鲸岚探店日记"UGC活动，优秀笔记送50元券。</p>
+<p><strong>KPI：</strong></p>
+<div class="grid2">
 <div class="card"><div class="v">15篇+</div><div class="l">品牌号笔记</div></div>
 <div class="card"><div class="v">10篇+</div><div class="l">UGC笔记</div></div>
 <div class="card"><div class="v">3万+</div><div class="l">POI浏览量</div></div>
 </div>`},
 
-{num:'12',title:'收银系统与话术标准化',sub:'全链路流程 · 五句话术 · 台卡布置',
-content:`<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">收银系统全链路流程</h3>
-<div class="timeline">
-<div class="tl-item"><div class="phase">步骤一</div><h4>后台营销设置</h4><p>创建满50元可用10元通用券，生成领券二维码</p></div>
-<div class="tl-item"><div class="phase">步骤二</div><h4>装修期铺设</h4><p>围挡/便利店/试吃台铺设二维码，顾客扫码领券</p></div>
-<div class="tl-item"><div class="phase">步骤三</div><h4>到店核销</h4><p>报手机号→收银员查询→系统一键核销→自动留存会员</p></div>
-<div class="tl-item"><div class="phase">步骤四</div><h4>复购券自动推送</h4><p>消费后次日系统自动发复购券，5天未复购再次触达</p></div>
-<div class="tl-item"><div class="phase">步骤五</div><h4>私域+口碑引导</h4><p>收银台摆放加群二维码+官方点星码+收藏二维码</p></div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">收银员五句话术标准化</h3>
-<div class="slogan-box">
-<div class="slogan-item"><div class="bd">① 核销</div>「您好，您的优惠券已核销，欢迎下次光临。」</div>
-<div class="slogan-item"><div class="bd">② 满赠</div>「今天消费已满100元，赠您一张精酿空间体验券，欢迎去隔壁坐坐。」</div>
-<div class="slogan-item"><div class="bd">③ 会员</div>「您还没加入会员吧？报一下手机号，今天加入额外送您一份小菜。」</div>
-<div class="slogan-item"><div class="bd">④ 口碑</div>「您吃得满意的话，方便的话帮我们点个星、收藏一下，非常感谢。」</div>
-<div class="slogan-item"><div class="bd">⑤ 联动</div>「楼上鲸岚烧肉也在装修中，开业后凭我们小票到楼上也有优惠哦。」</div>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">台卡布置</h3>
+{num:'12',title:'收银系统配合流程与话术标准化',sub:'全链路流程 / 五句话术 / 台卡布置',badge:'执行',
+content:`<p><strong>收银系统全链路流程：</strong></p>
+<p>步骤一：后台营销设置 — 创建满50元可用10元通用券，生成领券二维码</p>
+<p>步骤二：装修期铺设 — 围挡/便利店/试吃台铺设二维码，顾客扫码领券</p>
+<p>步骤三：顾客到店核销 — 报手机号→收银员查询→系统一键核销→自动留存会员</p>
+<p>步骤四：复购券自动推送 — 消费后次日系统自动发复购券，5天未复购再次触达</p>
+<p>步骤五：私域加群沉淀 — 收银台摆放加群二维码及红包规则立牌</p>
+<p>步骤六：合规口碑引导 — 固定摆放官方点星、收藏二维码</p>
+<p><strong>收银员五句话术标准化：</strong></p>
+<p class="highlight">1. 核销话术：「您好，您的优惠券已核销，欢迎下次光临。」<br>2. 满赠话术：「今天消费已满100元，赠您一张精酿空间体验券，欢迎去隔壁坐坐。」<br>3. 会员引导：「您还没加入会员吧？报一下手机号，以后消费有积分，今天加入额外送您一份小菜。」<br>4. 口碑引导：「您吃得满意的话，方便的话帮我们点个星、收藏一下，非常感谢。」<br>5. 品牌联动：「楼上鲸岚烧肉也在装修中，开业后凭我们小票到楼上也有优惠哦。」</p>
+<p><strong>台卡布置：</strong></p>
 <p>台卡①：消费满100元赠精酿空间体验券（与精酿空间合作）</p>
 <p>台卡②：社群加群二维码+新人红包规则</p>
 <p>台卡③：鲸岚烧肉品牌联动——凭小票互享优惠</p>
 <p>台卡④：官方点星码+收藏二维码（合规摆放）</p>`},
 
-{num:'13',title:'活动节奏总览',sub:'蓄水期 → 预热期 → 爆发期 → 积累期 → 稳定期',
+{num:'13',title:'活动节奏总览',sub:'蓄水期 → 预热期 → 爆发期 → 积累期 → 稳定期',badge:'时间轴',
 content:`<div class="timeline">
-<div class="tl-item"><div class="phase">蓄水期</div><div class="time">开业前45-15天</div><h4>装修围挡铺设二维码</h4><p>便利店桌贴+精酿空间互推+鲸岚烧肉社群预热。目标：累计领券1000-1500人。</p></div>
-<div class="tl-item"><div class="phase">预热期</div><div class="time">开业前15-3天</div><h4>商场出入口拦截+社区派发</h4><p>鲸岚烧肉装修处导流+KOC探店。目标：累计领券500-700人。</p></div>
-<div class="tl-item"><div class="phase">爆发期</div><div class="time">开业1-7天</div><h4>68元套餐核销+全场8.8折</h4><p>发圈活动+每日限定烧鸟+内测评价发布。目标：拉升人气，积累100+评价。</p></div>
-<div class="tl-item"><div class="phase">积累期</div><div class="time">开业2-4周</div><h4>复购券自动化+精酿联动</h4><p>精酿品鉴会+社群日常运营+达人探店发布。目标：沉淀私域，提升复购。</p></div>
-<div class="tl-item"><div class="phase">稳定期</div><div class="time">开业2-3个月</div><h4>私域精细化运营</h4><p>精酿一条街竞争应对+三平台常态化运营+品牌联动。目标：日均单量稳定，复购率20%+。</p></div>
+<div class="tl-item"><div class="tl-phase">🏗️ 蓄水期</div><div class="tl-time">开业前45天 → 15天</div><div class="tl-title">装修围挡铺设二维码 + 便利店桌贴 + 鲸岚烧肉社群预热 + 精酿空间互推</div><div class="tl-desc">目标：累计领券1000-1500人</div></div>
+<div class="tl-item"><div class="tl-phase">🔥 预热期</div><div class="tl-time">开业前15天 → 3天</div><div class="tl-title">商场出入口拦截 + 社区派发 + 鲸岚烧肉装修处导流 + KOC探店</div><div class="tl-desc">目标：累计领券500-700人</div></div>
+<div class="tl-item"><div class="tl-phase">🎉 爆发期</div><div class="tl-time">开业1-7天</div><div class="tl-title">68元套餐核销 + 全场8.8折 + 发圈活动 + 每日限定烧鸟 + 内测评价发布</div><div class="tl-desc">目标：拉升人气、积累100+评价</div></div>
+<div class="tl-item"><div class="tl-phase">📈 积累期</div><div class="tl-time">开业2-4周</div><div class="tl-title">复购券自动化 + 精酿联动 + 精酿品鉴会 + 社群日常运营 + 达人探店发布</div><div class="tl-desc">目标：沉淀私域、提升复购</div></div>
+<div class="tl-item"><div class="tl-phase">🌟 稳定期</div><div class="tl-time">开业2-3个月</div><div class="tl-title">私域精细化运营 + 精酿一条街竞争应对 + 三平台常态化运营 + 品牌联动</div><div class="tl-desc">目标：日均单量稳定、复购率20%+</div></div>
 </div>`},
 
-{num:'14',title:'预算汇总',sub:'三档可选 · 丰俭由人',
-content:`<div class="budget-tabs" id="budgetTabs">
-<button class="budget-tab active" data-tab="basic">基础版 ¥3,000</button>
-<button class="budget-tab" data-tab="standard">标准版 ¥8,000</button>
-<button class="budget-tab" data-tab="full">完整版 ¥15,600</button>
+{num:'14',title:'预算汇总',sub:'基础版 / 标准版 / 完整版 三档可选',badge:'预算',
+content:`<p>注：让利成本（优惠券核销让利约6800元）非现金支出，是利润让渡。以下为现金支出。</p>
+<div class="budget-tabs" id="budgetTabs">
+  <button class="budget-tab active" onclick="switchBudget('basic')">💰 基础版 ¥3,000</button>
+  <button class="budget-tab" onclick="switchBudget('standard')">⭐ 标准版 ¥8,000</button>
+  <button class="budget-tab" onclick="switchBudget('full')">🚀 完整版 ¥15,600</button>
 </div>
-<div class="budget-panel active" id="panel-basic">
+<div class="budget-content active" id="budgetBasic">
 <div class="tbl-wrap"><table class="tbl">
 <tr><th>项目</th><th>费用（元）</th><th>说明</th></tr>
 <tr><td>装修期二维码物料（围挡+桌贴）</td><td>300</td><td>设计+印刷</td></tr>
@@ -569,188 +564,111 @@ content:`<div class="budget-tabs" id="budgetTabs">
 <tr><td>地推派发人工</td><td>600</td><td>3人×3天</td></tr>
 <tr><td>开业内测体验（食材成本）</td><td>500</td><td>30-50人免费体验</td></tr>
 <tr><td>开业赠品（年糕+精酿体验券）</td><td>1000</td><td>开业首周活动配套</td></tr>
-<tr class="hl"><td><strong>基础版合计</strong></td><td><strong>3,000</strong></td><td>不含让利成本</td></tr>
 </table></div>
+<div class="budget-total"><div class="v">¥3,000</div><div class="l">基础版 · 最低配置</div></div>
 </div>
-<div class="budget-panel" id="panel-standard">
+<div class="budget-content" id="budgetStandard">
 <div class="tbl-wrap"><table class="tbl">
 <tr><th>项目</th><th>费用（元）</th><th>说明</th></tr>
-<tr><td>基础版全部</td><td>3,000</td><td>含基础版所有项目</td></tr>
-<tr><td>KOC探店费用</td><td>1,500</td><td>3-5位本地美食KOC</td></tr>
-<tr><td>小红书矩阵号运营</td><td>1,000</td><td>品牌号+素人号内容制作</td></tr>
-<tr><td>抖音本地推投流</td><td>2,000</td><td>开业首周+次周投流</td></tr>
+<tr><td>基础版全部</td><td>3000</td><td>含基础版所有项目</td></tr>
+<tr><td>KOC探店费用</td><td>1500</td><td>3-5位本地美食KOC</td></tr>
+<tr><td>小红书矩阵号运营</td><td>1000</td><td>品牌号+素人号内容制作</td></tr>
+<tr><td>抖音本地推投流</td><td>2000</td><td>开业首周+次周投流</td></tr>
 <tr><td>社群运营+红包</td><td>500</td><td>新人红包+活动激励</td></tr>
-<tr class="hl"><td><strong>标准版合计</strong></td><td><strong>8,000</strong></td><td>不含让利成本</td></tr>
 </table></div>
+<div class="budget-total"><div class="v">¥8,000</div><div class="l">标准版 · 推荐配置</div></div>
 </div>
-<div class="budget-panel" id="panel-full">
+<div class="budget-content" id="budgetFull">
 <div class="tbl-wrap"><table class="tbl">
 <tr><th>项目</th><th>费用（元）</th><th>说明</th></tr>
-<tr><td>标准版全部</td><td>8,000</td><td>含标准版所有项目</td></tr>
-<tr><td>抖音达人探店矩阵</td><td>6,000</td><td>8-10位本地美食达人</td></tr>
-<tr><td>小红书探店博主</td><td>1,500</td><td>3-5位本地博主</td></tr>
+<tr><td>标准版全部</td><td>8000</td><td>含标准版所有项目</td></tr>
+<tr><td>抖音达人探店矩阵</td><td>6000</td><td>8-10位本地美食达人</td></tr>
+<tr><td>小红书探店博主</td><td>1500</td><td>3-5位本地博主</td></tr>
 <tr><td>品牌通用储值卡制作</td><td>100</td><td>烧鸟+烧肉两店通用</td></tr>
-<tr class="hl"><td><strong>完整版合计</strong></td><td><strong>15,600</strong></td><td>不含让利成本约6,800元</td></tr>
 </table></div>
-</div>
-<p class="dim">注：让利成本（优惠券核销让利约6,800元）非现金支出，是利润让渡。实际现金支出按所选档位执行。</p>`},
+<div class="budget-total"><div class="v">¥15,600</div><div class="l">完整版 · 全渠道覆盖</div></div>
+</div>`},
 
-{num:'15',title:'KPI总览',sub:'评分 · 评价 · 收藏 · 核销率 · 营收',
-content:`<div class="kpi-grid">
-<div class="kpi-card"><div class="cat">大众点评</div><div class="val">4.0星</div><div class="lbl">首月评分</div></div>
-<div class="kpi-card"><div class="cat">大众点评</div><div class="val">100条+</div><div class="lbl">首月评价</div></div>
-<div class="kpi-card"><div class="cat">大众点评</div><div class="val">500个</div><div class="lbl">首月收藏</div></div>
-<div class="kpi-card"><div class="cat">大众点评</div><div class="val">70%</div><div class="lbl">团购核销率</div></div>
-<div class="kpi-card"><div class="cat">抖音</div><div class="val">50%</div><div class="lbl">团购核销率</div></div>
-<div class="kpi-card"><div class="cat">抖音</div><div class="val">8-10条</div><div class="lbl">达人探店视频</div></div>
-<div class="kpi-card"><div class="cat">小红书</div><div class="val">15篇+</div><div class="lbl">品牌号笔记</div></div>
-<div class="kpi-card"><div class="cat">小红书</div><div class="val">10篇+</div><div class="lbl">UGC笔记</div></div>
-<div class="kpi-card"><div class="cat">私域</div><div class="val">1,400人</div><div class="lbl">首月会员</div></div>
-<div class="kpi-card"><div class="cat">私域</div><div class="val">20%</div><div class="lbl">首月复购率</div></div>
-<div class="kpi-card" style="border-color:var(--fire)"><div class="cat" style="color:var(--fire)">营收</div><div class="val" style="color:var(--fire)">¥8万</div><div class="lbl">鲸岚·烧鸟首月</div></div>
-<div class="kpi-card" style="border-color:var(--amber)"><div class="cat" style="color:var(--amber)">季度</div><div class="val" style="color:var(--amber)">¥15万</div><div class="lbl">季度月均目标</div></div>
-</div>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>维度</th><th>指标</th><th>首月目标</th><th>季度目标</th></tr>
-<tr><td rowspan="3"><strong>大众点评</strong></td><td>评分</td><td>4.0星</td><td>4.3星+</td></tr>
-<tr><td>评价数</td><td>100条+</td><td>300条+</td></tr>
-<tr><td>收藏打卡</td><td>500个</td><td>1,000个</td></tr>
-<tr><td rowspan="2"><strong>抖音</strong></td><td>团购核销率</td><td>50%</td><td>60%+</td></tr>
-<tr><td>达人探店视频</td><td>8-10条</td><td>20条+</td></tr>
-<tr><td rowspan="2"><strong>小红书</strong></td><td>品牌号笔记</td><td>15篇+</td><td>40篇+</td></tr>
-<tr><td>UGC笔记</td><td>10篇+</td><td>30篇+</td></tr>
-<tr><td rowspan="2"><strong>私域</strong></td><td>会员总数</td><td>1,400人</td><td>3,000人</td></tr>
-<tr><td>复购率</td><td>20%</td><td>30%+</td></tr>
-<tr class="hl"><td><strong>营收</strong></td><td><strong>鲸岚·烧鸟</strong></td><td><strong>¥8万</strong></td><td><strong>¥15万</strong></td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">营收测算推导逻辑</h3>
-<p>KPI之间需要打通推导链条，让老板清楚「首月8万」是怎么算出来的：</p>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>推导步骤</th><th>计算过程</th><th>结果</th></tr>
-<tr><td><strong>① 装修期蓄水到店</strong></td><td>1500领券 × 60%核销率</td><td>900人到店</td></tr>
-<tr><td><strong>② 自然客流到店</strong></td><td>商场日均自然客流×转化率（保守估算）</td><td>600人到店</td></tr>
-<tr><td><strong>③ 团购引流到店</strong></td><td>点评+抖音团购售出500份×70%核销率</td><td>350人到店</td></tr>
-<tr><td><strong>④ 首月总到店人次</strong></td><td>900+600+350</td><td><strong>约1,850人次</strong></td></tr>
-<tr><td><strong>⑤ 人均消费</strong></td><td>68元引流套餐+加点（烧鸟串+饮品）</td><td><strong>约45-55元</strong></td></tr>
-<tr><td><strong>⑥ 首月营收</strong></td><td>1,850人次 × 50元人均</td><td><strong>约9.25万元</strong></td></tr>
-<tr class="hl"><td><strong>⑦ 保守目标</strong></td><td>考虑开业磨合期，取保守值</td><td><strong>¥8万</strong></td></tr>
-</table>
-</div>
-<p class="dim">注：以上测算未计入复购消费。首月复购率20%意味着约370人会二次到店，额外贡献约1.8万营收，因此首月实际营收有望冲击10-12万。</p>`},
+{num:'15',title:'KPI总览',sub:'评分 / 评价 / 收藏 / 核销率 / 营收',badge:'目标',
+content:`<div class="tbl-wrap"><table class="tbl">
+<tr><th>维度</th><th>指标</th><th>首月目标</th><th>季度目标</th><th>说明</th></tr>
+<tr><td rowspan="3"><strong>大众点评</strong></td><td>评分</td><td>4.0星</td><td>4.3星+</td><td>自然口碑</td></tr>
+<tr><td>评价数</td><td>100条+</td><td>300条+</td><td>含内测+自然</td></tr>
+<tr><td>收藏打卡</td><td>500个</td><td>1000个</td><td>平台权重</td></tr>
+<tr><td rowspan="2"><strong>抖音</strong></td><td>团购核销率</td><td>50%</td><td>60%+</td><td>抖音团购</td></tr>
+<tr><td>达人探店视频</td><td>8-10条</td><td>20条+</td><td>含达人+素人</td></tr>
+<tr><td rowspan="2"><strong>小红书</strong></td><td>品牌号笔记</td><td>15篇+</td><td>40篇+</td><td>品牌号发布</td></tr>
+<tr><td>UGC笔记</td><td>10篇+</td><td>30篇+</td><td>顾客自发</td></tr>
+<tr><td rowspan="2"><strong>私域</strong></td><td>会员总数</td><td>1400人</td><td>3000人</td><td>含装修期蓄水</td></tr>
+<tr><td>复购率</td><td>20%</td><td>30%+</td><td>首月复购</td></tr>
+<tr><td><strong>营收</strong></td><td>鲸岚·烧鸟</td><td><strong>8万</strong></td><td><strong>15万</strong></td><td>月营业额</td></tr>
+</table></div>`},
 
-{num:'16',title:'竞品分析',sub:'周边竞品 · 差异化优势',
-content:`<div class="tbl-wrap">
-<table class="tbl">
+{num:'16',title:'竞品分析',sub:'周边竞品 / 差异化优势',badge:'分析',
+content:`<div class="tbl-wrap"><table class="tbl">
 <tr><th>竞品</th><th>距离</th><th>人均</th><th>优劣势分析</th></tr>
 <tr><td><strong>商场内日料店</strong></td><td>同商场</td><td>80-120元</td><td>定位高端，非烧鸟专门店，价格偏高</td></tr>
 <tr><td><strong>周边中式烧烤</strong></td><td>500m-1km</td><td>50-70元</td><td>中式烧烤为主，非日式烧鸟，品类不同</td></tr>
 <tr><td><strong>未来精酿一条街</strong></td><td>对面</td><td>—</td><td>未来竞品，精酿空间需提前建立社群壁垒</td></tr>
 <tr><td><strong>鲸岚烧肉（自有品牌）</strong></td><td>楼上3楼</td><td>100-150元</td><td>同一品牌，可联动导流，形成互补</td></tr>
-</table>
-</div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">差异化优势</h3>
+</table></div>
+<p><strong>差异化优势：</strong></p>
 <div class="feat">
 <div class="feat-card"><div class="ic">🎯</div><h4>日式烧鸟专门店</h4><p>区域内无直接竞品，品类差异化明显</p></div>
-<div class="feat-card"><div class="ic">🐋</div><h4>鲸岚品牌背书</h4><p>已有口碑基础和客户信任度</p></div>
-<div class="feat-card"><div class="ic">📍</div><h4>黄金位置</h4><p>商场出入口，自然客流充足</p></div>
-<div class="feat-card"><div class="ic">🏗️</div><h4>45天蓄水</h4><p>开业即有1500+准顾客</p></div>
-<div class="feat-card"><div class="ic">🍻</div><h4>烧鸟+精酿联动</h4><p>差异化体验，纯精酿酒吧无法复制</p></div>
+<div class="feat-card"><div class="ic">🐋</div><h4>鲸岚品牌背书</h4><p>已有口碑基础和社群基础，品牌信任度高</p></div>
+<div class="feat-card"><div class="ic">📍</div><h4>商场黄金位置</h4><p>出入口旁，自然客流充足</p></div>
+<div class="feat-card"><div class="ic">⏰</div><h4>45天蓄水期</h4><p>开业即有1500+准顾客，远超传统模式</p></div>
+<div class="feat-card"><div class="ic">🍺</div><h4>烧鸟+精酿组合</h4><p>差异化体验，纯精酿酒吧无法提供</p></div>
 </div>`},
 
-{num:'17',title:'总结',sub:'核心策略 · 预期成果',
-content:`<p class="big">以美团智能收银为核心，构建完整私域引流与复购闭环</p>
-<p>本方案围绕鲸岚·烧鸟的独特优势——鲸岚品牌背书+商场出入口位置+装修期45天蓄水+精酿空间联动——制定了完整的开业前线下引流及前期营销方案。</p>
-<p><strong>核心策略：</strong>以鲸岚烧肉品牌联动为最大流量来源，以装修期45天二维码铺设为核心蓄水手段，以大众点评/抖音/小红书三平台线上运营为曝光引擎，以私域社群和复购券自动化为长期复购保障。</p>
-<p><strong>与精酿空间联动：</strong>通过联合套餐、互相导流、共用私域，实现「烧鸟+精酿」差异化体验，同时为精酿空间应对未来精酿一条街竞争提供助力。</p>
-<p><strong>预算三档可选：</strong>基础版¥3,000 / 标准版¥8,000 / 完整版¥15,600（均为现金支出，不含让利成本），丰俭由人。</p>
-<p><strong>核心目标：</strong>点评评分4.0星+、收藏500+、团购核销率70%、首月营业额8万+，为鲸岚品牌在天津市场的长期发展打下坚实基础。</p>
-<div class="grid3" style="margin-top:24px">
-<div class="card" style="border-color:var(--fire)"><div class="v" style="color:var(--fire)">🐋</div><div class="l">鲸岚品牌联动</div></div>
-<div class="card" style="border-color:var(--amber)"><div class="v" style="color:var(--amber)">🏗️</div><div class="l">45天蓄水</div></div>
-<div class="card" style="border-color:var(--gold)"><div class="v" style="color:var(--gold)">📱</div><div class="l">三平台运营</div></div>
+{num:'17',title:'总结',sub:'核心策略 / 预算 / KPI',badge:'总结',
+content:`<p>本方案以美团智能版收银系统为核心，围绕鲸岚·烧鸟的独特优势——<strong>鲸岚品牌背书 + 商场出入口位置 + 装修期45天蓄水 + 精酿空间联动</strong>——制定了完整的开业前线下引流及前期营销方案。</p>
+<p><strong>核心策略：</strong></p>
+<p>· 以鲸岚烧肉品牌联动为最大流量来源</p>
+<p>· 以装修期45天二维码铺设为核心蓄水手段</p>
+<p>· 以大众点评/抖音/小红书三平台线上运营为曝光引擎</p>
+<p>· 以私域社群和复购券自动化为长期复购保障</p>
+<p>· 以精酿空间联动打造「烧鸟+精酿」差异化体验</p>
+<p><strong>预算三档可选：</strong></p>
+<div class="grid2">
+<div class="card"><div class="v" style="color:var(--dim)">¥3,000</div><div class="l">基础版 · 最低配置</div></div>
+<div class="card" style="border-color:var(--border2)"><div class="v" style="color:var(--amber)">¥8,000</div><div class="l">标准版 · 推荐配置</div></div>
+<div class="card" style="border-color:var(--fire)"><div class="v" style="color:var(--fire)">¥15,600</div><div class="l">完整版 · 全渠道覆盖</div></div>
 </div>
-<p style="text-align:center;margin-top:24px;color:var(--dim);font-size:13px">编制人：娄苏 | 美团SAAS · 2026年5月（完整版）</p>`}
-
-
-{num:'18',title:'鲸岚烧肉三店联动',sub:'品牌矩阵 · 三店互导 · 超级引流资产',
-content:`<p class="big">三楼鲸岚烧肉同步装修中——这是整份方案里被严重低估的超级引流资产</p>
-<p>鲸岚烧肉与鲸岚·烧鸟同属鲸岚品牌，且位于同一栋楼的三楼。等烧肉开业后，完全可以形成<strong>「烧鸟+精酿+烧肉」三店品牌矩阵</strong>，互相导流，形成品牌合力。</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">三店联动设计</h3>
-<div class="tbl-wrap">
-<table class="tbl">
-<tr><th>联动方式</th><th>具体操作</th><th>预期效果</th></tr>
-<tr><td><strong>品牌通用储值卡</strong></td><td>推出鲸岚品牌通用储值卡，烧鸟+烧肉两店通用（精酿可协商加入）</td><td>打通品牌消费闭环，提升客单价</td></tr>
-<tr><td><strong>消费互享折扣</strong></td><td>任一店消费后，凭小票到另两店享9折优惠</td><td>三店互相导流，提升复购</td></tr>
-<tr><td><strong>联合会员体系</strong></td><td>三店共用会员体系，消费积分通存通兑</td><td>扩大私域池，提升会员价值</td></tr>
-<tr><td><strong>品牌矩阵宣传</strong></td><td>三店菜单/台卡/海报互相露出，形成「鲸岚美食矩阵」认知</td><td>强化品牌心智，降低获客成本</td></tr>
-<tr><td><strong>联合活动日</strong></td><td>每月设「鲸岚品牌日」，三店同步推出限定套餐/折扣</td><td>制造话题，集中引爆</td></tr>
-</table>
+<p><strong>核心目标：</strong></p>
+<div class="grid2">
+<div class="card"><div class="v">4.0星+</div><div class="l">点评评分</div></div>
+<div class="card"><div class="v">500个</div><div class="l">收藏打卡</div></div>
+<div class="card"><div class="v">70%</div><div class="l">团购核销率</div></div>
+<div class="card"><div class="v">8万+</div><div class="l">首月营收</div></div>
 </div>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">烧肉开业前的蓄水准备</h3>
-<p>鲸岚烧肉装修期间（与烧鸟同步），即可提前为烧肉蓄水：</p>
-<p>· 在鲸岚·烧鸟收银台放置烧肉店开业预告+领券二维码</p>
-<p>· 在烧鸟社群中定期推送烧肉装修进度+开业福利预告</p>
-<p>· 烧鸟顾客结账时话术：「楼上鲸岚烧肉也在装修中，开业后凭我们小票到楼上也有优惠哦」</p>
-<p>· 烧鸟开业活动期间，同步收集顾客对烧肉的期待和偏好，为烧肉开业提供选品参考</p>
-<h3 style="color:var(--amber);font-size:17px;margin:16px 0 8px">品牌矩阵长期价值</h3>
-<div class="feat">
-<div class="feat-card"><div class="ic">🐋</div><h4>品牌认知叠加</h4><p>三店覆盖「烧鸟（轻食）+精酿（社交）+烧肉（正餐）」全场景，强化鲸岚品牌在天津日式餐饮领域的心智占位</p></div>
-<div class="feat-card"><div class="ic">🔄</div><h4>流量循环利用</h4><p>一店获客→三店共享→交叉复购，单个获客成本被三店分摊，ROI大幅提升</p></div>
-<div class="feat-card"><div class="ic">🛡️</div><h4>竞争壁垒</h4><p>三店品牌矩阵形成规模效应，竞品难以复制，为未来精酿一条街竞争提供品牌护城河</p></div>
-</div>`}
+<p class="highlight">从开业前45天到开业后三个月，全链路覆盖，让鲸岚·烧鸟从开业第一天起就赢在起跑线。</p>`}
 ];
 
-// ===== Render TOC =====
-const tg=document.getElementById('tocGrid');
+// ===== 渲染 =====
+const tg=document.getElementById('tocGrid'),ct=document.getElementById('content'),nl=document.getElementById('navLinks');
 chapters.forEach((ch,i)=>{
-  const btn=document.createElement('div');btn.className='card';btn.style.cursor='pointer';
-  btn.innerHTML=`<div class="v" style="font-size:20px;color:var(--fire)">${ch.num}</div><div class="l" style="font-size:13px;color:var(--cream);font-weight:500">${ch.title}</div><div class="l" style="font-size:11px">${ch.sub}</div>`;
-  btn.onclick=()=>document.getElementById(`ch-${i}`).scrollIntoView({behavior:'smooth'});
+  const btn=document.createElement('button');btn.className='toc-btn';
+  btn.innerHTML='<span class="num">'+ch.num+'</span><span>'+ch.title+'</span><span class="arrow">→</span>';
+  btn.onclick=()=>document.getElementById('ch-'+i).scrollIntoView({behavior:'smooth'});
   tg.appendChild(btn);
+  const a=document.createElement('a');a.href='#ch-'+i;a.textContent=ch.num;a.title=ch.title;nl.appendChild(a);
+  const d=document.createElement('div');d.className='chapter';d.id='ch-'+i;
+  d.innerHTML='<div class="ch-hdr"><span class="ch-num">'+ch.num+'</span><div class="ch-info"><div class="ch-title">'+ch.title+'</div><div class="ch-sub">'+ch.sub+'</div></div><span class="ch-badge">'+ch.badge+'</span></div>'+ch.content;
+  ct.appendChild(d);
 });
 
-// ===== Render Content =====
-const ct=document.getElementById('content');
-chapters.forEach((ch,i)=>{
-  const sec=document.createElement('section');sec.className='section';sec.id=`ch-${i}`;
-  sec.innerHTML=`<div class="section-header"><div class="num">${ch.num}</div><h2>${ch.title}</h2><div class="sub">${ch.sub}</div></div><div class="section-body" id="body-${i}">${ch.content}</div>`;
-  ct.appendChild(sec);
-});
-
-// ===== Nav Links =====
-const nl=document.getElementById('navLinks');
-chapters.forEach((ch,i)=>{
-  const a=document.createElement('a');a.href=`#ch-${i}`;a.textContent=ch.num;a.title=ch.title;
-  nl.appendChild(a);
-});
-
-// ===== Nav Toggle =====
-document.getElementById('navToggle').onclick=()=>document.getElementById('navLinks').classList.toggle('open');
-
-// ===== Scroll Animations =====
+// ===== 滚动动画 =====
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.08});
-document.querySelectorAll('.section-body').forEach(el=>obs.observe(el));
+document.querySelectorAll('.chapter').forEach(el=>obs.observe(el));
 
-// ===== Nav Hide on Scroll =====
-let ls=0;
-addEventListener('scroll',()=>{
-  const s=scrollY,n=document.getElementById('nav');
-  if(s>300)n.classList.toggle('hidden',s>ls&&s>500);else n.classList.remove('hidden');
-  ls=s;
-});
-
-// ===== Budget Tabs =====
-document.querySelectorAll('.budget-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.budget-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.budget-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(`panel-${tab.dataset.tab}`).classList.add('active');
-  });
-});
+// ===== 预算切换 =====
+function switchBudget(id){
+  document.querySelectorAll('.budget-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.budget-content').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.budget-tab[onclick*="'+id+'"]').classList.add('active');
+  document.getElementById('budget'+id.charAt(0).toUpperCase()+id.slice(1)).classList.add('active');
+}
 </script>
 </body>
 </html>
